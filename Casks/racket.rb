@@ -6,8 +6,9 @@ cask 'racket' do
   name 'Racket'
   homepage 'https://racket-lang.org/'
   license :oss
+  
+  suite "Racket v#{version}", :target => 'Racket'
 
-  suite "Racket v#{version}"
   binary "Racket v#{version}/bin/drracket"
   binary "Racket v#{version}/bin/gracket"
   binary "Racket v#{version}/bin/gracket-text"

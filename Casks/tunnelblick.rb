@@ -1,6 +1,6 @@
 cask 'tunnelblick' do
-  version '3.5.7_build_4270.4517'
-  sha256 'bd8a3d21b7921970adc76ceed412cab410c2b8ae193c7c3413b4350931d8591f'
+  version '3.6beta24_build_4530'
+  sha256 '3da13bdce38f592f086818fff63ace33cd578c8e018522977a919cdf07901d42'
 
   url "https://www.tunnelblick.net/release/Tunnelblick_#{version}.dmg"
   appcast 'https://www.tunnelblick.net/appcast.rss',

@@ -1,8 +1,8 @@
 cask 'firefox' do
-  version '44.0.2'
-  sha256 '311f4114ab6159ec6b2795d43d787f292236cdb92d89a400f9b617cca60d9515'
+  version :latest
+  sha256 :no_check
 
-  url "https://ftp.mozilla.org/pub/firefox/releases/#{version}/mac/en-US/Firefox%20#{version}.dmg"
+  url "https://download.mozilla.org/?product=firefox-latest&lang=en-US&os=osx"
   appcast "https://aus5.mozilla.org/update/3/Firefox/#{version}/0/Darwin_x86_64-gcc3-u-i386-x86_64/en-US/release/Darwin%2015.3.0/default/default/update.xml?force=1",
           checkpoint: 'c7034b1ee3dc124a33b3f6641e6c038d708ea798a19ac8e6629b2ad692964d14'
   name 'Mozilla Firefox'

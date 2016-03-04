@@ -6,8 +6,134 @@ cask 'netbeans' do
   name 'NetBeans IDE'
   homepage 'https://netbeans.org/'
   license :oss
+  
+  preflight do
+      File.open('/tmp/netbeans-choices.xml', 'w') do |f|
+          # use "\n" for two lines of text
+          f.puts %Q{<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <array>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>baseide</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>javase</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>webcommon</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>extide</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>javaee</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>0</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>javame</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>cpp</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>groovy</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>php</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>ergonomics</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>0</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>glassfish</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>0</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>tomcat</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>postinstallscripts</string>
+        </dict>
+    </array>
+</plist>}
+      end
+  end
 
-  pkg "NetBeans #{version}.pkg"
+  preflight do
+    system 'rm', '-Rf', '/Applications/Netbeans.app'
+  end
+
+  pkg "NetBeans #{version}.pkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
+
+  postflight do
+    system '/usr/bin/sudo', '-E', '--', 
+          'mv', '-f', "/Applications/Netbeans/Netbeans #{version}.app/", '/Applications/Netbeans.app/'
+    system 'rmdir', '--', '/Applications/Netbeans/'
+  end
 
   # Theoretically this uninstall could conflict with a separate GlassFish
   # installation.
@@ -29,6 +155,6 @@ cask 'netbeans' do
   # the OS X installer, so it's insufficient to just delete the paths exposed
   # by pkgutil, hence the additional ":delete" option below.
 
-  uninstall pkgutil: 'org.netbeans.ide.*|glassfish-.*',
-            delete:  '/Applications/NetBeans'
+  uninstall :pkgutil => 'org.netbeans.ide.*|glassfish-.*',
+            :delete => '/Applications/NetBeans*'
 end
