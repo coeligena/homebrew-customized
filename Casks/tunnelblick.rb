@@ -12,7 +12,7 @@ cask 'tunnelblick' do
   auto_updates true
   depends_on macos: '>= :tiger'
 
-  app 'Tunnelblick.app'
+  app 'Tunnelblick.app', :target => 'Tunnelblick Moved.app'
 
   uninstall launchctl: 'net.tunnelblick.tunnelblick.LaunchAtLogin',
             quit:      'net.tunnelblick.tunnelblick'
