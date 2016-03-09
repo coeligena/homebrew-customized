@@ -1,6 +1,6 @@
 cask 'time-sink' do
-  version '1.2.5'
-  sha256 'e8742770f9fe7944bbf60c9f692127c3b00dba96b0bcc2ed0b80563eb525a08c'
+  version :latest
+  sha256 :no_check
 
   url 'https://manytricks.com/download/timesink'
   appcast 'https://manytricks.com/timesink/appcast.xml',
