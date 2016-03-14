@@ -1,6 +1,6 @@
 cask 'flash-ppapi' do
-  version '20.0.0.306'
-  sha256 '2398a68453cec809a6a0db9f29783b399207865aeb47850c0aa4ded0ac8dd08b'
+  version '21.0.0.182'
+  sha256 '9a94f721dfc4630937aa536fa87af36987d849c7a00954e53a68454ed7a9449c'
 
   # macromedia.com is the official download host per the vendor homepage
   url "https://fpdownload.macromedia.com/get/flashplayer/pdc/#{version}/install_flash_player_osx_ppapi.dmg"
