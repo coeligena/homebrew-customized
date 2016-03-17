@@ -2,7 +2,9 @@ cask 'firefox' do
   version :latest
   sha256 :no_check
 
-  url "https://download.mozilla.org/?product=firefox-latest&lang=en-US&os=osx"
+  url "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US",
+          user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36',
+          accept_encoding: 'gzip, deflate'
   appcast "https://aus5.mozilla.org/update/3/Firefox/#{version}/0/Darwin_x86_64-gcc3-u-i386-x86_64/en-US/release/Darwin%2015.3.0/default/default/update.xml?force=1",
           checkpoint: 'c82e11d0ac89e159a538cb614d4ae90e9232e9f761910222c92c3fa8938dcfbe'
   name 'Mozilla Firefox'
