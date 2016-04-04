@@ -1,3 +1,5 @@
+require 'Ox'
+
 cask 'myspeed' do
   #    version '1153' # 1.43
   #    sha256 '22a77eaf5fec64e3055bc68f5287b9d2d94a0c34abc83e5948d0ff591c8cf7f5'
@@ -8,6 +10,104 @@ cask 'myspeed' do
   homepage 'https://www.enounce.com/myspeed1-mac-download'
   license :commercial
 
+  preflight do
+    i = 30
+    while not File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist') && i > 0
+      print "> > > Waiting...\n"
+      sleep 5
+      i-=1
+    end
+    break unless File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist')
+    sleep 5
+    
+    system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
+
+    xml = Ox.parse(File.open(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist.bakp').read)
+    arr = xml.locate('plist/dict/*/^Text')
+    i = 0; lic = ''; licrem = ''; timesav = 0; timetot = 0
+    arr.each do |t|
+      timesav = arr[i+1] if t == 'UI:TimeSaved'
+      timetot = arr[i+1] if t == 'UI:TimeSavedTtl'
+      i+=1
+    end
+    
+    xml = Ox.parse(File.open(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist').read)
+    arr = xml.locate('plist/dict/*/^Text')
+    i = 0
+    arr.each do |t|
+      lic = arr[i+1] if t == 'License5'
+      licrem = arr[i+1] if t == 'UI:LicenseRemindTime'
+      i+=1
+    end
+    
+    println lic
+    println licrem
+    println timesav
+    println timetot
+    
+    File.open(ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'w') do |f|
+      # use "\n" for two lines of text
+      f.puts %Q{<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FlashAdapter:ProgramsToNotHook</key>
+	<array/>
+	<key>License5</key>
+	<string>#{lic}</string>
+	<key>Registration:Email</key>
+	<string></string>
+	<key>Registration:SerialNumber</key>
+	<string></string>
+	<key>UI:AlwaysStartAtOneX</key>
+	<false/>
+	<key>UI:AutoCheckForUpdates</key>
+	<true/>
+	<key>UI:EnableBrowserPlugin</key>
+	<false/>
+	<key>UI:HotKeyFaster</key>
+	<string>F</string>
+	<key>UI:HotKeyNormal</key>
+	<string>N</string>
+	<key>UI:HotKeyPreferred</key>
+	<string>B</string>
+	<key>UI:HotKeyShowSlider</key>
+	<string>M</string>
+	<key>UI:HotKeySlower</key>
+	<string>S</string>
+	<key>UI:LaunchAtLogin</key>
+	<true/>
+	<key>UI:LicenseRemindTime</key>
+	<integer>#{licrem}</integer>
+	<key>UI:PreferredSpeed</key>
+	<integer>30</integer>
+	<key>UI:ShowSliderWhenActive</key>
+	<false/>
+	<key>UI:SliderExpanded</key>
+	<false/>
+	<key>UI:TakeFocusWhenAutoShow</key>
+	<false/>
+	<key>UI:TimeSaved</key>
+	<integer>#{timesav}</integer>
+	<key>UI:TimeSavedTtl</key>
+	<integer>#{timetot}</integer>
+	<key>UI:UseHotKeys</key>
+	<true/>
+	<key>UI:currentRate</key>
+	<integer>30</integer>
+	<key>UI:maxRate</key>
+	<integer>50</integer>
+	<key>UI:minRate</key>
+	<integer>3</integer>
+	<key>UI:slewRate</key>
+	<integer>1</integer>
+</dict>
+</plist>
+}
+    end
+    system 'plutil', '-convert', 'binary1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
+  end
+  
   uninstall_preflight do
     File.open('/tmp/remove-myspeed.sh', 'w') do |f|
       # use "\n" for two lines of text
@@ -357,6 +457,11 @@ echo "MySpeed has been removed....thank you for trying MySpeed!"
   end
   
   pkg "MySpeed for Mac.pkg"
+  
+  uninstall_preflight do
+    system 'mv', '-f', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp'
+    system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp'
+  end
 
   uninstall :quit    => [
               'com.enounce.MySpeed',
@@ -376,6 +481,7 @@ echo "MySpeed has been removed....thank you for trying MySpeed!"
       :rmdir   => [
           '~/Library/Application Support/Enounce'
       ]
+  
   uninstall_postflight do
     system '/bin/bash', '/tmp/remove-myspeed.sh'
     local_files = Pathname.glob(Pathname.new("~/.en*").expand_path)
