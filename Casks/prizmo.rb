@@ -4,7 +4,7 @@ cask 'prizmo' do
 
   url "http://www.creaceed.com/downloads/prizmo3.zip"
   appcast 'http://www.creaceed.com/appcasts/prizmo3.xml',
-          checkpoint: '16e7f3d4e35494389f7582fd8ca8ed8b196aeb88e4a2bfd4a4dab7899d4ea510'
+          checkpoint: '67f7f81fe7504cd71f51d9707e6f7fb76b054a21560db94ebe401d3c6205e304'
   name 'Prizmo'
   homepage 'http://www.creaceed.com/prizmo'
   license :freemium
