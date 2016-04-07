@@ -1,6 +1,11 @@
 cask 'tunnelblick' do
-  version '3.6.1beta02_build_4544'
-  sha256 'fb6ebc2bf2a1ffd980112a5d9f18ce49e536a6f455e3ac7f1b374650d4e720d3'
+  if MacOS.release <= :snow_leopard
+    version '3.5.8_build_4270.4530'
+    sha256 'd634a9a5fd06f95c7325987197fb7890119bf0a40a3958284814958a14c20ce3'
+  else
+    version '3.6.1_build_4543.4551'
+    sha256 '6a1ae217e58a91fa6ffcb165758a65043e6fddbae875a2262f8f71d11dfd1b85'
+  end
 
   url "https://www.tunnelblick.net/release/Tunnelblick_#{version}.dmg"
   appcast 'https://www.tunnelblick.net/appcast.rss',
