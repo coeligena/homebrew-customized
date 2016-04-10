@@ -10,7 +10,7 @@ cask 'myspeed' do
   homepage 'https://www.enounce.com/myspeed1-mac-download'
   license :commercial
 
-  preflight do
+  postflight do
     i = 30
     while not File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist') && i > 0
       print "> > > Waiting...\n"
@@ -39,11 +39,6 @@ cask 'myspeed' do
       licrem = arr[i+1] if t == 'UI:LicenseRemindTime'
       i+=1
     end
-    
-    println lic
-    println licrem
-    println timesav
-    println timetot
     
     File.open(ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'w') do |f|
       # use "\n" for two lines of text
