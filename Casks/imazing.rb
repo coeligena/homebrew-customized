@@ -1,11 +1,11 @@
 cask 'imazing' do
-  version '1.5.6,1459355558'
-  sha256 'a24b0146517c16171d1480678960fbcfec13d00771872033912c1776006a297f'
+  version '1.5.9,1461598265'
+  sha256 '2b567c46d029b40e45e9f3542cc3b90e49695872de1b83eb0880348810f87499'
 
   # devmate.com/com.DigiDNA.iMazingMac was verified as official when first introduced to the cask
   url "https://dl.devmate.com/com.DigiDNA.iMazingMac/#{version.before_comma}/#{version.after_comma}/iMazingforMac-#{version.before_comma}.dmg"
   appcast 'https://updates.devmate.com/com.DigiDNA.iMazingMac.xml',
-          checkpoint: 'd81e45c6293105b50188596aa75d40e9f0fb17c604ee62cdc235b5fe35873639'
+          checkpoint: '5cd16c3bcbfd3a77fa5e6f83b48945d1c7f37d7ecddfc739b054d9767e44dd8c'
   name 'iMazing'
   homepage 'https://imazing.com/'
   license :commercial
