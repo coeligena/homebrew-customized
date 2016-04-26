@@ -13,5 +13,5 @@ cask 'devonthink-personal' do
   depends_on macos: '>= :mountain_lion'
   container nested: 'DEVONthink_Personal.dmg'
 
-  app 'DEVONthink Personal.app'
+  app 'DEVONthink.app'
 end
