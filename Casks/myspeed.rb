@@ -11,6 +11,22 @@ cask 'myspeed' do
   license :commercial
 
   postflight do
+    sleep 10
+    system 'killall', 'Installer'
+    
+    sleep 2
+    open "/Applications/MySpeed.app/"
+    sleep 2
+    
+    system 'osascript', '-e', %Q{tell application "MySpeed"
+	activate window "MySpeed™ Activation"
+	tell application "System Events" to tell process "MySpeed"
+		click button "Start Trial" of window "MySpeed™ Activation"
+		delay 5
+		click button "Ok" of window "MySpeed™ Activation"
+	end tell
+end tell}
+    
     i = 30
     while not File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist') && i > 0
       print "> > > Waiting...\n"
@@ -18,8 +34,11 @@ cask 'myspeed' do
       i-=1
     end
     break unless File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist')
-    sleep 5
+    sleep 10
     
+    system 'killall', '-m',  'MySpeed.*'
+    sleep 2
+        
     system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
 
     xml = Ox.parse(File.open(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist.bakp').read)
@@ -101,6 +120,7 @@ cask 'myspeed' do
 }
     end
     system 'plutil', '-convert', 'binary1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
+    system 'xattr', '-c', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
   end
   
   uninstall_preflight do
