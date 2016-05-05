@@ -13,7 +13,7 @@ cask 'bettertouchtool' do
 
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
     appcast 'http://appcast.boastr.net',
-            checkpoint: '463c010fb81e31bbee36d6804dc51ce719e62bf051cf13831992ea9a23b0e111'
+            checkpoint: 'c0db13ea9aec2e83f4a69ce215d652b457898a2fb3f9d71d1fb9f0085a86cf08'
 
     license :commercial
   end
