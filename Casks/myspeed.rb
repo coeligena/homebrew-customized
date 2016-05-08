@@ -16,7 +16,7 @@ cask 'myspeed' do
     
     sleep 2
     open "/Applications/MySpeed.app/"
-    sleep 2
+    sleep 10
     
     system 'osascript', '-e', %Q{tell application "MySpeed"
 	activate window "MySpeed™ Activation"
@@ -38,89 +38,20 @@ end tell}
     
     system 'killall', '-m',  'MySpeed.*'
     sleep 2
-        
-    system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
-
-    xml = Ox.parse(File.open(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist.bakp').read)
-    arr = xml.locate('plist/dict/*/^Text')
-    i = 0; lic = ''; licrem = ''; timesav = 0; timetot = 0
-    arr.each do |t|
-      timesav = arr[i+1] if t == 'UI:TimeSaved'
-      timetot = arr[i+1] if t == 'UI:TimeSavedTtl'
-      i+=1
-    end
     
-    xml = Ox.parse(File.open(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist').read)
-    arr = xml.locate('plist/dict/*/^Text')
-    i = 0
-    arr.each do |t|
-      lic = arr[i+1] if t == 'License5'
-      licrem = arr[i+1] if t == 'UI:LicenseRemindTime'
-      i+=1
-    end
+    lic = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'} License5`.strip
+    licrem = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'} UI:LicenseRemindTime`.strip
+    timesav = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'} UI:TimeSaved`.strip
+    timetot = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'} UI:TimeSavedTtl`.strip
     
-    File.open(ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'w') do |f|
-      # use "\n" for two lines of text
-      f.puts %Q{<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>FlashAdapter:ProgramsToNotHook</key>
-	<array/>
-	<key>License5</key>
-	<string>#{lic}</string>
-	<key>Registration:Email</key>
-	<string></string>
-	<key>Registration:SerialNumber</key>
-	<string></string>
-	<key>UI:AlwaysStartAtOneX</key>
-	<false/>
-	<key>UI:AutoCheckForUpdates</key>
-	<true/>
-	<key>UI:EnableBrowserPlugin</key>
-	<false/>
-	<key>UI:HotKeyFaster</key>
-	<string>F</string>
-	<key>UI:HotKeyNormal</key>
-	<string>N</string>
-	<key>UI:HotKeyPreferred</key>
-	<string>B</string>
-	<key>UI:HotKeyShowSlider</key>
-	<string>M</string>
-	<key>UI:HotKeySlower</key>
-	<string>S</string>
-	<key>UI:LaunchAtLogin</key>
-	<true/>
-	<key>UI:LicenseRemindTime</key>
-	<integer>#{licrem}</integer>
-	<key>UI:PreferredSpeed</key>
-	<integer>30</integer>
-	<key>UI:ShowSliderWhenActive</key>
-	<false/>
-	<key>UI:SliderExpanded</key>
-	<false/>
-	<key>UI:TakeFocusWhenAutoShow</key>
-	<false/>
-	<key>UI:TimeSaved</key>
-	<integer>#{timesav}</integer>
-	<key>UI:TimeSavedTtl</key>
-	<integer>#{timetot}</integer>
-	<key>UI:UseHotKeys</key>
-	<true/>
-	<key>UI:currentRate</key>
-	<integer>30</integer>
-	<key>UI:maxRate</key>
-	<integer>50</integer>
-	<key>UI:minRate</key>
-	<integer>3</integer>
-	<key>UI:slewRate</key>
-	<integer>1</integer>
-</dict>
-</plist>
-}
-    end
-    system 'plutil', '-convert', 'binary1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
-    system 'xattr', '-c', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'License5', lic
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:LicenseRemindTime', licrem
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:TimeSaved', timesav
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:TimeSavedTtl', timetot
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:AutoCheckForUpdates', '-bool', 'false'
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:HotKeyPreferred', 'B'
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:PreferredSpeed', '30'
+    system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:maxRate', '50'
   end
   
   uninstall_preflight do
@@ -474,8 +405,8 @@ echo "MySpeed has been removed....thank you for trying MySpeed!"
   pkg "MySpeed for Mac.pkg"
   
   uninstall_preflight do
-    system 'mv', '-f', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp'
-    system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp'
+    system 'mv', '-f', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'
+    system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'
   end
 
   uninstall :quit    => [
