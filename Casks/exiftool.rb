@@ -1,6 +1,6 @@
 cask 'exiftool' do
-  version '10.13'
-  sha256 '464c3a88882b3aced64bb457d9efa3469bf326817ae0330f1cc9f9b6714ed8cd'
+  version '10.17'
+  sha256 '40df9539b9319b6df769159651ebae176f6ef2b4092a395d218ba4ba39a41670'
 
   url "http://owl.phy.queensu.ca/~phil/exiftool/ExifTool-#{version}.dmg"
   appcast 'http://owl.phy.queensu.ca/~phil/exiftool/rss.xml',

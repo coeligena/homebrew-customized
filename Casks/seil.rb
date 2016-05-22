@@ -6,8 +6,8 @@ cask 'seil' do
     version '11.3.0'
     sha256 '5fd57db4f96b833c4f1005b3d68711bb9ea52f0db8e98a0793eb2a9ff5d290b2'
   else
-    version '12.1.0'
-    sha256 'fddd1883d8cb28084c66fa284d1b58f0f4717022d1b794d1fded8219f1d9c85f'
+    version '12.1.2'
+    sha256 '1c7a684a56f34633ec5844b4438347612a9705d1728adc88eba7011937d65e99'
   end
 
   url "https://pqrs.org/osx/karabiner/files/Seil-#{version}.dmg"
