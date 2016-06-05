@@ -19,7 +19,7 @@ names, and other aspects of this manual are still subject to change.
 
 ## FREQUENTLY USED COMMANDS
 
-  * `install [--force]` <token> [ <token> ... ]:
+  * `install [--force] [--skip-cask-deps]` <token> [ <token> ... ]:
     Install Cask identified by <token>.
 
   * `uninstall [--force]` <token> [ <token> ... ]:
@@ -69,9 +69,10 @@ names, and other aspects of this manual are still subject to change.
   * `info` or `abv` <token> [ <token> ... ]:
     Display information about the given Cask.
 
-  * `install [--force]` <token> [ <token> ... ]:
+  * `install [--force] [--skip-cask-deps]` <token> [ <token> ... ]:
     Install the given Cask. With `--force`, re-install even if the Cask
-    appears to be already present.
+    appears to be already present. With `--skip-cask-deps`, skip any Cask
+    dependencies.
 
     <token> is usually the ID of a Cask as returned by `brew cask search`,
     but see [OTHER WAYS TO SPECIFY A CASK][] for variations.
@@ -142,6 +143,9 @@ in a future version.
     Force an install to proceed even when a previously-existing install
     is detected.
 
+  * `--skip-cask-deps`:
+    Skip Cask dependencies when installing.
+
   * `--caskroom=<path>`:
     Location of the Caskroom, where all binaries are stored. The default value is: `/opt/homebrew-cask/Caskroom`.
 
@@ -152,10 +156,10 @@ in a future version.
     Target location for Applications. The default value is `/Applications`.
 
   * `--colorpickerdir=<path>`:
-    Target location for Color Pickers. The default value is `~/Library/Color Pickers`.
+    Target location for Color Pickers. The default value is `~/Library/ColorPickers`.
 
   * `--prefpanedir=<path>`:
-    Target location for Preference Panes. The default value is `~/Library/Preference Panes`.
+    Target location for Preference Panes. The default value is `~/Library/PreferencePanes`.
 
   * `--qlplugindir=<path>`:
     Target location for QuickLook Plugins. The default value is `~/Library/QuickLook`.
