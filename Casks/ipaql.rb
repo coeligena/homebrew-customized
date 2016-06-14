@@ -1,11 +1,11 @@
 cask 'ipaql' do
-  version '1.3.0'
-  sha256 'bcff849e15b351c224fbd65888c1e5901f335ed034758eb673de1ce454000b18'
+  version '1.5'
+  sha256 'bfe5ea85f45713b621a5466b166f19f004cc461b2265fdc58795dd3fb670a8d0'
 
-  url "http://ipaql.com/site/assets/files/1006/ipaql_#{version.gsub('.', '-')}.zip"
+  url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/quicklook-ipa/IPA%20Quick%20Look%20Plugin%20#{version}.dmg"
   name 'CocoaDeveloper Quicklook Plugin'
-  homepage 'http://ipaql.com/'
+  homepage 'https://code.google.com/archive/p/quicklook-ipa/'
   license :gratis
 
-  qlplugin 'ipaql.qlgenerator'
+  pkg 'IPA Quick Look Plugin.pkg'
 end
