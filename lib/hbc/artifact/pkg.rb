@@ -1,4 +1,6 @@
 class Hbc::Artifact::Pkg < Hbc::Artifact::Base
+  attr_reader :pkg_relative_path
+
   def self.artifact_dsl_key
     :pkg
   end
@@ -13,17 +15,13 @@ class Hbc::Artifact::Pkg < Hbc::Artifact::Base
         raise
       end
       raise if pkg_description.nil?
-    rescue StandardError => e
-      raise Hbc::CaskInvalidError.new(@cask, 'Bad pkg stanza')
+    rescue StandardError
+      raise Hbc::CaskInvalidError.new(@cask, "Bad pkg stanza")
     end
   end
 
   def pkg_install_opts(opt)
     @pkg_install_opts[opt] if @pkg_install_opts.respond_to?(:keys)
-  end
-
-  def pkg_relative_path
-    @pkg_relative_path
   end
 
   def install_phase
@@ -40,7 +38,7 @@ class Hbc::Artifact::Pkg < Hbc::Artifact::Base
     ohai "Package installers may write to any location; options such as --appdir are ignored."
     source = @cask.staged_path.join(pkg_relative_path)
     unless source.exist?
-      raise Hbc::CaskError.new "pkg source file not found: '#{source}'"
+      raise Hbc::CaskError, "pkg source file not found: '#{source}'"
     end
     args = [
       '-pkg',    source,
@@ -52,6 +50,6 @@ class Hbc::Artifact::Pkg < Hbc::Artifact::Base
       args << '-applyChoiceChangesXML'
       args << pkg_install_opts( :apply_choice_changes_xml )
     end
-    @command.run!('/usr/sbin/installer', {:sudo => true, :args => args, :print_stdout => true})
+    @command.run!("/usr/sbin/installer", sudo: true, args: args, print_stdout: true)
   end
 end

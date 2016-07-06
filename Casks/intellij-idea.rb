@@ -7,7 +7,7 @@ cask 'intellij-idea' do
   homepage 'https://www.jetbrains.com/idea/'
   license :commercial
 
-  conflicts_with cask: 'intellij-idea-eap'
+  auto_updates true
 
   app 'IntelliJ IDEA.app'
 

@@ -5,7 +5,7 @@ cask 'flash' do
   # macromedia.com was verified as official when first introduced to the cask
   url "http://fpdownload.macromedia.com/get/flashplayer/pdc/#{version}/install_flash_player_osx.dmg"
   appcast 'http://fpdownload2.macromedia.com/get/flashplayer/update/current/xml/version_en_mac_pl.xml',
-          checkpoint: '3a7ddc4c641926867aa42c761bbd080df6083003861b2012f021fe0fd03d2a1d'
+          checkpoint: 'cd1cc6b42488cc6931c0554f41159f93a4b8383af4e72366610ee47f6b33b1ed'
   name 'Adobe Flash Player'
   homepage 'https://get.adobe.com/flashplayer'
   license :gratis

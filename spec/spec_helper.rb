@@ -2,6 +2,9 @@ require 'pathname'
 require 'rspec/its'
 require 'rspec/wait'
 
+homebrew_repo = `brew --repository`
+$LOAD_PATH.unshift(File.expand_path("#{homebrew_repo.chomp}/Library/Homebrew"))
+
 if ENV['COVERAGE']
   require 'coveralls'
   Coveralls.wear_merged!
@@ -16,7 +19,7 @@ project_root = Pathname(File.expand_path("../..", __FILE__))
 
 Dir["#{project_root}/spec/support/*.rb"].each { |f| require f }
 
-# todo: removeme, this is transitional
+# TODO: removeme, this is transitional
 include HomebrewTestingEnvironment
 
 # force some environment variables

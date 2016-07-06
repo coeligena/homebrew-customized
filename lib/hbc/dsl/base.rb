@@ -23,4 +23,15 @@ class Hbc::DSL::Base
   def staged_path
     caskroom_path.join(@cask.version)
   end
+
+  def appdir
+    Hbc::DSL.appdir
+  end
+
+  def method_missing(method, *)
+    underscored_class = self.class.name.gsub(%r{([[:lower:]])([[:upper:]][[:lower:]])}, '\1_\2').downcase
+    section = underscored_class.downcase.split("::").last
+    Hbc::Utils.method_missing_message(method, @cask.to_s, section)
+    nil
+  end
 end

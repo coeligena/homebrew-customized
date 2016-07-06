@@ -2,6 +2,9 @@ require 'bundler'
 require 'bundler/setup'
 require 'pathname'
 
+homebrew_repo = `brew --repository`
+$LOAD_PATH.unshift(File.expand_path("#{homebrew_repo.chomp}/Library/Homebrew"))
+
 if ENV['COVERAGE']
   require 'coveralls'
   Coveralls.wear_merged!
@@ -18,14 +21,14 @@ casks_path = brew_cask_path.join('Casks')
 lib_path = brew_cask_path.join('lib')
 $:.push(lib_path)
 
-# todo: removeme, this is transitional
+# TODO: removeme, this is transitional
 require 'vendor/homebrew-fork/testing_env'
 
 # force some environment variables
 ENV['HOMEBREW_NO_EMOJI'] = '1'
 ENV['HOMEBREW_CASK_OPTS'] = nil
 
-# todo temporary, copied from old Homebrew, this method is now moved inside a class
+# TODO: temporary, copied from old Homebrew, this method is now moved inside a class
 def shutup
   if ENV.has_key?('VERBOSE_TESTS')
     yield
@@ -126,6 +129,14 @@ class TestHelper
       end
     end
   end
+
+  def self.install_with_caskfile(cask)
+    Hbc::Installer.new(cask).tap do |i|
+      shutup do
+        i.save_caskfile
+      end
+    end
+  end
 end
 
 # Extend MiniTest API with support for RSpec-style shared examples
@@ -142,7 +153,7 @@ require 'tempfile'
 
 # pretend like we installed the homebrew-cask tap
 project_root = Pathname.new(File.expand_path("#{File.dirname(__FILE__)}/../"))
-taps_dest = Hbc.homebrew_prefix.join(*%w{Library Taps caskroom})
+taps_dest = Hbc.homebrew_prefix.join(*%w[Library Taps caskroom])
 
 # create directories
 FileUtils.mkdir_p taps_dest

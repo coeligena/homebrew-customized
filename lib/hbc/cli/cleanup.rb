@@ -46,27 +46,31 @@ class Hbc::CLI::Cleanup < Hbc::CLI::Base
       incomplete_file = Dir.chdir cache_location do
         f = symlink.readlink
         f = f.realpath if f.exist?
-        Pathname.new(f.to_s.concat('.incomplete'))
+        Pathname.new(f.to_s.concat(".incomplete"))
       end
       incomplete_file = nil unless incomplete_file.exist?
-      incomplete_file = nil if outdated_only and incomplete_file and incomplete_file.stat.mtime > OUTDATED_TIMESTAMP
+      incomplete_file = nil if outdated_only && incomplete_file && incomplete_file.stat.mtime > OUTDATED_TIMESTAMP
       incomplete_file
     end.compact
   end
 
   def cache_completes
-    cache_symlinks.collect do |symlink|
+    completes = cache_symlinks.collect do |symlink|
       file = Dir.chdir cache_location do
         f = symlink.readlink
         f.exist? ? f.realpath : f
       end
       file = nil unless file.exist?
-      if outdated_only and file and file.stat.mtime > OUTDATED_TIMESTAMP
+      if outdated_only && file && file.stat.mtime > OUTDATED_TIMESTAMP
         file = nil
         symlink = nil
       end
-      [ symlink, file ]
-    end.flatten.compact.sort { |x,y| x.to_s.count(File::SEPARATOR) <=> y.to_s.count(File::SEPARATOR) }
+      [symlink, file]
+    end
+    completes
+      .flatten
+      .compact
+      .sort { |x, y| x.to_s.count(File::SEPARATOR) <=> y.to_s.count(File::SEPARATOR) }
   end
 
   # will include dead symlinks if they aren't handled separately
