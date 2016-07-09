@@ -1,6 +1,6 @@
 cask 'darktable' do
-  version '2.0.4'
-  sha256 '1e6306f623c3743fabe88312d34376feae94480eb5a38858f21751da04ac4550'
+  version '2.0.5'
+  sha256 'e0ae0e5e19771810a80d6851e022ad5e51fb7da75dcbb98d96ab5120b38955fd'
 
   # github.com/darktable-org/darktable was verified as official when first introduced to the cask
   url "https://github.com/darktable-org/darktable/releases/download/release-#{version}/darktable-#{version}.dmg"
