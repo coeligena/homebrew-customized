@@ -1,6 +1,6 @@
 cask 'flash-esr' do
-  version '18.0.0.360'
-  sha256 '76070c1c7dbbb779f29cb1a5c5ece5dfc55e4b78216cfd58aa2e52bca74ba965'
+  version '18.0.0.366'
+  sha256 '25b72f2a36fe8b1f9953d5e9f8cebe936d5dc33a5b14c0eac69a51c940537912'
 
   # macromedia.com was verified as official when first introduced to the cask
   url "http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_#{version.split('.')[0]}_osx_pkg.dmg"
