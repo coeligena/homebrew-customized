@@ -5,7 +5,7 @@ cask 'darktable' do
   # github.com/darktable-org/darktable was verified as official when first introduced to the cask
   url "https://github.com/darktable-org/darktable/releases/download/release-#{version}/darktable-#{version}.dmg"
   appcast 'https://github.com/darktable-org/darktable/releases.atom',
-          checkpoint: '7983f9d630d521bc530069d06be63b971685d9ed81b181d70bba95c788cdd978'
+          checkpoint: '097513cfe481beb354fc63002a3255646cbf5c5b2e23b9f6e60d58e9a7c5b45d'
   name 'darktable'
   homepage 'https://www.darktable.org/'
   license :gpl
