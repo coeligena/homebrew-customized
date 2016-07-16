@@ -1,5 +1,5 @@
 cask 'rubymine' do
-  version '2016.1.1b'
+  version '2016.1.2'
   sha256 '86ada622827c32bb8dc646f7696bfa63a33e9f0386fb6ab30c89391b3fd5e67b'
 
   url "https://download.jetbrains.com/ruby/RubyMine-#{version}.dmg"
