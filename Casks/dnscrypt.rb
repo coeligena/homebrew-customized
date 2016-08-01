@@ -1,6 +1,6 @@
 cask 'dnscrypt' do
-  version '1.0.11'
-  sha256 '91610e90474cf788430f820f9a13f59d84449773133ff11df1c5ee58a9dfe82e'
+  version '1.0.12'
+  sha256 'f3badcc535933cfc7bdae7b0cb1e0f7d89a46d1fb085f4f3baff3b8d4f38a797'
 
   url "https://github.com/alterstep/dnscrypt-osxclient/releases/download/#{version}/dnscrypt-osxclient-#{version}.dmg"
   appcast 'https://github.com/alterstep/dnscrypt-osxclient/releases.atom',
