@@ -5,7 +5,7 @@ cask 'firefox' do
   url "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US",
           user_agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36'
   appcast "https://aus5.mozilla.org/update/3/Firefox/#{version}/0/Darwin_x86_64-gcc3-u-i386-x86_64/en-US/release/Darwin%2015.3.0/default/default/update.xml?force=1",
-          checkpoint: 'c03d2c0ce638c499da24232ddcdbce6b908fd718953440797924bd12b87552cf'
+          checkpoint: '3bcddb4a768718aa1c44067092cefd5b4e0c456dd6a95a236bf4e438f2d7b8d8'
   name 'Mozilla Firefox'
   homepage 'https://www.mozilla.org/en-US/firefox/'
   license :mpl
