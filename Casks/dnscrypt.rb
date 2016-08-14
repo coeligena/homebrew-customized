@@ -4,7 +4,7 @@ cask 'dnscrypt' do
 
   url "https://github.com/alterstep/dnscrypt-osxclient/releases/download/#{version}/dnscrypt-osxclient-#{version}.dmg"
   appcast 'https://github.com/alterstep/dnscrypt-osxclient/releases.atom',
-          checkpoint: '656d405a7df005ff301315ca7320a0831dd53873429e6d771fd2e239d538d09c'
+          checkpoint: '29c595e8cc826a70d1f0bee7a30930f53ba3f06d1a4e422879bf92bac139ddad'
   name 'DNSCrypt'
   homepage 'https://github.com/alterstep/dnscrypt-osxclient'
   license :oss
