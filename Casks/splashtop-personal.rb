@@ -1,6 +1,6 @@
 cask 'splashtop-personal' do
-  version '2.6.4.1'
-  sha256 'df738c2067e99fac4aed16ab79b0a659aa0787ac6c68e195fab4e5d1c9f02820'
+  version '2.6.6'
+  sha256 '761164ff34d6d684c0935bf9339c02438fd85539ec15676136d0cb85529273d7'
 
   # d17kmd0va0f0mp.cloudfront.net was verified as official when first introduced to the cask
   url "https://d17kmd0va0f0mp.cloudfront.net/macclient/STP/Splashtop_Personal_v#{version}.dmg"
