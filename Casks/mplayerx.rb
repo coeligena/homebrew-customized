@@ -1,6 +1,6 @@
 cask 'mplayerx' do
-  version '1.1.3-1913'
-  sha256 'd48abb4b42ecbde2ba99b6afcb0ae14cf3d5a160b758eeb3cb9c533ebe7bda58'
+  version '1.1.4-1920'
+  sha256 '9306b11acd9df45464fc3ddca1a3a757f50ef019ea6a09ce13ad3f51f1ef1592'
 
   # sourceforge.net/mplayerx-osx was verified as official when first introduced to the cask
   url "https://downloads.sourceforge.net/mplayerx-osx/MPlayerX-#{version}.zip"
