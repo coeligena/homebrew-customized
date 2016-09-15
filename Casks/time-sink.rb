@@ -4,7 +4,7 @@ cask 'time-sink' do
 
   url 'https://manytricks.com/download/timesink'
   appcast 'https://manytricks.com/timesink/appcast.xml',
-          checkpoint: 'f6886239162de22ba1b755eb14603ef514d5d00ab59b75969b3761ac1beadbaa'
+          checkpoint: '31adc137baa25f72cb6609ac8048d2a502c56ab8a2dfcf1311cb41a872a99381'
   name 'Time Sink'
   homepage 'https://manytricks.com/timesink/'
   license :commercial
