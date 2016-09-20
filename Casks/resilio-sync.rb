@@ -1,9 +1,9 @@
-cask 'bittorrent-sync' do
+cask 'resilio-sync' do
   version :latest
   sha256 :no_check
 
-  url 'https://download-cdn.resilio.com/stable/osx/Resilio-Sync.dmg'
-  name 'BitTorrent Sync'
+  url 'https://download-cdn.getsync.com/stable/osx/Resilio-Sync.dmg'
+  name 'Resilio Sync'
   homepage 'https://www.getsync.com/'
   license :gratis
 
