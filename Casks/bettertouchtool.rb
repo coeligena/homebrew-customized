@@ -9,7 +9,7 @@ cask 'bettertouchtool' do
     license :gratis
   else
     version :latest
-    sha256 'f405f7e3252fc97e08c2e2e9e0122c81bc7337bae3cb3aba40ecdfaedc4e189f'
+    sha256 '8607e1069282654cd7de2f3073a3c89f910db86439677d61518459b750d8df7f'
 
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
     appcast 'http://appcast.boastr.net',
