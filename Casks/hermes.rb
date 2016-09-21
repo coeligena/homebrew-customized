@@ -1,6 +1,6 @@
 cask 'hermes' do
-  version '1.2.8'
-  sha256 '62cf30dd4f02a0e2f3d29d63b4051963724140c4f098e527ee465277d9a7a275'
+  version '1.3.0'
+  sha256 '661544619346c83c586890a93e6b68af6e86e09b8605acc92d53921c2c160911'
 
   # github.com/HermesApp/Hermes was verified as official when first introduced to the cask
   url "https://github.com/HermesApp/Hermes/releases/download/v#{version}/Hermes-#{version}.zip"
