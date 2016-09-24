@@ -1,6 +1,6 @@
 cask 'near-lock' do
-  version '3.6'
-  sha256 'd5f15c5da6e818ed467dead23a070ffd99af48d6265f5dbf3319ef6f336df530'
+  version '3.6.1'
+  sha256 '68c4b4e9f4f3b01908f5004650e845ffc7603ddc3d44c76b6534e12ebb641c7e'
 
   url 'http://nearlock.me/downloads/nearlock.dmg'
   appcast 'http://nearlock.me/downloads/nearlock.xml',

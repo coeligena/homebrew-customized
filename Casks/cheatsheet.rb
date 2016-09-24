@@ -1,6 +1,6 @@
 cask 'cheatsheet' do
-  version '1.2.5'
-  sha256 '6bb6340f5e204d581d9516861504fd4e3a036a6e94b1c9a5a76127121a1f70ae'
+  version '1.2.6'
+  sha256 'cb4008869ea0dcb569a7c310c73a0bfe2192a7eb566f41b13c771a22adaea78c'
 
   # mediaatelier.com/CheatSheet was verified as official when first introduced to the cask
   url "https://mediaatelier.com/CheatSheet/CheatSheet_#{version}.zip"
