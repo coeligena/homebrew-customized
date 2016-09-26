@@ -3,8 +3,8 @@ cask 'tunnelblick' do
     version '3.5.9_build_4270.4560'
     sha256 '7651754cab92c5f61fc22b55448875cf14fcf8b6f5b3ba469899740c49b6fae3'
   else
-    version '3.6.8beta04_build_4619'
-    sha256 '8b2837ade1a2840348a91d6bf1593c84f87f23d7c59635ed4dbaee913c660d0c'
+    version '3.6.8beta06_build_4620'
+    sha256 '541cbb2ee6ebdb2aef7574df8b97aecbcb5de8e23eb85ec53239267d05038978'
   end
 
   url "https://www.tunnelblick.net/release/Tunnelblick_#{version}.dmg"
