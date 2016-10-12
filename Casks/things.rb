@@ -1,6 +1,6 @@
 cask 'things' do
-  version '2.8.7'
-  sha256 '70cc828451302aa3f267759a56ea2c354d16bb591bb571542e3330b6e40b4e9b'
+  version '2.8.8'
+  sha256 '8a80e15eb33b5a2e35de4661dc9c2ea6807809756bfd6b2933f2d4aa3a755c09'
 
   # culturedcode.cachefly.net was verified as official when first introduced to the cask
   url "https://culturedcode.cachefly.net/things/Things_#{version}.zip"
