@@ -1,6 +1,6 @@
 cask 'appcode' do
-  version '2016.2'
-  sha256 'e4950f49c0fb736400dfd25cdc564593b61c2f97c61cac93fa99b6d53a01b2c4'
+  version '2016.2.2'
+  sha256 '73392ea84d247ec3a75b7ecf9c5f11078b32e01fbde5a7f54e8ad95a65fc68dc'
 
   url "https://download.jetbrains.com/objc/AppCode-#{version}.dmg"
   name 'AppCode'
