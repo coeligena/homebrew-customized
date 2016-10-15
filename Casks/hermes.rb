@@ -5,10 +5,9 @@ cask 'hermes' do
   # github.com/HermesApp/Hermes was verified as official when first introduced to the cask
   url "https://github.com/HermesApp/Hermes/releases/download/v#{version}/Hermes-#{version}.zip"
   appcast 'https://raw.githubusercontent.com/HermesApp/HermesApp.github.io/master/versions.xml',
-          checkpoint: 'f02de008d4f279cd956d828a0b36386af81947a2b6cba42f5a79915c978318ab'
+          checkpoint: 'b50dd357b9bc29039a83b1eba22065a300ee1a3d3bcb17933507ce1a2086dfd9'
   name 'Hermes'
   homepage 'http://hermesapp.org/'
-  license :mit
 
   auto_updates true
 

@@ -1,11 +1,10 @@
 cask 'facebook-ios-sdk' do
-  version :latest
-  sha256 :no_check
+  version '4.16.1'
+  sha256 'd6aaeb90f6b438d8c1d695ec00cd1ee1d792da8ff7017f0ed9f21db655f5290d'
 
-  url 'https://origincache.facebook.com/developers/resources/?id=facebook-ios-sdk-current.zip'
+  url "https://origincache.facebook.com/developers/resources/?id=FacebookSDKs-iOS-#{version}.zip"
   name 'Facebook SDK for iOS'
   homepage 'https://developers.facebook.com/docs/ios'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   artifact 'AccountKit.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/AccountKit.framework"
   artifact 'AccountKitStrings.bundle', target: "#{ENV['HOME']}/Documents/FacebookSDK/AccountKitStrings.bundle"

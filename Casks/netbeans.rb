@@ -5,7 +5,6 @@ cask 'netbeans' do
   url "http://download.netbeans.org/netbeans/#{version}/final/bundles/netbeans-#{version}-macosx.dmg"
   name 'NetBeans IDE'
   homepage 'https://netbeans.org/'
-  license :oss
   
   preflight do
       File.open('/tmp/netbeans-choices.xml', 'w') do |f|
@@ -155,6 +154,6 @@ cask 'netbeans' do
   # the macOS installer, so it's insufficient to just delete the paths exposed
   # by pkgutil, hence the additional ":delete" option below.
 
-  uninstall :pkgutil => 'org.netbeans.ide.*|glassfish-.*',
-            :delete => '/Applications/NetBeans*'
+  uninstall pkgutil: 'org.netbeans.ide.*|glassfish-.*',
+            delete:  '/Applications/NetBeans'
 end

@@ -5,10 +5,9 @@ cask 'things' do
   # culturedcode.cachefly.net was verified as official when first introduced to the cask
   url "https://culturedcode.cachefly.net/things/Things_#{version}.zip"
   appcast 'https://culturedcode.cachefly.net/things/sparkle/sparkle_en.xml',
-          checkpoint: 'e95af743abf659ff9df566c7575fab4fade4cef05432140c77f96d6c5626e563'
+          checkpoint: 'c8720881d183baea1601339cc80cf24c1ecab9c5d05b2d0735f784a46a5f98cc'
   name 'Things'
   homepage 'https://culturedcode.com/things/'
-  license :commercial
 
   app 'Things.app'
 
