@@ -16,8 +16,8 @@ cask '1password' do
 
     app "1Password #{version.major}.app"
   else
-    version '6.3.3'
-    sha256 '9b8c4c102c4459272865494158542456f18bc564ddc4776561a58bb95b5eb380'
+    version '6.3.5'
+    sha256 'c87848e2985bd8854b792812dff9f23be0280b35eb6d1da3ccd104435a18a8b6'
 
     # d13itkw33a7sus.cloudfront.net was verified as official when first introduced to the cask
     url "https://d13itkw33a7sus.cloudfront.net/dist/1P/mac4/1Password-#{version}.zip"

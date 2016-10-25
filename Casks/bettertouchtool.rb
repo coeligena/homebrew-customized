@@ -8,11 +8,11 @@ cask 'bettertouchtool' do
 
   else
     version :latest
-    sha256 'd934b42c2dc93a7378d6043d265c61d8f7b3c3ef38ba25329a9e9892fd2fae01'
+    sha256 '4be6a1449df24e8751f3a3a4b8b13a9215905abd47ee4eaa1b02e6e563f22b77'
 
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
     appcast 'http://appcast.boastr.net',
-            checkpoint: '4e8f1aa8caa162a4c742ca5f237dae7c75216bd945c1bce1eb7b51dd45839124'
+            checkpoint: 'df6443a5e3285a68a7aba41851eaf5d6237a4f65a8508d81ffebe715715c4674'
 
   end
 
