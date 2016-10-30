@@ -1,12 +1,13 @@
 cask 'racket' do
-  version '6.6'
-  sha256 '95f2ca4c39b70cfd02324f0668a377a9c176f297f046842ed3c227cd7e388778'
+  version '6.7'
+  sha256 'abd6d9da0b09c3dc9d06e5a48ebb5e567f57ffa1584f4f262f9e6ecca9d8108a'
 
   url "https://mirror.racket-lang.org/releases/#{version}/installers/racket-#{version}-x86_64-macosx.dmg"
   name 'Racket'
   homepage 'https://racket-lang.org/'
 
-  suite "Racket v#{version}"
+  suite "Racket v#{version}", :target => 'Racket'
+  
   binary "#{appdir}/Racket v#{version}/bin/drracket"
   binary "#{appdir}/Racket v#{version}/bin/gracket"
   binary "#{appdir}/Racket v#{version}/bin/gracket-text"
