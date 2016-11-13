@@ -3,8 +3,8 @@ cask 'tunnelblick' do
     version '3.5.10_build_4270.4563'
     sha256 '2219f7ffcf5a5be7fb5f55945a19f6b3966e73d500feb03d8c376a0e00640ade'
   else
-    version '3.6.9beta01_build_4651'
-    sha256 '116c8fca41129032588c97640a86518f3a23df4a0d046820424f1feed889cc72'
+    version '3.6.9beta02_build_4675'
+    sha256 '045f5947cbfb4c9768ff7b4dd8284bd1404b34df404c2f03315c3553846f93bb'
   end
 
   url "https://www.tunnelblick.net/release/Tunnelblick_#{version}.dmg"
@@ -14,7 +14,7 @@ cask 'tunnelblick' do
   auto_updates true
   depends_on macos: '>= :tiger'
 
-  app 'Tunnelblick.app'#, :target => 'Tunnelblick Moved.app'
+  app 'Tunnelblick.app'
 
   uninstall launchctl: 'net.tunnelblick.tunnelblick.LaunchAtLogin',
             quit:      'net.tunnelblick.tunnelblick'
