@@ -1,12 +1,12 @@
 cask 'keka' do
-  version '1.0.5'
-  sha256 'c27401253aad6de5d9d19c5a2b548042bda713049caab8a850fd0c3a5858f6dd'
+  version '1.0.6'
+  sha256 'c164cdca023c47a9c61ef1c93bf64252636ed73433bf36117408db4a1647c966'
 
   url "http://www.kekaosx.com/release/Keka-#{version}.dmg"
   appcast 'http://www.kekaosx.com/update/keka.xml',
-          checkpoint: 'b9ef692d877af3c3bb2e9f6dfc679786ed3cfad538f4fdb2485e592d55d600cb'
+          checkpoint: '76c07c4ead37d0ec9771f0aec315596d496fa0f80aacb9188c5ac5d9cf631e4e'
   name 'Keka'
-  homepage 'http://kekaosx.com/'
+  homepage 'http://www.kekaosx.com/'
 
   auto_updates true
   depends_on macos: '>= :lion'
@@ -17,5 +17,6 @@ cask 'keka' do
                 '~/Library/Application Support/Keka',
                 '~/Library/Caches/com.aone.keka',
                 '~/Library/Preferences/com.aone.keka.plist',
+                '~/Library/Saved Application State/com.aone.keka.savedState',
               ]
 end

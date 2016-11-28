@@ -1,6 +1,6 @@
 cask 'waterfox' do
-  version '49.0.2.1'
-  sha256 'e00909d0f0db5c24e3ce53e7fa3cc14118f7676c89ef09d1c3b878e1ec4017ca'
+  version '50.0'
+  sha256 '74e81e64893b449d7d4a73cf2f0550692abaf804fe63d18de3cca1cd588f2c69'
 
   # storage-waterfox.netdna-ssl.com was verified as official when first introduced to the cask
   url "https://storage-waterfox.netdna-ssl.com/releases/osx64/installer/Waterfox%20#{version}%20Setup.dmg"
