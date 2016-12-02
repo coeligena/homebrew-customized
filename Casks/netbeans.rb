@@ -5,128 +5,73 @@ cask 'netbeans' do
   url "http://download.netbeans.org/netbeans/#{version}/final/bundles/netbeans-#{version}-macosx.dmg"
   name 'NetBeans IDE'
   homepage 'https://netbeans.org/'
-  
-  preflight do
-      File.open('/tmp/netbeans-choices.xml', 'w') do |f|
-          # use "\n" for two lines of text
-          f.puts %Q{<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-    <array>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>baseide</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>javase</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>webcommon</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>extide</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>javaee</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>0</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>javame</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>cpp</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>groovy</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>php</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>ergonomics</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>0</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>glassfish</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>0</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>tomcat</string>
-        </dict>
-        <dict>
-            <key>attributeSetting</key>
-            <integer>1</integer>
-            <key>choiceAttribute</key>
-            <string>selected</string>
-            <key>choiceIdentifier</key>
-            <string>postinstallscripts</string>
-        </dict>
-    </array>
-</plist>}
-      end
-  end
 
   preflight do
     system 'rm', '-Rf', '/Applications/Netbeans.app'
   end
 
-  pkg "NetBeans #{version}.pkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
+  pkg "NetBeans #{version}.pkg", choices: [
+      {
+        'choiceIdentifier' => 'baseide',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'javase',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'webcommon',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'extide',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'javaee',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'cpp',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'groovy',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'php',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'ergonomics',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 1,
+      },
+      {
+        'choiceIdentifier' => 'javame',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 0,
+      },
+      {
+        'choiceIdentifier' => 'glassfish',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 0,
+      },
+      {
+        'choiceIdentifier' => 'tomcat',
+        'choiceAttribute'  => 'selected',
+        'attributeSetting' => 0,
+      }
+    ]
 
   postflight do
     system '/usr/bin/sudo', '-E', '--', 
