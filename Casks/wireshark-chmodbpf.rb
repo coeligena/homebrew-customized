@@ -1,12 +1,12 @@
 cask 'wireshark-chmodbpf' do
-  version '2.2.2'
-  sha256 'acbe9372ec868a673cd609523779a2bae836e1950536a328b5a688d2f1d603f7'
+  version '2.0.5'
+  sha256 '9fe81f0738fb718cb7340ab4f08094d84cc6343d0f299df4dd56f153483446a5'
 
-  url "https://www.wireshark.org/download/osx/Wireshark%20#{version}%20Intel%2064.dmg"
+  url "https://www.wireshark.org/download/osx/all-versions/Wireshark%20#{version}%20Intel%2064.dmg"
   name 'Wireshark-ChmodBPF'
   homepage 'https://www.wireshark.org/'
 
-  pkg "Wireshark #{version} Intel 64.pkg", 
+  pkg "Wireshark #{version} Intel 64.pkg",
       choices: [
                  {
                    'choiceIdentifier' => 'wireshark',
