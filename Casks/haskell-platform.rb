@@ -6,10 +6,11 @@ cask 'haskell-platform' do
   name 'Haskell Platform'
   homepage 'https://www.haskell.org/platform/'
 
-  depends_on macos: '>= :snow_leopard'
-
   pkg "Haskell Platform #{version} Full 64bit-signed-a.pkg"
 
-  uninstall script:  { executable: '/Library/Haskell/bin/uninstall-hs', args: %w[all --remove] },
+  uninstall script:  {
+                       executable: '/Library/Haskell/bin/uninstall-hs',
+                       args:       %w[all --remove],
+                     },
             pkgutil: 'org.haskell.HaskellPlatform.*'
 end
