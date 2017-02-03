@@ -1,14 +1,14 @@
 cask 'bettertouchtool' do
   if MacOS.version <= :snow_leopard
     version '0.939'
-    sha256 'fad5e9d36259c379bdb33188cf15d179fd9ff73023035c98f5734e7e3e13bb75'
+    sha256 'b79f71602113dba3e2740e470b9e286025425f9d50d4f797bd47995816b462ae'
 
     # bettertouchtool.net was verified as official when first introduced to the cask
     url "https://bettertouchtool.net/btt#{version}.zip"
 
   else
     version :latest
-    sha256 '1025bde0be2842e6a565d08f7c64cfb80020314d8f289b32af8fb1886b42829e'
+    sha256 'b79f71602113dba3e2740e470b9e286025425f9d50d4f797bd47995816b462ae'
 
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
     appcast 'http://appcast.boastr.net',

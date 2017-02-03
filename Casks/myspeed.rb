@@ -52,6 +52,10 @@ end tell}
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:HotKeyPreferred', 'B'
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:PreferredSpeed', '30'
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:maxRate', '50'
+    
+    sleep 5
+    system 'rm', '-Rf', ENV['HOME']+'/Library/Frameworks/EWSMac.framework'
+    system 'rm', '-Rf', ENV['HOME']+'/Library/Application Support/eSellerate'
   end
   
   uninstall_preflight do
