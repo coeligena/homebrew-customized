@@ -1,8 +1,8 @@
 cask 'rider-eap' do
-  version '163.8671'
-  sha256 'b7eb5bf01a7e84c0e6a329cba73f7306fe35c7a9e4715710e6a7e3daab633136'
+  version '171.3085.726'
+  sha256 '37b257a9e79fe30402d73297494dcccaadccaa4fcd5ad6a9907eaf685d67c376'
 
-  url "http://download.jetbrains.com/resharper/riderRS-#{version}.dmg"
+  url "https://download.jetbrains.com/resharper/riderRS-#{version}.dmg"
   name 'AppCode'
   homepage 'https://www.jetbrains.com/rider/'
   license :commercial
