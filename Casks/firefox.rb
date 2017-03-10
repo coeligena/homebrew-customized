@@ -1,79 +1,104 @@
 cask 'firefox' do
-  version :latest
+  version '52.0'
 
   language 'de' do
-    sha256 '9f1ead3afa8b40400fd6a8cddf820b14b34c2746a8424441fe3ddf631373e102'
+    sha256 '3e85cee46ab5d10696c73cc901b7cef2064979b50dc364fa59300c3e6d8e6e4f'
     'de'
   end
 
   language 'en-GB' do
-    sha256 '6b26439ee28d0502c511c5a34c93b03d34ee8fefbfab40ca8f56c45bcc7943ee'
+    sha256 '4cd427d491edfb7a3ec3e1b9793dc87a02deab474c496cf2270b680b837b7130'
     'en-GB'
   end
 
   language 'en', default: true do
-    sha256 'eb9f5f44dbb3fac727314e9c98bb0f67e5fd33240ed83cd7267afd065bd423b8'
+    sha256 'd753336be2e277a4671fe348d291fcf5a53957793e66e2e21134cfa779e9fe22'
     'en-US'
   end
 
+  language 'es-AR' do
+    sha256 'fcb8514f86580c5cd2ca05bcd73299199d98a193e522beceb7d68a65da4604d4'
+    'es-AR'
+  end
+
+  language 'es-CL' do
+    sha256 'c9a89ba8975592c38d9f8cd867d704ae024397e151d866300262c635e66417aa'
+    'es-CL'
+  end
+
+  language 'es-ES' do
+    sha256 '10e1ec20305363db5ba1bf2d57c5d1542ee827fb1d47f53f8b3e62f6dc9e2223'
+    'es-ES'
+  end
+
   language 'fr' do
-    sha256 '8370edb41d4623a35e8cb0490eac870af1dd178ae34f94a7bb19a4fc1e48eee6'
+    sha256 '3a8589fa4afa96bf6e3389cc7467290b075bd389c288f84d7815069ba4dc7693'
     'fr'
   end
 
   language 'gl' do
-    sha256 '4389b953f71546248a3356d49788ed3c30b23571aa9b52f61429c96afeffad77'
+    sha256 '8f59c2d7d9b2876b13e184e86254fcbac873ee9fd0bbf8d3836c49fb366503ec'
     'gl'
   end
 
+  language 'hi' do
+    sha256 'bf4fe6b5415ff7a2fa374758f5f7bc719168805e42cf90337184659ed5a62d26'
+    'hi-IN'
+  end
+
   language 'it' do
-    sha256 '54b4355223ae8d7449000456db76f9aa9510be0f143508b6d3113cc2f2e8d5ac'
+    sha256 '97850e74d83e8a998c4448c09d6092580430d9a2aa041c30be0eff2868ff9879'
     'it'
   end
 
   language 'ja' do
-    sha256 '9ef20d19cef71ce530ad1b4a4370289096f827999f4e8f21dbdaf44e6b889fad'
+    sha256 '5649dfa21bab357eadf7078841aefff4f7ccabeb9ef1b3ab1dd1f810adde3bfb'
     'ja-JP-mac'
   end
 
   language 'nl' do
-    sha256 '77fb0b92309a2e564dba6642989c6d7773bd22195f2c7dcf08e1b43741522308'
+    sha256 'ded743271d41b8f754264f2414b54f179a637b1cb3a8d314a016fe4a0b53f6ac'
     'nl'
   end
 
   language 'pl' do
-    sha256 '97ebbb3f31e5af447084133bf645e213f01124d1a8061780b350ece2e66c3e13'
+    sha256 'e50737f7602da0520f31985175f410689634214e691a9bc425e9dc6a0699316c'
     'pl'
   end
 
   language 'pt' do
-    sha256 '63a8c686bb612769d459c992389a3d666e6205d94dd8bc57110ad3a50680efa9'
+    sha256 'ff556198b4f77d9f6870e05f143f1b50f8c74e9118b3fb1b4892d63f06b10fca'
     'pt-PT'
   end
 
+  language 'pt-BR' do
+    sha256 'f6e47571aee5ed011cc832abd8af3ab90fedd700a0430045c63bdfc03610b0ad'
+    'pt-BR'
+  end
+
   language 'ru' do
-    sha256 '0a947c29c254cf0e857a544e9b16045315276c77c30486291733f5b420bca9f6'
+    sha256 'fbb94561bbda26131e16a2a7888c7224da43a6df708963b5806f125d2a3d47fd'
     'ru'
   end
 
   language 'uk' do
-    sha256 '2d1eaac95af8230884bb11ac7795d77015c01103fc0d53df38bfbb2e26072422'
+    sha256 '4343fba50c4955b388fd716a7396483c689a57d07067ea8301a45b871e849215'
     'uk'
   end
 
   language 'zh-TW' do
-    sha256 '1202deb082d20988adaaf1a88ad99a5023e25e05161c67d6ae0b75cf921964e8'
+    sha256 '19c4ebea490c3cbe3e3298de8dde549a7d63a5061815e19625cb29f818903bec'
     'zh-TW'
   end
 
   language 'zh' do
-    sha256 '7d35062779cb89803f6c33516c28f146be234f354f7be393d5e2897e4dcf59cc'
+    sha256 'ea27a0aaeca57a6b087733854e797cb2f982ac1e842e350fa96b9f57b567e45a'
     'zh-CN'
   end
 
-  url "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US",
+  url "https://ftp.mozilla.org/pub/firefox/releases/#{version}/mac/#{language}/Firefox%20#{version}.dmg"
   appcast "https://aus5.mozilla.org/update/3/Firefox/#{version}/0/Darwin_x86_64-gcc3-u-i386-x86_64/en-US/release/Darwin%2015.3.0/default/default/update.xml?force=1",
-          checkpoint: 'ce2b16b074e1b27af9e846a7ee873349226abf039c5f8fd57a7fb769b548344d'
+          checkpoint: '98b72a3ac12ef87b8274b37135e2e7d011bca36d6bcfefa711fd80739d0001eb'
   name 'Mozilla Firefox'
   homepage 'https://www.mozilla.org/firefox/'
 

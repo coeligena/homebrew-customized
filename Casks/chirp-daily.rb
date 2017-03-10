@@ -1,10 +1,10 @@
 cask 'chirp-daily' do
-  version '20170126'
-  sha256 '7fc48fa3752f828120b94a21c1df1612dbd285904bcff6886d0b843604cfcf31'
+  version '20170222'
+  sha256 'ec3d82f04e88922fb89b1ee4515623aa3aabbb2a1c4184797315ac4db126fdb7'
 
   url "http://trac.chirp.danplanet.com/chirp_daily/LATEST/chirp-daily-#{version}.app.zip"
   name 'CHIRP'
-  homepage 'http://chirp.danplanet.com/'
+  homepage 'http://chirp.danplanet.com/projects/chirp/wiki/Home'
 
   depends_on cask: 'kk7ds-python-runtime'
 

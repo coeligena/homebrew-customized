@@ -1,79 +1,79 @@
 cask 'thunderbird' do
-  version '45.7.0'
+  version '45.8.0'
 
   language 'de' do
-    sha256 '87af4fa81c50f830329897deb9d6b80c07837eda79d80697b605d09d14bbffc4'
+    sha256 '1ea4426cc5a35ef17fc405eba29264b0d6cc5a286a96b69b4a684ffdc2872047'
     'de'
   end
 
   language 'en-GB' do
-    sha256 '4a9e0715887383487f05fe9bfd88d578239e0d15f50014e40aab0731975db07f'
+    sha256 'e9530d72adafbf5c5d1b7dd6355533d295e6d8ece2495a103bf90582f8aca980'
     'en-GB'
   end
 
   language 'en', default: true do
-    sha256 '0a479d94e36bec5b240e461010faef2133b08c3071c2be7822f161358614e620'
+    sha256 'cda77d6bf33ce5dc32c1e704f726f7840016080dcdd04939de781854f87aebbd'
     'en-US'
   end
 
   language 'fr' do
-    sha256 '462181dc95468ecf2253912c1a68f680f8fbc3de758caaa9e0f28d698dd9430f'
+    sha256 '61c1d840c1520220bff4c711866a954213c88e993ca542bde9981c49c2d5dac1'
     'fr'
   end
 
   language 'gl' do
-    sha256 'aad71bbe1a7b22dd1150ccb19613ccab2d80fd94565e73523a5923915049de40'
+    sha256 '6b15d86f7bca7e431395bce387d3c91007f467d443b78de474c2a472c43b51f4'
     'gl'
   end
 
   language 'it' do
-    sha256 'c4e7911a4b7efb3efb945f2aefe7a71a3a8746da7d839dcf8ce46f4be46952bc'
+    sha256 '1a8a1497c84aa24cf595c9030cc692d6906a8a7ec41fcda62da04debdf4867fb'
     'it'
   end
 
   language 'ja' do
-    sha256 'd5925695268fe7dec27a921281d74597d1ff262e8bd5fe5808b274f8dc3c843f'
+    sha256 'b767657782673907c7e8a2f6604024acadbd3b2dc54f46eb38635027039201e6'
     'ja-JP-mac'
   end
 
   language 'nl' do
-    sha256 '2c876863c2683e94a520081f071d238d3731e6c317cfb386441dd639e2fe159e'
+    sha256 '21231da420a04831c59bca682c30b00b22bd4bf7fbc00ddde1b66d8e780c6c65'
     'nl'
   end
 
   language 'pl' do
-    sha256 '3ff4cb6a64014466f7411d27ac5e9f591715fe506f7e9bdcff12b0ba7c18dd66'
+    sha256 '1459d9125bfd4cf7f2433f83c352a7a540c3a32e5c7836ba8cd77d7083f98892'
     'pl'
   end
 
   language 'pt' do
-    sha256 '4e1560eb9173bde3a25acb702858b0f6704b27d992b9dc2361786da1702b53be'
+    sha256 '1af47a513f7f2f14c9c948c033e770edfd8e715843b2d26c7271550957b78e98'
     'pt-BR'
   end
 
   language 'ru' do
-    sha256 '6808192874b34e8fb68fa5a1e36ddbbc5998399f22225a1d150241dfc39e4359'
+    sha256 '679f3e100e23fd4a0e4e07068b8832c4bfb75850ff3e15c1f2e7edf92df50b09'
     'ru'
   end
 
   language 'uk' do
-    sha256 'ffde5d83b1592570889765371e85840c1368b8161a2c3f92ce86bb0994cddbc4'
+    sha256 'eff3ed2395e18925bf08bddf53f69c30c86316ed288a8d767255ea8c30853290'
     'uk'
   end
 
   language 'zh-TW' do
-    sha256 '1b69f3c4cf0e2f3ec59bdff0c7b0b9f1fe9ed07bd8c018f7d0504ac004ada99a'
+    sha256 '60b21d4d7200fbc9820dff1d996ab2baccb90050383b72ac3d796e96c03246c5'
     'zh-TW'
   end
 
   language 'zh' do
-    sha256 'e41392fe40f10f5ae0750176ecaefebe8e6023234b0ee3975c49d02b4f8f51a9'
+    sha256 '0bbe05d97d169796804ee046ba92c3df3871c8982416a3a0cef5c2398701d008'
     'zh-CN'
   end
 
   url "https://ftp.mozilla.org/pub/thunderbird/releases/#{version}/mac/#{language}/Thunderbird%20#{version}.dmg"
   appcast "https://aus5.mozilla.org/update/3/Thunderbird/#{version}/0/Darwin_x86_64-gcc3-u-i386-x86_64/en-US/release/Darwin%2015.3.0/default/default/update.xml?force=1",
-          checkpoint: 'ee5ad1d4bbc21309f5f2f4ac9f370acb2865866b838d5f624b4b306b6c61e100'
+          checkpoint: 'f62345f0c37745e26d53719440b4ca34900628912fb41a53346969f64d9549e9'
   name 'Mozilla Thunderbird'
   homepage 'https://www.mozilla.org/thunderbird/'
 

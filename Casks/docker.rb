@@ -1,12 +1,13 @@
 cask 'docker' do
-  version '1.13.0.15072'
-  sha256 '1ff2a59d36348c2e1df73318e366624b04d42861e81af3d1b72effd803402641'
+  version '17.03.0-ce'
+  sha256 'ed670f3a456289ce887ce8ac54f47a5d17df26353beceb463dc09c4709973a3d'
 
-  url "https://download.docker.com/mac/stable/#{version}/Docker.dmg"
-  appcast 'https://download.docker.com/mac/stable/appcast.xml',
-          checkpoint: 'df585a51327110755eb8d9aba8c42b559c91b41d98563604c8d448f3f2714906'
-  name 'Docker'
-  homepage 'https://www.docker.com/products/docker'
+  url 'https://download.docker.com/mac/stable/Docker.dmg'
+  appcast 'https://github.com/docker/docker/releases.atom',
+          checkpoint: '3a35ac575dfb9c14759a839b30a65d12a2fbf8d6c7c9129830dd24c5f223cbc3'
+  name 'Docker Community Edition'
+  name 'Docker CE'
+  homepage 'https://www.docker.com/community-edition'
 
   auto_updates true
   depends_on macos: '>= :yosemite'

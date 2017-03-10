@@ -1,10 +1,10 @@
 cask 'kotori' do
-  version '0.14'
-  sha256 '8ce83290e6705b32c285308b376a3f849675c3ff0f91b5c4448a4b4a6b1e79e8'
+  version '0.20'
+  sha256 '719f7a87f72654c1760787ec998665622f0b48bddb033b18d7eaa9886b5505a3'
 
   url "https://github.com/Watson1978/kotori/releases/download/v#{version}/kotori_#{version}.dmg"
   appcast 'https://github.com/Watson1978/kotori/releases.atom',
-          checkpoint: '10dddbf3e6d44d33b12a6b02f2c4336a6a4036cc09cf3c6166062684b22b9d04'
+          checkpoint: 'b68136ca01e145656496a64bb64821b8f506d6d34f9ec14b48162a93ce8a1594'
   name 'kotori'
   name '小鳥'
   homepage 'https://github.com/Watson1978/kotori'

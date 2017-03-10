@@ -1,15 +1,16 @@
 cask 'iina' do
-  version '0.0.4'
-  sha256 '1c610b237b63e15d16eb551395c9bf3612b92cf4d365a5d23edd6eecd524f00b'
+  version '0.0.6'
+  sha256 '1395d8e5574dce5e7fa5685a66403259501463cc09abd1c47b653ccfdd487015'
 
   # github.com/lhc70000/iina was verified as official when first introduced to the cask
-  url "https://github.com/lhc70000/iina/releases/download/v#{version}/IINA.v#{version}.zip"
+  url "https://github.com/lhc70000/iina/releases/download/v#{version}/IINA.v#{version}.dmg"
   appcast 'https://github.com/lhc70000/iina/releases.atom',
-          checkpoint: '70901e8c6d313b114fe817b48aefa6e6aeac393b4aec577d562481f923a2b88e'
+          checkpoint: 'd96a00016d5edc6be4514c771c1155cca46570b04eedb0bdaa07f2a3e864884f'
   name 'IINA'
   homepage 'https://lhc70000.github.io/iina/'
 
   auto_updates true
+  depends_on macos: '>= :yosemite'
 
   app 'IINA.app'
 

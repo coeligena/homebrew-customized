@@ -1,12 +1,12 @@
 cask 'bloodhound' do
-  version '1.2'
-  sha256 '3873ae845a8ffefa3578142e2e264b6e8f510ca59be94c768b7d519d4b978828'
+  version '1.2.1'
+  sha256 '63abbfb483811a004171a8680402e613ca6129c7bd152d67321e65d90b70810b'
 
-  url "https://github.com/adaptivethreat/BloodHound/releases/download/#{version}/BloodHound-darwin-x64.zip"
-  appcast 'https://github.com/adaptivethreat/BloodHound/releases.atom',
-          checkpoint: '4c88fc90e6cf817a74f951f3a60fabd94ac19602348086b0bf72a070b1894eae'
+  url "https://github.com/BloodHoundAD/BloodHound/releases/download/#{version}/BloodHound-darwin-x64.zip"
+  appcast 'https://github.com/BloodHoundAD/BloodHound/releases.atom',
+          checkpoint: '7d191f2c56d164380082cbbbfa75908947fd45bb943ee405d50ed9194eece955'
   name 'bloodhound'
-  homepage 'https://github.com/adaptivethreat/BloodHound'
+  homepage 'https://github.com/BloodHoundAD/BloodHound'
 
   app 'BloodHound-darwin-x64/BloodHound.app'
 end
