@@ -13,6 +13,7 @@ cask 'myspeed' do
   postflight do
     sleep 10
     system 'killall', 'Installer'
+    system 'killall', 'installer'
     system 'killall', 'eSellHijack1.0b7Installer'
     
     sleep 2
