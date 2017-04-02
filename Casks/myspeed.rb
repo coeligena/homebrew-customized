@@ -3,8 +3,8 @@ require 'Ox'
 cask 'myspeed' do
   #    version '1153' # 1.43
   #    sha256 '22a77eaf5fec64e3055bc68f5287b9d2d94a0c34abc83e5948d0ff591c8cf7f5'
-  version '6330' # 6 Beta
-  sha256 'b77b13228bc550ab9520e37721ab17d72d12298664f7e5c2e4d240f2bb580140'
+  version '6333' # 6 Beta
+  sha256 '98de4a2c00529276e802eb62287883a83c177eaeda68b12d225a18e149f3647c'
   
   url "https://www.enounce.com/downloads/#{version}/EnounceMySpeed.dmg"
   homepage 'https://www.enounce.com/myspeed1-mac-download'
