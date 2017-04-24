@@ -1,13 +1,13 @@
 cask 'aptible' do
-  version '0.8.4+20170125122046'
-  sha256 '6cb9763d0ac9369241a3fc390762916cd46434572182dd268c70dc7b4c082719'
+  version '0.8.6+20170421093101,136'
+  sha256 'c5e063137c32d07802f1a95ce1771ba827a325edfe6bd4520ac9ddc45935cb71'
 
   # omnibus-aptible-toolbelt.s3.amazonaws.com was verified as official when first introduced to the cask
-  url "https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/master/132/pkg/aptible-toolbelt-#{version.sub('+', '%2B')}-mac-os-x.10.11.6-1.pkg"
+  url "https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/master/#{version.after_comma}/pkg/aptible-toolbelt-#{version.before_comma.sub('+', '%2B')}-mac-os-x.10.11.6-1.pkg"
   name 'Aptible Toolbelt'
   homepage 'https://www.aptible.com/support/toolbelt/'
 
-  pkg "aptible-toolbelt-#{version}-mac-os-x.10.11.6-1.pkg"
+  pkg "aptible-toolbelt-#{version.before_comma}-mac-os-x.10.11.6-1.pkg"
 
   uninstall pkgutil: 'com.aptible.toolbelt'
 end

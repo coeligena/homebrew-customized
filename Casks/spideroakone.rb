@@ -6,8 +6,9 @@ cask 'spideroakone' do
   name 'SpiderOakOne'
   homepage 'https://spideroak.com/'
 
+  depends_on macos: '>= :mountain_lion'
+
   pkg 'SpiderOakONE.pkg'
 
-  uninstall delete:  '/Applications/SpiderOakONE.app',
-            pkgutil: 'org.python.python'
+  uninstall pkgutil: 'org.python.python'
 end

@@ -2,9 +2,9 @@ cask 'iholdem-indicator' do
   version :latest
   sha256 :no_check
 
-  url 'https://www.iholdemindicator.com/download/iHoldemIndicatorInstaller.pkg'
+  url 'http://www.iholdemindicator.com/download/iHoldemIndicatorInstaller.pkg'
   name 'iHoldem Indicator'
-  homepage 'https://www.iholdemindicator.com/'
+  homepage 'http://www.iholdemindicator.com/'
 
   pkg 'iHoldemIndicatorInstaller.pkg'
 
@@ -13,8 +13,7 @@ cask 'iholdem-indicator' do
                          'com.ckmn.iHoldemIndicator',
                          'com.ckmn.IndicatorHelper',
                        ],
-            pkgutil:   'iHoldemIndicatorInstaller',
-            delete:    '/Applications/iHoldemIndicator.app'
+            pkgutil:   'com.ckmn.iholdemIndicator.iHoldemIndicator.pkg'
 
   zap delete: '~/Library/Application Support/iHoldemIndicator'
 end
