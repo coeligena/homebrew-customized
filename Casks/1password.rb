@@ -16,8 +16,8 @@ cask '1password' do
 
     app "1Password #{version.major}.app"
   else
-    version '6.6.4'
-    sha256 '40ae4d2a3672aba1f411880dd875854d8954ad0a9e27a52436648e733e27e37f'
+    version '6.7.1'
+    sha256 '8c857369284e754040fa07b474940c1cc174c6f27d68639425d4d2994792d0a7'
 
     # d13itkw33a7sus.cloudfront.net was verified as official when first introduced to the cask
     url "https://d13itkw33a7sus.cloudfront.net/dist/1P/mac4/1Password-#{version}.zip"
@@ -26,7 +26,7 @@ cask '1password' do
   end
 
   appcast 'https://app-updates.agilebits.com/product_history/OPM4',
-          checkpoint: '59ffe7334bf28793ea8cf7268c4a77d574eb968797633c36c008a393b4ae364d'
+          checkpoint: '2d5c43fbdb3a86c80122a1c4e4a1788137d0e68fb4206b5d9002269a85177453'
   name '1Password'
   homepage 'https://1password.com/'
 

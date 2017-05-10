@@ -18,7 +18,7 @@ cask 'bettertouchtool' do
     sha256 '74c61fcb91a4108021a7f31bea4d1bf2af32564d5602b3390d4923dab504deae'
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
     appcast 'https://updates.bettertouchtool.net/appcast.xml',
-            checkpoint: '720ffbe4b74a5efd17fd4f80e56e44d5f4f2314d7bd0521a31a132abbe9ca904'
+            checkpoint: '3565087a5bb58feaa17d7aae0af0a98d674210007d949140677a25ff8deb45f8'
   end
 
   name 'BetterTouchTool'

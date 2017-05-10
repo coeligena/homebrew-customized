@@ -4,9 +4,13 @@ cask 'dbeaver-enterprise' do
 
   url "http://dbeaver.jkiss.org/files/#{version}/dbeaver-ee-#{version}-macos.dmg"
   appcast 'http://dbeaver.jkiss.org/files/',
-          checkpoint: 'f3e43d131961916e864abaad038206aaaa29c89f571145b632cec27e1976bc2b'
+          checkpoint: 'f600c36bda2d4ce9c33e3a8aa006a61a74fb8f825f373a3ea82e41fe2ca6d49e'
   name 'DBeaver Enterprise Edition'
   homepage 'http://dbeaver.jkiss.org/'
 
   app 'Dbeaver.app'
+
+  caveats do
+    depends_on_java('8+')
+  end
 end
