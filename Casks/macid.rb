@@ -1,6 +1,6 @@
 cask 'macid' do
   version :latest
-  sha256 'fdb37485748ad774e6e78e5d9134ce355aa5227e2926206a0e2314cc660ae452'
+  sha256 'b13c7018e073007ec5ad2e2b8573b0d1dae7d7be77fb380ac0055ba269fdf80b'
 
   url "https://macid.co/download/"
   name 'MacID'
