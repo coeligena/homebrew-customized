@@ -1,6 +1,6 @@
 cask 'bytecoinwallet' do
-  version '1.1.1'
-  sha256 '6b1266a761c037fc4156c7e4f9df1fa225d12666f20f71d4aa1f0296f0a26c0d'
+  version '1.1.5'
+  sha256 '424b2671ed7fd59266c83c4219976c21d742de0cae1614372025b33c1901db3f'
 
   url "https://bytecoin.org/static/files/BytecoinWallet-#{version}.dmg"
   name 'Bytecoin Wallet'

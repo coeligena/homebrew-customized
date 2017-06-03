@@ -15,7 +15,7 @@ cask 'bettertouchtool' do
     url "https://bettertouchtool.net/releases/btt#{version}_final_10_9.zip"
   else
     version :latest
-    sha256 '74c61fcb91a4108021a7f31bea4d1bf2af32564d5602b3390d4923dab504deae'
+    sha256 '4ec647454cdecc5588e46498747cacc0f9cadee77c422e36934ce79f53c59590'
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
     appcast 'https://updates.bettertouchtool.net/appcast.xml',
             checkpoint: '3565087a5bb58feaa17d7aae0af0a98d674210007d949140677a25ff8deb45f8'

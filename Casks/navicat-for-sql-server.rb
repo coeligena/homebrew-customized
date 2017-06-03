@@ -1,8 +1,10 @@
 cask 'navicat-for-sql-server' do
-  version '11.2.17'
-  sha256 '84826b23b496dc809794c91ad77bce6deff9978c5ddb780999e9dd76ae776cc3'
+  version '12.0.2'
+  sha256 'a989eaca6becc7f5a243922de7b8fa6c78dc3f4046f2c0e6632e270061d7a0a9'
 
   url "http://download.navicat.com/download/navicat#{version.major_minor.no_dots}_sqlserver_en.dmg"
+  appcast 'https://www.navicat.com/products/navicat-for-sqlserver-release-note',
+          checkpoint: 'fecfcb9ca68e5b374c1d1dad8a8facac205104df9e2e94e2ba43a18574e7a528'
   name 'Navicat for SQL Server'
   homepage 'https://www.navicat.com/products/navicat-for-sqlserver'
 

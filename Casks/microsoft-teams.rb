@@ -1,10 +1,10 @@
 cask 'microsoft-teams' do
-  version '1.0.00.10951'
-  sha256 'ed19b0efcb0e68ae3d8b6966e60e2090b20da09137462c94a15981ab022874f5'
+  version '1.0.00.13751'
+  sha256 'fe1b99af080630e45413d74dbcbabf19087dae87e808079daf786bf9ff7c85fa'
 
   url "https://statics.teams.microsoft.com/production-osx/#{version}/Teams_osx.dmg"
   appcast 'https://teams.microsoft.com/downloads/DesktopUrl?env=production&plat=osx',
-          checkpoint: 'd249664a8f614c9f7ee3f7fb4743dc11eb451c64963b5e7ac0a48a8bd496e07b'
+          checkpoint: '8511fd80c9976fff63b3d2cba2d1a9dae922189ebccca8f793f52af53bee51ea'
   name 'Microsoft Teams'
   homepage 'https://teams.microsoft.com/downloads'
 

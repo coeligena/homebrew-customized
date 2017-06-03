@@ -1,14 +1,15 @@
 cask 'telegram-desktop' do
-  version '1.0.29'
-  sha256 'fda92753e5311eec0b545bebcc1909164bd7c7f63bff434692ea7bcc4925da88'
+  version '1.1.7'
+  sha256 '52c80d990bfce7a58caebca57c7d5f23e8de8df98aad7ec3406ae56bd0165b85'
 
-  # tdesktop.com was verified as official when first introduced to the cask
-  url "https://updates.tdesktop.com/tmac/tsetup.#{version}.dmg"
-  appcast "https://tdesktop.com/mac/tupdates/current?version=#{version.no_dots}",
-          checkpoint: '4dd92ab9cc86cfb77e459f94eb1ac43853cde252a19d2a5831be2dea64fe0a7b'
+  # github.com/telegramdesktop/tdesktop/releases/download was verified as official when first introduced to the cask
+  url "https://github.com/telegramdesktop/tdesktop/releases/download/v#{version}/tsetup.#{version}.dmg"
+  appcast 'https://github.com/telegramdesktop/tdesktop/releases.atom',
+          checkpoint: '5f69b7f4e3ddea61d988e6c316b97560a830f0f08e81c99df92ff89c88b438dc'
   name 'Telegram Desktop'
   homepage 'https://desktop.telegram.org/'
 
+  auto_updates true
   conflicts_with cask: 'telegram-desktop-dev'
 
   # Renamed to avoid conflict with telegram
