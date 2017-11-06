@@ -3,14 +3,18 @@ require 'Ox'
 cask 'myspeed' do
   #    version '1153' # 1.43
   #    sha256 '22a77eaf5fec64e3055bc68f5287b9d2d94a0c34abc83e5948d0ff591c8cf7f5'
-  version '6333' # 6 Beta
-  sha256 '98de4a2c00529276e802eb62287883a83c177eaeda68b12d225a18e149f3647c'
+  version '6334' # 6 Beta
+  sha256 'c53f7968008d4155b7fcd174141d26cbcc14650cb8ea0b626d5e4e2797c5d3e1'
   
   url "https://www.enounce.com/downloads/#{version}/EnounceMySpeed.dmg"
   homepage 'https://www.enounce.com/myspeed1-mac-download'
   license :commercial
 
   postflight do
+    sleep 2
+    system 'killall', 'Installer'
+    system 'killall', 'installer'
+    system 'killall', 'eSellHijack1.0b7Installer'
     sleep 10
     system 'killall', 'Installer'
     system 'killall', 'installer'
