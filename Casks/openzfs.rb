@@ -20,5 +20,17 @@ cask 'openzfs' do
     pkg "OpenZFS on OS X #{version.before_comma} Sierra.pkg"
   end
 
-  uninstall pkgutil: 'net.lundman.openzfs.*'
+  if MacOS.version >= :el_capitan
+    uninstall_preflight do
+      uninstall_zfs = "#{staged_path}/Docs & Scripts/uninstall-openzfsonosx.sh"
+      IO.write(uninstall_zfs, IO.read(uninstall_zfs).gsub('/usr/sbin/zpool', '/usr/local/bin/zpool'))
+      IO.write(uninstall_zfs, IO.read(uninstall_zfs).gsub('/usr/sbin/zfs', '/usr/local/bin/zfs'))
+    end
+  end
+
+  uninstall delete: '~/zfsuninstaller.*',
+            script: {
+                      executable: "#{staged_path}/Docs & Scripts/uninstall-openzfsonosx.sh",
+                      sudo:       true,
+                    }
 end

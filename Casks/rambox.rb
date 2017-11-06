@@ -1,11 +1,11 @@
 cask 'rambox' do
-  version '0.5.9'
-  sha256 'cb0d0263a5bfb7f3ded3762f6ccc057e2ac9c1a14efa6152f7ee1aff71039093'
+  version '0.5.13'
+  sha256 '8ec83ac8a82179aad47d30fdc326fc5571ca871e8cf48d2db8f5d2e52f68e51a'
 
   # github.com/saenzramiro/rambox was verified as official when first introduced to the cask
-  url "https://github.com/saenzramiro/rambox/releases/download/#{version}/Rambox-#{version}.dmg"
+  url "https://github.com/saenzramiro/rambox/releases/download/#{version}/Rambox-#{version}-mac.zip"
   appcast 'https://github.com/saenzramiro/rambox/releases.atom',
-          checkpoint: 'e1e360e15afdef800ae546ff7658e2f8271e2091beb0275e6369b81ba85c8f70'
+          checkpoint: '06b7e301ccad5de7627c038237b36a2325e931774399c6789099bad806a7f1e6'
   name 'Rambox'
   homepage 'http://rambox.pro/'
 

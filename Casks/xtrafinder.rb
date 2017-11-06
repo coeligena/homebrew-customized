@@ -1,14 +1,16 @@
 cask 'xtrafinder' do
-  version '0.26'
-  sha256 '09714b41e29496465986f776b6a6b7e401258656c8eb0ec1c04928f582d0b2f7'
+  version '0.27'
+  sha256 'dd34c5eeb5b5330ab341ebe9beeb033911239d316f7ced30be0009dd1dd1ec3e'
 
   url 'https://www.trankynam.com/xtrafinder/downloads/XtraFinder.dmg'
-  appcast 'https://www.trankynam.com/xtrafinder/XtraFinder-Appcast.xml',
-          checkpoint: '77a57b3ebebcf7904d92edd6ec7c1ddbb8e092c4d8d9c7365b57bf6cbe85c06c'
+  appcast 'https://www.trankynam.com/xtrafinder/releasenotes.html',
+          checkpoint: '5bd372dce9160059740cce967e4d78253205f86c4f6dcf647fad2df4881dc98c'
   name 'XtraFinder'
   homepage 'https://www.trankynam.com/xtrafinder/'
 
-  pkg 'XtraFinder.pkg'
+  depends_on macos: '<= :yosemite'
+
+  pkg 'XtraFinderInstaller.pkg'
 
   uninstall pkgutil: 'com.trankynam.xtrafinder.*'
 end

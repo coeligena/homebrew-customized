@@ -1,6 +1,6 @@
 cask 'gotomeeting' do
-  version '8.5.0.6956,ka338000000CjPXAA0'
-  sha256 '5722fb63a00c320a20d071f8cb00d2fe93a1c4f73cbf8b80602021a8f8fb82de'
+  version '8.15.0.7759,ka338000000L6agAAC'
+  sha256 '717dbc41e4ef0322ce3e98bf49ec784a0673fcdb3414ca42a0164b226c518e23'
 
   # support.citrixonline.com was verified as official when first introduced to the cask
   url "https://support.citrixonline.com/servlet/fileField?entityId=#{version.after_comma}&field=Content__Body__s"

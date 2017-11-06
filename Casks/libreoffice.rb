@@ -1,6 +1,6 @@
 cask 'libreoffice' do
-  version '5.3.3'
-  sha256 '292f4e8b8b8cf89ba64922c5ba4e8824ecfdd6de24bad601e404d0e276094010'
+  version '5.4.2'
+  sha256 '934a9ad86b10727eaee30be0a55949a65ef6a9596e7bc899a380257492d8b4f7'
 
   # documentfoundation.org was verified as official when first introduced to the cask
   url "https://download.documentfoundation.org/libreoffice/stable/#{version}/mac/x86_64/LibreOffice_#{version}_MacOS_x86-64.dmg"
@@ -26,7 +26,7 @@ cask 'libreoffice' do
   binary shimscript, target: 'soffice'
 
   preflight do
-    IO.write shimscript, <<-EOS.undent
+    IO.write shimscript, <<~EOS
       #!/bin/sh
       '#{appdir}/LibreOffice.app/Contents/MacOS/soffice' "$@"
     EOS
@@ -34,7 +34,10 @@ cask 'libreoffice' do
 
   zap delete: [
                 '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.libreoffice.script.sfl',
-                '~/Library/Application Support/LibreOffice',
                 '~/Library/Saved Application State/org.libreoffice.script.savedState',
+              ],
+      trash:  [
+                '~/Library/Application Support/LibreOffice',
+                '~/Library/Preferences/org.libreoffice.script.plist',
               ]
 end

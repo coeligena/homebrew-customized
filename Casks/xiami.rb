@@ -1,9 +1,9 @@
 cask 'xiami' do
-  version '3.0.5'
-  sha256 'af32206caeb848b65eb0e16f16aa1c94c3b1b6044eb14f99413b82947d1f10f3'
+  version '3.0.9-0A5FCD0'
+  sha256 '82e6d417da739211c0b70ea0f770754807d4f86837e1055bc7569794d3e3853b'
 
   # gxiami.alicdn.com/xiami-desktop was verified as official when first introduced to the cask
-  url "http://gxiami.alicdn.com/xiami-desktop%2fupdate%2f%e8%99%be%e7%b1%b3%e9%9f%b3%e4%b9%90-#{version}.dmg"
+  url "http://gxiami.alicdn.com/xiami-desktop/update/%E8%99%BE%E7%B1%B3%E9%9F%B3%E4%B9%90-#{version}.dmg"
   name 'Xiami'
   name '虾米音乐'
   homepage 'http://www.xiami.com/'

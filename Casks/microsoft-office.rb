@@ -1,6 +1,6 @@
 cask 'microsoft-office' do
-  version '15.34.17051500'
-  sha256 'e5db6c492c6dca689ad2970962bc6614bdb34dc8b8f424ae3647ab4e425bbe5b'
+  version '15.39.17101000'
+  sha256 'ccd5834ffdeeb9bcedcfc8b0e30f512a8e91941777d96b52084fcca7f30d8c27'
 
   # officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/ was verified as official when first introduced to the cask
   url "https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_#{version}_Installer.pkg"
@@ -19,6 +19,13 @@ cask 'microsoft-office' do
                          'com.microsoft.autoupdate.helpertool',
                          'com.microsoft.office.licensing.helper',
                          'com.microsoft.office.licensingV2.helper',
+                       ],
+            delete:    [
+                         '/Applications/Microsoft Excel.app',
+                         '/Applications/Microsoft OneNote.app',
+                         '/Applications/Microsoft Outlook.app',
+                         '/Applications/Microsoft PowerPoint.app',
+                         '/Applications/Microsoft Word.app',
                        ]
 
   zap       delete: [

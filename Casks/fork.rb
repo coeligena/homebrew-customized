@@ -1,10 +1,10 @@
 cask 'fork' do
-  version '1.0.47.1'
-  sha256 '8d3d7dd9bd20d00c3e777993a9ed501eb6016acadfba8943fef47e4cc169b7de'
+  version '1.0.58.3'
+  sha256 '0ee2847f55d323b0cf95ecb7d6cd1ecd246ce874e0f19d6965a9d06ec39173d4'
 
   url 'https://git-fork.com/update/files/Fork.dmg'
   appcast 'https://git-fork.com/update/feed.xml',
-          checkpoint: '2fed1e0f792b7cc858ea0c5a7e199b7eb44f49b6bf611e2d01378f0823021f75'
+          checkpoint: '6767a33672dbbd505f3df85114d63f0496d2bdb040d3a2ea334fd5fe436613b4'
   name 'Fork'
   homepage 'https://git-fork.com/'
 
@@ -13,9 +13,11 @@ cask 'fork' do
   app 'Fork.app'
 
   zap delete: [
-                '~/Library/Application Support/com.DanPristupov.Fork',
                 '~/Library/Caches/com.DanPristupov.Fork',
-                '~/Library/Preferences/com.DanPristupov.Fork.plist',
                 '~/Library/Saved Application State/com.DanPristupov.Fork.savedState',
+              ],
+      trash:  [
+                '~/Library/Application Support/com.DanPristupov.Fork',
+                '~/Library/Preferences/com.DanPristupov.Fork.plist',
               ]
 end

@@ -1,5 +1,5 @@
 cask 'perforce' do
-  version '16.2'
+  version '17.1'
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://cdist2.perforce.com/perforce/r#{version}/bin.darwin90x86/helix-versioning-engine.tgz"
@@ -11,7 +11,7 @@ cask 'perforce' do
   binary 'p4d'
   binary 'p4p'
 
-  caveats <<-EOS.undent
+  caveats <<~EOS
     Instructions on using the Helix Versioning Engine are available in
 
       #{staged_path}

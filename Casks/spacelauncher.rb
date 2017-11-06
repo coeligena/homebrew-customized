@@ -1,10 +1,10 @@
 cask 'spacelauncher' do
-  version '1.3'
-  sha256 '415b54074155845563bb5d72a636dca0acc2f631d6e12842f8f6dcba1995a73e'
+  version '1.4.6'
+  sha256 'b6fe6aed9712a61c931bb5fa05fe7c2d2da99d65a48b402781a9fe44cfe8b682'
 
   url 'https://spacelauncherapp.com/download/SpaceLauncher.zip'
   appcast 'https://spacelauncherapp.com/download/appcast.xml',
-          checkpoint: '0b2ae8e0e9978c3e1565c10b1f0d0ad79e727d107844b7a7670ad79194e216fc'
+          checkpoint: '7989ee373965a77232e260385ed83a87019008a20c6ca8454f1bd77acb17881e'
   name 'SpaceLauncher'
   homepage 'https://spacelauncherapp.com/'
 

@@ -1,6 +1,6 @@
 cask 'minecraft-server' do
-  version '1.11.2'
-  sha256 'dec47d36b429fd05076b90b1f42c2a25138bc39204aa51b9674ef2a98d64d88a'
+  version '1.12.2'
+  sha256 'fe1f9274e6dad9191bf6e6e8e36ee6ebc737f373603df0946aafcded0d53167e'
 
   # s3.amazonaws.com/Minecraft.Download was verified as official when first introduced to the cask
   url "https://s3.amazonaws.com/Minecraft.Download/versions/#{version}/minecraft_server.#{version}.jar"
@@ -14,7 +14,7 @@ cask 'minecraft-server' do
   binary shimscript, target: 'minecraft-server'
 
   preflight do
-    IO.write shimscript, <<-EOS.undent
+    IO.write shimscript, <<~EOS
       #!/bin/sh
       cd "$(dirname "$(readlink -n $0)")" && \
         java -Xmx1024M -Xms1024M -jar 'minecraft_server.#{version}.jar' nogui
@@ -29,7 +29,7 @@ cask 'minecraft-server' do
   end
 
   caveats do
-    <<-EOS.undent
+    <<~EOS
       To run this app, type "#{token}" in terminal.
       To configure the server take a look at the files staged at #{staged_path}
     EOS

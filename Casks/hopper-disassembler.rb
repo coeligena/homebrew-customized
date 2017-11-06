@@ -1,11 +1,11 @@
 cask 'hopper-disassembler' do
-  version '4.2.2'
-  sha256 'd8cb10851f75ac7e0a59f73c6e44326a5ec83a1936b440e500c4cdb14ddfe3d0'
+  version '4.3.6'
+  sha256 'e6e7e8ccdab3737b012ce1743a7441377d9dfaf015dbd62fd45620fbd63f5eee'
 
   # d2ap6ypl1xbe4k.cloudfront.net was verified as official when first introduced to the cask
   url "https://d2ap6ypl1xbe4k.cloudfront.net/Hopper-#{version}-demo.dmg"
   appcast "https://www.hopperapp.com/HopperWeb/appcast_v#{version.major}.php",
-          checkpoint: '40f00a6cd8673108c765babccc52ac1485a63780c9718a1ad018073fd733efc5'
+          checkpoint: 'ae91ed2b43b3ffd8696d154f64b725838a981e8f81a952ae9ed94ca060289227'
   name 'Hopper Disassembler'
   homepage 'https://www.hopperapp.com/'
 
@@ -16,10 +16,12 @@ cask 'hopper-disassembler' do
   binary "#{appdir}/Hopper Disassembler v#{version.major}.app/Contents/MacOS/hopper"
 
   zap delete: [
+                "~/Library/Caches/com.cryptic-apps.hopper-web-#{version.major}",
+                "~/Library/Saved Application State/com.cryptic-apps.hopper-web-#{version.major}.savedState",
+              ],
+      trash:  [
                 '~/Library/Application Support/Hopper',
                 "~/Library/Application Support/Hopper Disassembler v#{version.major}",
-                "~/Library/Caches/com.cryptic-apps.hopper-web-#{version.major}",
                 "~/Library/Preferences/com.cryptic-apps.hopper-web-#{version.major}.plist",
-                "~/Library/Saved Application State/com.cryptic-apps.hopper-web-#{version.major}.savedState",
               ]
 end

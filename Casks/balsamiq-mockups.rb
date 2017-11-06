@@ -1,10 +1,10 @@
 cask 'balsamiq-mockups' do
-  version '3.5.9'
-  sha256 '13abbe8f62973ec455bf3706e7deb1e833b4073d71f4cf58b8f0574447b2056b'
+  version '3.5.15'
+  sha256 'a10414150a04cdc571efcb8c351366811834fcd514b1e2756f8e4e19cb6e43f4'
 
   url "https://builds.balsamiq.com/mockups-desktop/Balsamiq_Mockups_#{version}.dmg"
   appcast 'https://builds.balsamiq.com/mockups-desktop/version.jsonp',
-          checkpoint: 'ca9cca286e7d59af89cf5dd70cd4431e45ecfd24fa6347dba14f2263c20871d3'
+          checkpoint: '9bcb8186464a47e6a1913d11447d7f05b7a2ef3967bda6562a0291dc833f0bbc'
   name 'Balsamiq Mockups'
   homepage 'https://balsamiq.com/'
 

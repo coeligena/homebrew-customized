@@ -1,11 +1,10 @@
 cask 'komodo-edit' do
-  version '10.2.1-17670'
-  sha256 'fa911f9c7b1fe398d8ec69eb5207c37c11a09e1981c3efcb96e1c507de42d4c5'
+  version '11.0.1-18119'
+  sha256 '74be0c20c4fb96bbbf697f6b52b4ea0abbda1d06381906e224ecf8eddd08f7c9'
 
-  # activestate.com/Komodo was verified as official when first introduced to the cask
   url "https://downloads.activestate.com/Komodo/releases/#{version.sub(%r{-.*}, '')}/Komodo-Edit-#{version}-macosx-x86_64.dmg"
   name 'Komodo Edit'
-  homepage 'https://komodoide.com/komodo-edit/'
+  homepage 'https://www.activestate.com/komodo-edit/'
 
   app "Komodo Edit #{version.major}.app"
 end

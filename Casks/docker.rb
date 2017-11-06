@@ -1,10 +1,10 @@
 cask 'docker' do
-  version '17.03.1-ce-mac12,17661'
-  sha256 'b65882665a678c5833037637a3dd43997283e6a096a431d83f130642447a855e'
+  version '17.09.0-ce-mac35,19611'
+  sha256 '488ae64a9bec7650d3349c7bfc0347026147712b3d5827e24860869796ac0a8f'
 
   url "https://download.docker.com/mac/stable/#{version.after_comma}/Docker.dmg"
   appcast 'https://download.docker.com/mac/stable/appcast.xml',
-          checkpoint: 'f584f80d5651e0dc4a94e601222d111c60505ecf776d3b2c4a36b9eb2372727c'
+          checkpoint: '3eca966b5e6154051b3270cbf4ebd1afdfd1ba8145f8ae2b88bea6408eb49143'
   name 'Docker Community Edition'
   name 'Docker CE'
   homepage 'https://www.docker.com/community-edition'
@@ -14,11 +14,12 @@ cask 'docker' do
 
   app 'Docker.app'
 
-  uninstall launchctl: [
+  uninstall delete:    '/Library/PrivilegedHelperTools/com.docker.vmnetd',
+            launchctl: [
                          'com.docker.helper',
                          'com.docker.vmnetd',
                        ],
-            delete:    '/Library/PrivilegedHelperTools/com.docker.vmnetd'
+            quit:      'com.docker.docker'
 
   zap delete: [
                 '~/Library/Application Scripts/com.docker.helper',
@@ -28,8 +29,8 @@ cask 'docker' do
                 '~/Library/Containers/com.docker.docker',
                 '~/Library/Containers/com.docker.helper',
                 '~/Library/Group Containers/group.com.docker',
-                '~/Library/Preferences/com.docker.docker.plist',
               ],
+      trash:  '~/Library/Preferences/com.docker.docker.plist',
       rmdir:  [
                 '~/Library/Caches/KSCrashReports',
                 '~/Library/Caches/com.plausiblelabs.crashreporter.data',

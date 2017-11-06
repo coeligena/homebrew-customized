@@ -1,5 +1,5 @@
 cask 'adobe-air' do
-  version '25.0'
+  version '27.0'
   sha256 :no_check # required as upstream package is updated in-place
 
   url "https://airdownload.adobe.com/air/mac/download/#{version}/AdobeAIR.dmg"
@@ -8,13 +8,13 @@ cask 'adobe-air' do
 
   installer script: {
                       executable: 'Adobe AIR Installer.app/Contents/MacOS/Adobe AIR Installer',
-                      args:       %w[-silent],
+                      args:       ['-silent'],
                       sudo:       true,
                     }
 
   uninstall script: {
                       executable: 'Adobe AIR Installer.app/Contents/MacOS/Adobe AIR Installer',
-                      args:       %w[-uninstall],
+                      args:       ['-uninstall'],
                       sudo:       true,
                     },
             rmdir:  [

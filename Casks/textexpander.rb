@@ -1,23 +1,11 @@
 cask 'textexpander' do
-  if MacOS.version <= :snow_leopard
-    version '3.4.2'
-    sha256 '87859d7efcbfe479e7b78686d4d3f9be9983b2c7d68a6122acea10d4efbb1bfa'
+  version '6.2.3'
+  sha256 '76ed5c10c970dcda5ee2b7b70bd4961d2db88812874457aaf9cb8b28417c10e5'
 
-    url "https://cdn.smilesoftware.com/TextExpander_#{version}.zip"
-  elsif MacOS.version <= :mavericks
-    version '4.3.6'
-    sha256 'ec90d6bd2e76bd14c0ca706d255c9673288f406b772e5ae6022e2dbe27848ee9'
-
-    url "https://cdn.smilesoftware.com/TextExpander_#{version}.zip"
-  else
-    version '6.2.1'
-    sha256 'aed11d5a004c54c7841e07819dfe10dcbd4319acd32df641e60a858df10ed00b'
-
-    url "https://cdn.textexpander.com/mac/TextExpander_#{version}.zip"
-    appcast 'https://smilesoftware.com/appcast/TextExpander6.xml',
-            checkpoint: 'c02b25c60c720805757b2e0a9a01d859f94c3402a00d025843433013a1a82a14'
-  end
-
+  # cdn.textexpander.com/mac was verified as official when first introduced to the cask
+  url "https://cdn.textexpander.com/mac/TextExpander_#{version}.zip"
+  appcast "https://smilesoftware.com/appcast/TextExpander#{version.major}.xml",
+          checkpoint: '4225f92d3c5586165e76e69b35f5a4d70d0ff9e730be90bacfb5cb03bbc563a9'
   name 'TextExpander'
   homepage 'https://smilesoftware.com/TextExpander'
 
@@ -28,5 +16,5 @@ cask 'textexpander' do
 
   uninstall login_item: 'TextExpander'
 
-  zap delete: '~/Library/Application Support/TextExpander/'
+  zap trash: '~/Library/Application Support/TextExpander/'
 end

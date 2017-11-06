@@ -1,11 +1,11 @@
 cask 'cerebro' do
-  version '0.2.8'
-  sha256 'c54a6e6aba93d9573551e3c09cd24589ec8e974ec1d9e2bca7a28eaeacd20408'
+  version '0.3.1'
+  sha256 '83fe4fa5baae56052eb44ae0a94a93880e2d99e52ad5d2e0d4201ddd2f960889'
 
   # github.com/KELiON/cerebro was verified as official when first introduced to the cask
   url "https://github.com/KELiON/cerebro/releases/download/v#{version}/cerebro-#{version}.dmg"
   appcast 'https://github.com/KELiON/cerebro/releases.atom',
-          checkpoint: '729cc231b3971efea3d10f6ab06136206384498ef68a8d88a59cee20909ec29e'
+          checkpoint: '868bc9ed6937baa629020e6338898aed949e76c5a367006ffe5112a1f4f9ce91'
   name 'Cerebro'
   homepage 'https://cerebroapp.com/'
 

@@ -8,11 +8,13 @@ cask 'totalterminal' do
   name 'TotalTerminal'
   homepage 'https://totalterminal.binaryage.com/'
 
+  depends_on macos: '<= :yosemite'
+
   pkg 'TotalTerminal.pkg'
 
   uninstall pkgutil: 'com.binaryage.pkg.totalterminal.app',
             script:  {
                        executable: 'TotalTerminal Uninstaller.app/Contents/MacOS/TotalTerminal Uninstaller',
-                       args:       %w[--headless],
+                       args:       ['--headless'],
                      }
 end

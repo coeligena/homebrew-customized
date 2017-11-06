@@ -1,15 +1,15 @@
 cask 'bitcoin-classic' do
-  version '1.2.5'
-  sha256 '43376113b68a115ab3d04135527bd3d660b3183cd6a31d27471d93886de3051f'
+  version '1.3.7'
+  sha256 '0aafe8f34820da51810b60658234dc55bd05f5b96d6e5d5c99ef0c40569761b5'
 
   # github.com/bitcoinclassic was verified as official when first introduced to the cask
   url "https://github.com/bitcoinclassic/bitcoinclassic/releases/download/v#{version}/bitcoin-#{version}-osx.dmg"
   appcast 'https://github.com/bitcoinclassic/bitcoinclassic/releases.atom',
-          checkpoint: 'f269c31370e255b28402bf355d5cea800267202f4008266469fe89d1e6e0924b'
+          checkpoint: '4a64ea7c3b998d4abeabb3ce6f58ffab270b8a2f35ae7c7c531c422091062ec9'
   name 'Bitcoin Classic'
   homepage 'https://bitcoinclassic.com/'
 
-  conflicts_with cask: %w[bitcoin-core bitcoin-unlimited bitcoin-xt]
+  conflicts_with cask: ['bitcoin-core', 'bitcoin-unlimited', 'bitcoin-xt']
   depends_on macos: '>= :mountain_lion'
 
   # Renamed for consistency: app name is different in the Finder and in a shell.

@@ -1,6 +1,6 @@
 cask 'cloudera-hive-odbc' do
-  version '2.5.21,1010'
-  sha256 'bf180972a6d4810648c5bdbc1e3a67f56cbfd884079660914ed7cffaf8b671e1'
+  version '2.5.24,1017'
+  sha256 '0a4888384a642fdfa7623609605774ea712ca2986d3a493731d092381a68137f'
 
   url "https://downloads.cloudera.com/connectors/hive_odbc_#{version.before_comma}.#{version.after_comma}/OSX/ClouderaHiveODBC.dmg"
   name 'Cloudera ODBC Driver for Hive'
@@ -10,7 +10,7 @@ cask 'cloudera-hive-odbc' do
 
   uninstall pkgutil: 'cloudera.hiveodbc'
 
-  caveats <<-EOS.undent
+  caveats <<~EOS
     For configuration instructions, see
 
       /opt/cloudera/hiveodbc/Readme.txt

@@ -1,14 +1,14 @@
 cask 'clamxav' do
-  version '2.12_3050'
-  sha256 'abb487c8b2c4e10b73d4a88b289f947a0b9f044862e077a304c230dadd9fc699'
+  version '2.15.3_3501'
+  sha256 'e781c968e79d4ce432612b11e023618be51e42678dcae72095279bb73f494c36'
 
-  url "https://www.clamxav.com/downloads/ClamXav_#{version}.zip"
+  url "https://www.clamxav.com/downloads/ClamXAV_#{version}.zip"
   appcast 'https://www.clamxav.com/sparkle/appcast.xml',
-          checkpoint: 'c0bed429b19e3c7d088a0c118521f7d37a2dadf6eabedcd9f8205e41c8a320be'
-  name 'ClamXav'
+          checkpoint: 'da94f5d9a2f68326d4e3cd9bc636e4d07a9fa6e56d3f03a9ccdac8f1657a3d0d'
+  name 'ClamXAV'
   homepage 'https://www.clamxav.com/'
 
-  app 'ClamXav.app'
+  app 'ClamXAV.app'
 
   zap delete: [
                 '~/Library/Caches/uk.co.markallan.clamxav',

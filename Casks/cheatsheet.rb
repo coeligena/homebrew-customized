@@ -1,17 +1,18 @@
 cask 'cheatsheet' do
-  version '1.2.7'
-  sha256 'cfe0c699e04ea116965d13be02eee8358d5acd89c32144c388d0e28ee693fbd3'
+  version '1.2.8'
+  sha256 'fa33612d16a36f3817f2388c65539254c6e77f7f3e546f05ff97eeae534166f2'
 
   # mediaatelier.com/CheatSheet was verified as official when first introduced to the cask
   url "https://mediaatelier.com/CheatSheet/CheatSheet_#{version}.zip"
   appcast 'https://mediaatelier.com/CheatSheet/feed.php',
-          checkpoint: '59fa86defe758b8e0d85572f5a67e72cf559a8be0f0b912e4f4510dc50f85c0e'
+          checkpoint: 'e37ea0a75cb998a0369066ba60004bc2b079c1f3898db523c73c0fbf78835241'
   name 'CheatSheet'
   homepage 'https://www.cheatsheetapp.com/CheatSheet/'
 
   app 'CheatSheet.app'
 
-  zap delete: [
+  zap delete: '~/Library/Caches/com.mediaatelier.CheatSheet',
+      trash:  [
                 '~/Library/Application Support/com.mediaatelier.CheatSheet',
                 '~/Library/Preferences/com.mediaatelier.CheatSheet.plist',
               ]

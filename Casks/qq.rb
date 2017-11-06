@@ -1,6 +1,6 @@
 cask 'qq' do
-  version '5.5.1'
-  sha256 'a01b6c7343789c792f6dba48541d811b736f283f3ae948c612f31fcb9ea1a7b4'
+  version '6.1.1'
+  sha256 '3e5903716f2c4649fd4393e730f08d4c38f47a62fee6f19046799050dd9caa41'
 
   url "https://dldir1.qq.com/qqfile/QQforMac/QQ_V#{version}.dmg"
   name 'QQ'

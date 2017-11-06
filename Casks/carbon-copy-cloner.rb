@@ -1,12 +1,26 @@
 cask 'carbon-copy-cloner' do
-  version '4.1.15.4548'
-  sha256 'e11584ea9b61b2c4d2fb8839158f7c087b3c78a7b49bc4d5814a85c192e6aa33'
+  version '5.0.4.5163'
+  sha256 '357abb873767aa2c28073a51d29c84bffde29960477d4896af25a0cc47bf8012'
 
-  url "https://bombich.com/software/download_ccc_update.php?v=#{version}"
-  appcast 'https://bombich.com/software/updates/ccc.php',
-          checkpoint: 'eec027f0d0aa576e292b4fe57441f1821409c6295330787dd82533b0d483cb26'
+  # bombich.scdn1.secure.raxcdn.com/software/files was verified as official when first introduced to the cask
+  url "https://bombich.scdn1.secure.raxcdn.com/software/files/ccc-#{version}.zip"
   name 'Carbon Copy Cloner'
   homepage 'https://bombich.com/'
 
   app 'Carbon Copy Cloner.app'
+
+  uninstall login_item: 'CCC User Agent',
+            quit:       [
+                          'com.bombich.ccc',
+                          'com.bombich.cccuseragent',
+                        ]
+
+  zap delete: [
+                '~/Library/Caches/com.bombich.ccc',
+                '~/Library/Saved Application State/com.bombich.ccc.savedState',
+              ],
+      trash:  [
+                '~/Library/Application Support/com.bombich.ccc',
+                '~/Library/Preferences/com.bombich.ccc.plist',
+              ]
 end

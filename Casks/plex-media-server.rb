@@ -1,14 +1,14 @@
 cask 'plex-media-server' do
-  version '1.5.6.3790-4613ce077'
-  sha256 'a94b39d162029396eb7afa9131e1209cdf2bceb8296c0b9859806b31e469ef35'
+  version '1.9.4.4325-1bf240a65'
+  sha256 '910a0fe8ea3f7b0f9d921fe18f8391669a25dd77958fae90b4b4a35effbe1225'
 
   url "https://downloads.plex.tv/plex-media-server/#{version}/PlexMediaServer-#{version}-OSX.zip"
   appcast 'https://plex.tv/api/downloads/1.json',
-          checkpoint: 'd5cbaa09ae77ff0f89fceb4d805f058521fe14ac731e463b0dbe4418cea3f480'
+          checkpoint: 'aa1ed92e9d1c697c4c6194f11b9168253718b284bb8c14dbcbd7d8d2c5d30af8'
   name 'Plex Media Server'
   homepage 'https://www.plex.tv/'
 
-  depends_on macos: '>= :mountain_lion'
+  depends_on macos: '>= :mavericks'
 
   app 'Plex Media Server.app'
 
@@ -16,9 +16,11 @@ cask 'plex-media-server' do
             launchctl: 'com.plexapp.mediaserver'
 
   zap delete: [
-                '~/Library/Application Support/Plex Media Server/',
                 '~/Library/Caches/PlexMediaServer/',
                 '~/Library/Logs/Plex Media Server/',
+              ],
+      trash:  [
+                '~/Library/Application Support/Plex Media Server/',
                 '~/Library/Preferences/com.plexapp.plexmediaserver.plist',
               ]
 end

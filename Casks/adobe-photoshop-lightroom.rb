@@ -1,6 +1,6 @@
 cask 'adobe-photoshop-lightroom' do
-  version '6.10'
-  sha256 '096c0b6d1c5cbe8dba89e7b7602287387f8e5681fca0609a629e74cfbfbc3f8c'
+  version '6.13'
+  sha256 '607c5f843243a99ef8423c37cfca9e39b997dce7e449416ca7084def45da1be0'
 
   url "http://swupdl.adobe.com/updates/oobe/aam20/mac/AdobeLightroom-#{version.major}.0/#{version}/setup.dmg"
   name 'Adobe Photoshop Lightroom'
@@ -31,10 +31,10 @@ cask 'adobe-photoshop-lightroom' do
     system_command 'brew', args: ['cask', 'uninstall', 'adobe-photoshop-lightroom600']
   end
 
-  zap delete: [
-                '~/Library/Application Support/Adobe/Lightroom',
-                "~/Library/Preferences/com.adobe.Lightroom#{version.major}.plist",
-              ]
+  zap trash: [
+               '~/Library/Application Support/Adobe/Lightroom',
+               "~/Library/Preferences/com.adobe.Lightroom#{version.major}.plist",
+             ]
 
   caveats 'Installation or Uninstallation may fail with Exit Code 19 (Conflicting Processes running) if Browsers, Safari Notification Service or SIMBL Services are running or Adobe Creative Cloud or any other Adobe Products are already installed. See Logs in /Library/Logs/Adobe/Installers if Installation or Uninstallation fails, to identify the conflicting processes.'
 end

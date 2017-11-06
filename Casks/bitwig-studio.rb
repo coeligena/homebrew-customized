@@ -1,6 +1,6 @@
 cask 'bitwig-studio' do
-  version '2.0'
-  sha256 'e7ca7ddaadf1fda21ea6dcef01afa33c012e5278150b773ee87091ac268f3d6e'
+  version '2.1.3'
+  sha256 '623e3ae9d988e11f1a97fe8098f4c05a2f541f813209c8cb210803f8b575f58b'
 
   url "https://downloads.bitwig.com/stable/#{version}/Bitwig%20Studio%20#{version}.dmg"
   name 'Bitwig Studio'

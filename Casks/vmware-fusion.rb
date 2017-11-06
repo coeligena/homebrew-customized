@@ -1,10 +1,10 @@
 cask 'vmware-fusion' do
-  version '8.5.7-5528452'
-  sha256 '6ef593263303f13702d3a3c7934785b7936f053fca2d728e574e5a5c77cccc20'
+  version '10.0.1-6754183'
+  sha256 'ebd58107c1e63125d9d422b22fca4829de1561f5b812c3dfbad33e0b2f5717fe'
 
   url "https://download3.vmware.com/software/fusion/file/VMware-Fusion-#{version}.dmg"
   appcast 'https://softwareupdate.vmware.com/cds/vmw-desktop/fusion.xml',
-          checkpoint: '2f3c86aceddfd0081e47e0d10b78217fb665c74157d6933ce4036dbf37d1659d'
+          checkpoint: 'd31fda3d47feb3b33e36083fbe9dcc2579751b7fe28b4a918823878121655130'
   name 'VMware Fusion'
   homepage 'https://www.vmware.com/products/fusion.html'
 
@@ -47,27 +47,29 @@ cask 'vmware-fusion' do
   end
 
   zap delete: [
-                # note: '~/Library/Application Support/VMware Fusion' is not safe
-                # to delete. In older versions, VM images were located there.
-                '/Library/Application Support/VMware',
                 '/Library/Logs/VMware Fusion Services.log',
+                '/Library/Logs/VMware USB Arbitrator Service.log',
                 '/Library/Logs/VMware',
-                '/Library/Preferences/VMware Fusion',
                 '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.vmware.fusion.sfl',
                 '~/Library/Caches/com.vmware.fusion',
                 '~/Library/Logs/VMware Fusion',
                 '~/Library/Logs/VMware Graphics Service.log',
                 '~/Library/Logs/VMware',
-                '~/Library/Preferences/VMware Fusion',
                 '~/Library/Preferences/com.vmware.fusion.LSSharedFileList.plist',
                 '~/Library/Preferences/com.vmware.fusion.LSSharedFileList.plist.lockfile',
+                '~/Library/Saved Application State/com.vmware.fusion.savedState',
+                '~/Library/WebKit/com.vmware.fusion',
+              ],
+      trash:  [
+                '/Library/Application Support/VMware',
+                '/Library/Preferences/VMware Fusion',
+                '~/Library/Application Support/VMware Fusion',
+                '~/Library/Preferences/VMware Fusion',
                 '~/Library/Preferences/com.vmware.fusion.plist',
                 '~/Library/Preferences/com.vmware.fusion.plist.lockfile',
                 '~/Library/Preferences/com.vmware.fusionDaemon.plist',
                 '~/Library/Preferences/com.vmware.fusionDaemon.plist.lockfile',
                 '~/Library/Preferences/com.vmware.fusionStartMenu.plist',
                 '~/Library/Preferences/com.vmware.fusionStartMenu.plist.lockfile',
-                '~/Library/Saved Application State/com.vmware.fusion.savedState',
-                '~/Library/WebKit/com.vmware.fusion',
               ]
 end

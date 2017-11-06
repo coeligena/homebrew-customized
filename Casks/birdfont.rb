@@ -1,10 +1,10 @@
 cask 'birdfont' do
-  version '2.18.3'
-  sha256 'a3c20e3d53feda829e2a573b2a463488d601812e9119ce91828a6197efb3bf5f'
+  version '2.19.4'
+  sha256 '013d9c42c2252b57079453bd27e4c18dbbc09eda55563ff1516fd079c0499f76'
 
   url "https://birdfont.org/download/birdfont-#{version}-free.dmg"
   appcast 'https://github.com/johanmattssonm/birdfont/releases.atom',
-          checkpoint: '470a4c4caa05c16e8432edb5b5d46d160326d22aa959a47dfd4cacd547187233'
+          checkpoint: 'd63a7f199cb21b0a2fff532b25e7bea671390ac27f90840c420fbba1952d0e38'
   name 'BirdFont'
   homepage 'https://birdfont.org/'
 

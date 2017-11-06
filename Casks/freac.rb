@@ -1,11 +1,11 @@
 cask 'freac' do
-  version '20170317'
-  sha256 '5651c5ed5fbd96a7c44b3f116e7e8ceceda9772daf592b30b720d0c5d91b95af'
+  version '1.1-alpha-20170902'
+  sha256 '31e591e88e3540b102e8f2606ec06a73af3b7a5b30980cae22e84e7f915ea6c9'
 
   # sourceforge.net/bonkenc was verified as official when first introduced to the cask
   url "https://downloads.sourceforge.net/bonkenc/freac-#{version}-macosx.dmg"
   appcast 'https://sourceforge.net/projects/bonkenc/rss',
-          checkpoint: 'ab72691a5e1ddc009262196cd28963e420b01caab9fe45f62056df50fb4c5425'
+          checkpoint: '4939b8a5daf8bce38ddb7ec635408f75396d109b0d8f0f936130b28c2ef8f848'
   name 'fre:ac'
   homepage 'https://www.freac.org/'
 

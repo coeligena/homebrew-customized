@@ -1,10 +1,10 @@
 cask 'rsyncosx' do
-  version '4.3.0'
-  sha256 '52337b1e918c6cedabe2c098b77c768b7b706d49c006c28e5f3d0c571ed90433'
+  version '4.5.1'
+  sha256 'ad4714156e6a2e06f761e3e0067e9c28506dad8e2fc51cdd775959e1ad3ed3c8'
 
   url "https://github.com/rsyncOSX/RsyncOSX/releases/download/v#{version}/RsyncOSX.dmg"
   appcast 'https://github.com/rsyncOSX/RsyncOSX/releases.atom',
-          checkpoint: '7bd1f80ca4ae6bc48c85cef27671d29c5faccec2380f821d7805f5ae55d8a4ee'
+          checkpoint: 'dbf7c2713d1b148a5d9a4d767bed7c1b2767f456cbc4899e8c368f4fda25f728'
   name 'RsyncOSX'
   homepage 'https://github.com/rsyncOSX/RsyncOSX'
 

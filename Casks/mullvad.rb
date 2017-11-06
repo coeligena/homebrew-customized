@@ -1,6 +1,6 @@
 cask 'mullvad' do
-  version '63'
-  sha256 '6ba5fcf3d29462273b15de586a5f269a0f28e578adf4231b12ac13ac02f4c41b'
+  version '65'
+  sha256 '27a9b8bd1f5c7effda87e104b217aac4e39cc299d0e706472b8766d24a70d4a5'
 
   url "https://www.mullvad.net/media/client/Mullvad-#{version}.dmg"
   name 'Mullvad'

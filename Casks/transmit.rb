@@ -1,17 +1,17 @@
 cask 'transmit' do
-  version '4.4.12'
-  sha256 'b4fdc538d8727bbeb34f2c42b794895b9a8bd4666a9e798ddd05381e94694669'
+  version '5.0.5'
+  sha256 '9c33c66c3d8f06b1b21780f0be4d10e37f64d738bcb494dab4887d48e60306b1'
 
   url "https://www.panic.com/transmit/d/Transmit%20#{version}.zip"
-  appcast 'https://panic.com/transmit/releasenotes.html',
-          checkpoint: '6f0d5a3d469d4a444f181e477c39f0cd47aa79a8f1f4074ac1bc5a4cf294cf1e'
+  appcast "https://library.panic.com/releasenotes/transmit#{version.major}/",
+          checkpoint: '50b744c230ed87ac93b007186cc3b85e3a33d68aa032f62000423fbde49d5691'
   name 'Transmit'
   homepage 'https://panic.com/transmit/'
 
   app 'Transmit.app'
 
-  zap delete: [
-                '~/Library/Preferences/com.panic.Transmit.plist',
-                '~/Library/Application Support/Transmit',
-              ]
+  zap trash: [
+               '~/Library/Preferences/com.panic.Transmit.plist',
+               '~/Library/Application Support/Transmit',
+             ]
 end

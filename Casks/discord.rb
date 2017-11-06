@@ -1,19 +1,24 @@
 cask 'discord' do
-  version '0.0.247'
-  sha256 '381ff1e790ee788da348fb6cd1cc8f5be99589eac39cbd619ddbe45adbbfebea'
+  version '0.0.248'
+  sha256 'd4bab00d8f804474648c2109e56cf572ebbd342ffee32c03043e78399618717b'
 
   url "https://cdn.discordapp.com/apps/osx/#{version}/Discord.dmg"
   name 'Discord'
   homepage 'https://discordapp.com/'
 
+  auto_updates true
+
   app 'Discord.app'
 
   zap delete: [
-                '~/Library/Application Support/com.hnc.Discord.ShipIt',
-                '~/Library/Application Support/discord',
-                '~/Library/Saved Application State/com.hnc.Discord.savedState',
                 '~/Library/Caches/com.hnc.Discord',
-                '~/Library/Caches/discord',
+                '~/Library/Caches/com.hnc.Discord.ShipIt',
+                '~/Library/Cookies/com.hnc.Discord.binarycookies',
+                '~/Library/Saved Application State/com.hnc.Discord.savedState',
+              ],
+      trash:  [
+                '~/Library/Application Support/discord',
+                '~/Library/Preferences/com.hnc.Discord.helper.plist',
                 '~/Library/Preferences/com.hnc.Discord.plist',
               ]
 end

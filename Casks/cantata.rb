@@ -1,10 +1,10 @@
 cask 'cantata' do
-  version '2.0.1'
-  sha256 '534fc39e4b540a2aafbcb06f175af2a772fd503a9f7434a9be2bb82a39a78277'
+  version '2.2.0'
+  sha256 'ae94571146866a8d4d43bfb06870ccc5d31947e1b38616e8fdf1f24444ea441b'
 
   url "https://github.com/CDrummond/cantata/releases/download/v#{version}/Cantata-#{version}.dmg"
   appcast 'https://github.com/CDrummond/cantata/releases.atom',
-          checkpoint: '4421d33d3c8b121da3d7740b2ce6bc356d8f04c6a762581f6787ee2e7cdf1c0d'
+          checkpoint: '2ec33166423bf32795c06f1224f21efbf29f0bcce35e6ceb9d6af2277d376106'
   name 'Cantata'
   homepage 'https://github.com/cdrummond/cantata'
 

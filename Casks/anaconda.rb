@@ -1,10 +1,11 @@
 cask 'anaconda' do
-  version '4.3.1'
-  sha256 'a42267203e207cb5e0f539e0d879ead12e436311825c7114d0edd880d001b539'
+  version '5.0.1'
+  sha256 'f438a0af923bc1edc7bca53f496c59a668d1a08b48c768f443ad7f5ea2b8b3f8'
 
+  # repo.continuum.io/archive was verified as official when first introduced to the cask
   url "https://repo.continuum.io/archive/Anaconda3-#{version}-MacOSX-x86_64.sh"
   name 'Continuum Analytics Anaconda'
-  homepage 'https://www.continuum.io/why-anaconda'
+  homepage 'https://www.anaconda.com/what-is-anaconda/'
 
   depends_on macos: '>= :lion'
   container type: :naked
@@ -19,7 +20,10 @@ cask 'anaconda' do
     set_ownership "#{HOMEBREW_PREFIX}/anaconda3"
   end
 
-  uninstall delete: "#{HOMEBREW_PREFIX}/anaconda3"
+  uninstall delete: [
+                      "#{HOMEBREW_PREFIX}/anaconda3",
+                      '/Applications/Anaconda-Navigator.app',
+                    ]
 
   zap delete: [
                 '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.continuum.io.sfl',

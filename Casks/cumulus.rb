@@ -5,7 +5,7 @@ cask 'cumulus' do
   # github.com/gillesdemey/Cumulus was verified as official when first introduced to the cask
   url "https://github.com/gillesdemey/Cumulus/releases/download/v#{version}/Cumulus-#{version}.dmg"
   appcast 'https://github.com/gillesdemey/Cumulus/releases.atom',
-          checkpoint: '0c0c3542e7562241cecc3dd19b95d813d44f28f8232961658f9d0ebd429a9654'
+          checkpoint: '8e41bcf826fc11c3d86f122294242fe3a15ccadc45b55652afb3ffdcca7a0eb3'
   name 'Cumulus'
   homepage 'https://gillesdemey.github.io/Cumulus/'
 

@@ -1,10 +1,10 @@
 cask 'intellij-idea' do
-  version '2017.1.3,171.4424.56'
-  sha256 '2cc1c1c975f8ef312221f7c96707c94f0210b070c6772d9f7301bc2c8522760e'
+  version '2017.2.5,172.4343.14'
+  sha256 '0f5bd681fb6c36490ebabc5f9effbfbe1ec8d28cfdb6bc4247858144bd067a8d'
 
   url "https://download.jetbrains.com/idea/ideaIU-#{version.before_comma}.dmg"
   appcast 'https://data.services.jetbrains.com/products/releases?code=IIU&latest=true&type=release',
-          checkpoint: 'a274dfaf6c07c9c73cfcc55c2a7b73c98d114443e53b3ca5ab5d2a3992dcf9a1'
+          checkpoint: '34c38d07f0585edc7924f8005a02445c4f5ce2c7014a2a77ec31b1b67c5cc55a'
   name 'IntelliJ IDEA Ultimate'
   homepage 'https://www.jetbrains.com/idea/'
 
@@ -13,15 +13,17 @@ cask 'intellij-idea' do
   app 'IntelliJ IDEA.app'
 
   uninstall_postflight do
-    ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'idea') }.each { |path| File.delete(path) if File.exist?(path) }
+    ENV['PATH'].split(File::PATH_SEPARATOR).map { |path| File.join(path, 'idea') }.each { |path| File.delete(path) if File.exist?(path) && File.readlines(path).grep(%r{# see com.intellij.idea.SocketLock for the server side of this interface}).any? }
   end
 
   zap delete: [
                 "~/Library/Caches/IntelliJIdea#{version.major_minor}",
                 "~/Library/Logs/IntelliJIdea#{version.major_minor}",
+                '~/Library/Saved Application State/com.jetbrains.intellij.savedState',
+              ],
+      trash:  [
                 "~/Library/Application Support/IntelliJIdea#{version.major_minor}",
                 "~/Library/Preferences/IntelliJIdea#{version.major_minor}",
                 '~/Library/Preferences/com.jetbrains.intellij.plist',
-                '~/Library/Saved Application State/com.jetbrains.intellij.savedState',
               ]
 end

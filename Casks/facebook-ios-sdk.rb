@@ -1,6 +1,6 @@
 cask 'facebook-ios-sdk' do
-  version '4.22.1'
-  sha256 'ef40605b01075eb149b813f5a6996c7c4b24a11fb009d8ae8fedb824901df66b'
+  version '4.27.1'
+  sha256 '59beecf6941906c77c286ffa41c924bcd757026ee5b6acbd5679263835d7d99b'
 
   url "https://origincache.facebook.com/developers/resources/?id=FacebookSDKs-iOS-#{version}.zip"
   name 'Facebook SDK for iOS'
@@ -10,13 +10,13 @@ cask 'facebook-ios-sdk' do
   artifact 'AccountKitStrings.bundle', target: "#{ENV['HOME']}/Documents/FacebookSDK/AccountKitStrings.bundle"
   artifact 'Bolts.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/Bolts.framework"
   artifact 'DocSets', target: "#{ENV['HOME']}/Documents/FacebookSDK/DocSets"
-  artifact 'FBAudienceNetwork.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBAudienceNetwork.framework"
+  artifact 'FacebookSDKStrings.bundle', target: "#{ENV['HOME']}/Documents/FacebookSDK/FacebookSDKStrings.bundle"
   artifact 'FBNotifications.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBNotifications.framework"
   artifact 'FBSDKCoreKit.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBSDKCoreKit.framework"
   artifact 'FBSDKLoginKit.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBSDKLoginKit.framework"
   artifact 'FBSDKMessengerShareKit.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBSDKMessengerShareKit.framework"
+  artifact 'FBSDKPlacesKit.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBSDKPlacesKit.framework"
   artifact 'FBSDKShareKit.framework', target: "#{ENV['HOME']}/Documents/FacebookSDK/FBSDKShareKit.framework"
-  artifact 'FacebookSDKStrings.bundle', target: "#{ENV['HOME']}/Documents/FacebookSDK/FacebookSDKStrings.bundle"
   artifact 'Samples', target: "#{ENV['HOME']}/Documents/FacebookSDK/Samples"
 
   preflight do

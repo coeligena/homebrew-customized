@@ -1,8 +1,10 @@
 cask 'whatroute' do
-  version '2.0.21'
-  sha256 '7d9c727c7c3a690f1f26669f9d307c6d84f858824541a7cb9049a960223e16cb'
+  version '2.0.24'
+  sha256 '6fd7ce7fe4d781664a25fea46aed0b30d6bf93c2944649f92d02060cf3db7d99'
 
   url "https://downloads.whatroute.net/software/whatroute-#{version}.zip"
+  appcast "https://www.whatroute.net/whatroute#{version.major}appcast.xml",
+          checkpoint: '4341713df452487d23c6e8c68aaec3424e4b675a642b68d79947e03a2130691f'
   name 'WhatRoute'
   homepage 'https://www.whatroute.net/'
 
@@ -10,11 +12,16 @@ cask 'whatroute' do
 
   app 'WhatRoute.app'
 
+  uninstall delete:    "/Library/PrivilegedHelperTools/net.whatroute.whatroute#{version.major}helper",
+            launchctl: [
+                         'net.whatroute.LaunchHelper',
+                         "net.whatroute.whatroute#{version.major}helper",
+                       ],
+            quit:      "net.whatroute.whatroute#{version.major}"
+
   zap delete: [
-                '/Library/LaunchDaemons/net.whatroute.whatroute2helper.plist',
-                '/Library/PrivilegedHelperTools/net.whatroute.whatroute2helper',
-                '~/Library/Caches/net.whatroute.whatroute2',
-                '~/Library/Logs/net.whatroute.whatroute2',
-                '~/Library/Preferences/net.whatroute.whatroute2.plist',
-              ]
+                "~/Library/Caches/net.whatroute.whatroute#{version.major}",
+                "~/Library/Logs/net.whatroute.whatroute#{version.major}",
+              ],
+      trash:  "~/Library/Preferences/net.whatroute.whatroute#{version.major}.plist"
 end

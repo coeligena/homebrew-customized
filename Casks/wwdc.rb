@@ -1,11 +1,11 @@
 cask 'wwdc' do
-  version '5.0.4'
-  sha256 '7d724e63fdc84c7eed67ea618ee1cf513aa0154581672353012457fc34c4d50d'
+  version '5.3'
+  sha256 '5f0b434063b918a8e1bc9b57eb12a9c8e9962c7cf16012cfa1ed9bec31d06d60'
 
   # github.com/insidegui/WWDC was verified as official when first introduced to the cask
   url "https://github.com/insidegui/WWDC/releases/download/#{version}/WWDC_v#{version}.zip"
   appcast 'https://github.com/insidegui/WWDC/releases.atom',
-          checkpoint: '10ae8c5b6bc7fc1bd09cac9ddc70528fad3fac49cc24288a96c6952d3733ddc8'
+          checkpoint: 'b2492fc7089b88e8bf0049f165204ca6eea93453075df42d51875edc3784af97'
   name 'WWDC'
   homepage 'https://wwdc.io/'
 
@@ -14,8 +14,9 @@ cask 'wwdc' do
   app 'WWDC.app'
 
   zap delete: [
-                '~/Library/Application Support/br.com.guilhermerambo.WWDC',
-                '~/Library/Caches/br.com.guilhermerambo.WWDC',
-                '~/Library/Preferences/br.com.guilhermerambo.WWDC.plist',
+                '~/Library/Application Support/io.wwdc.app',
+                '~/Library/Application Support/io.wwdc.app.TranscriptIndexingService',
+                '~/Library/Application Support/WWDC',
+                '~/Library/Preferences/io.wwdc.app.plist',
               ]
 end

@@ -4,11 +4,11 @@ cask 'coconutbattery' do
     sha256 '0edf6bdaf28fb3cc9c242fd916c348fbbae30a5356ddc1d6e5158d50f96d740d'
     url "https://www.coconut-flavour.com/downloads/coconutBattery_#{version.dots_to_underscores}.zip"
   else
-    version '3.6.1'
-    sha256 '9707b852365221e714e59952e1cb237fea66fed512b1e32f9f14fb485aba66e1'
+    version '3.6.4'
+    sha256 '8e289fb4a75cb117fc1d7861020c9ab2384b09dfd18f066c7fadfc9d42c3ac56'
     url "https://www.coconut-flavour.com/downloads/coconutBattery_#{version}.zip"
     appcast 'https://coconut-flavour.com/updates/coconutBattery.xml',
-            checkpoint: '4a995713587c36dd8b92bed98875073bd498c5ac7feb5c84b5b7da4f0b269f31'
+            checkpoint: '4320a20538efeba285345daa0451b306af6e1269bc9530033e847ab638b7ee57'
   end
 
   name 'coconutBattery'
@@ -16,10 +16,16 @@ cask 'coconutbattery' do
 
   app 'coconutBattery.app'
 
+  uninstall launchctl: 'com.coconut-flavour.coconutBattery-Menu',
+            quit:      'com.coconut-flavour.coconutBattery-Menu'
+
   zap delete: [
-                '~/Library/Application Support/coconutBattery',
-                '~/Library/Caches/com.coconut-flavour.coconutBattery',
-                '~/Library/Preferences/com.coconut-flavour.coconutBattery.plist',
+                '~/Library/Caches/com.coconut-flavour.coconutBattery*',
+                '~/Library/Group Containers/*.coconut-flavour.coconutBattery',
                 '~/Library/Saved Application State/com.coconut-flavour.coconutBattery.savedState',
+              ],
+      trash:  [
+                '~/Library/Application Support/coconutBattery',
+                '~/Library/Preferences/com.coconut-flavour.coconutBattery.plist',
               ]
 end

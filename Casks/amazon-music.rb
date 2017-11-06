@@ -1,6 +1,6 @@
 cask 'amazon-music' do
-  version '20170418,1912553acc'
-  sha256 '4ed1773081163648b6eeb01706af1df1d0a7ad4499a6b20397ba0d30ac952b99'
+  version '20171103,212957f389'
+  sha256 'd2380a9e3b14acf8f69cf966f703bfe8833dfc467582da7f5ac6c0b3e14a5206'
 
   # ssl-images-amazon.com was verified as official when first introduced to the cask
   url "https://images-na.ssl-images-amazon.com/images/G/01/digital/music/morpho/installers/#{version.before_comma}/#{version.after_comma}/AmazonMusicInstaller.dmg"
@@ -26,8 +26,8 @@ cask 'amazon-music' do
                 '~/Library/Application Support/Amazon Music/',
               ]
 
-  caveats <<-EOS.undent
-    If the app won't launch after installation, try
+  caveats <<~EOS
+    If the app will not launch after installation, try
 
       brew cask zap #{token}
       brew cask install #{token}

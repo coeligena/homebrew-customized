@@ -1,23 +1,28 @@
 cask 'mactex' do
-  version '20161009'
-  sha256 'b44873d445881900401d0e0eddccc78140b9ed51b538364889eb8529350d5bd7'
+  version '20170524'
+  sha256 '0caf76027c9e0534a0b636f2b880ace4a0463105a7ad5774ccacede761be8c2d'
 
   # mirror.ctan.org/systems/mac/mactex was verified as official when first introduced to the cask
   url "http://mirror.ctan.org/systems/mac/mactex/mactex-#{version}.pkg"
   appcast 'https://www.tug.org/mactex/downloading.html',
-          checkpoint: '822244b8386bf149f1ef93c2e5c1552c3024c8bb991dfbcfcfce9f624e97c2f2'
+          checkpoint: '2dd3e7c71fe586512a5241f2b26c24f93af3510d2bda2f56da1a404098b894ee'
   name 'MacTeX'
   homepage 'https://www.tug.org/mactex/'
+
+  conflicts_with cask: [
+                         'mactex-no-ghostscript',
+                         'basictex',
+                       ]
 
   pkg "mactex-#{version}.pkg"
 
   uninstall pkgutil: [
-                       'org.tug.mactex.ghostscript9.19',
-                       'org.tug.mactex.gui2016',
-                       'org.tug.mactex.texlive2016',
+                       'org.tug.mactex.ghostscript9.21',
+                       'org.tug.mactex.gui2017',
+                       'org.tug.mactex.texlive2017',
                      ],
             delete:  [
-                       '/usr/local/texlive/2016',
+                       '/usr/local/texlive/2017',
                        '/Applications/TeX',
                        '/Library/PreferencePanes/TeXDistPrefPane.prefPane',
                        '/etc/paths.d/TeX',
@@ -40,7 +45,7 @@ cask 'mactex' do
                 '~/Library/Preferences/fr.chachatelier.pierre.LaTeXiT.plist',
                 '~/Library/Preferences/TeXShop.plist',
                 '~/Library/Saved Application State/edu.bucknell.Excalibur.savedState',
-                '~/Library/texlive/2016',
+                '~/Library/texlive/2017',
                 '~/Library/TeXShop',
               ],
       rmdir:  [

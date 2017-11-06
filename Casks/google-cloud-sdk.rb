@@ -8,7 +8,7 @@ cask 'google-cloud-sdk' do
 
   installer script: {
                       executable: 'google-cloud-sdk/install.sh',
-                      args:       %w[--usage-reporting false --bash-completion false --path-update false --rc-path false --quiet],
+                      args:       ['--usage-reporting', 'false', '--bash-completion', 'false', '--path-update', 'false', '--rc-path', 'false', '--quiet'],
                     }
   binary 'google-cloud-sdk/bin/bq'
   binary 'google-cloud-sdk/bin/gcloud'
@@ -17,7 +17,7 @@ cask 'google-cloud-sdk' do
 
   uninstall delete: "#{staged_path}/#{token}" # Not actually necessary, since it would be deleted anyway. It is present to make clear an uninstall was not forgotten and that for this cask it is indeed this simple.
 
-  caveats <<-EOS.undent
+  caveats <<~EOS
     #{token} is installed at #{staged_path}/#{token}. Add your profile:
 
       for bash users

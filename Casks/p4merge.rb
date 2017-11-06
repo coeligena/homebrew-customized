@@ -1,6 +1,6 @@
 cask 'p4merge' do
-  version '2017.1-1491634'
-  sha256 'b015a82a7c0bd492edb972dc542b377a7633bad2148e4b3e2d800f7df0c9297a'
+  version '2017.2-1573260'
+  sha256 'b24a68eaac73003c252ccfc235d8191c58dc3a0aa1abe035081ed8b76f834dd3'
 
   url "http://filehost.perforce.com/perforce/r#{version.sub(%r{\A20(\d\d\.\d+).*}, '\1')}/bin.macosx1011x86_64/P4V.dmg"
   name 'Perforce P4Merge'
@@ -14,7 +14,7 @@ cask 'p4merge' do
                 '~/Library/Saved Application State/com.perforce.p4merge.savedState',
               ]
 
-  caveats <<-EOS.undent
+  caveats <<~EOS
     git can be configured to use p4merge as a merge tool via
 
       https://pempek.net/articles/2014/04/18/git-p4merge/
