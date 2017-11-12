@@ -4,7 +4,7 @@ cask 'skim' do
 
   url "https://downloads.sourceforge.net/skim-app/Skim/Skim-#{version}/Skim-#{version}.dmg"
   appcast 'http://skim-app.sourceforge.net/skim.xml',
-          checkpoint: 'dd1fa456a150412c700ff53613dd55884b3a99d24153a78a383aa16b02a65133'
+          checkpoint: '46e7474ab57bf0b1f09d61dbaabfc9382eaa0a5e517ceffb5f79e0f8286241e1'
   name 'Skim'
   homepage 'http://skim-app.sourceforge.net/'
 
