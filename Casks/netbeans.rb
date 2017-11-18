@@ -102,8 +102,8 @@ cask 'netbeans' do
   uninstall pkgutil: 'org.netbeans.ide.*|glassfish.*',
             delete:  '/Applications/NetBeans'
 
-  zap delete: [
-                '~/Library/Application Support/NetBeans',
-                '~/Library/Caches/NetBeans',
-              ]
+  zap trash: [
+               '~/Library/Application Support/NetBeans',
+               '~/Library/Caches/NetBeans',
+             ]
 end

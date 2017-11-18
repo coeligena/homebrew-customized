@@ -11,5 +11,5 @@ cask 'macid' do
 
   app 'MacID.app'
 
-  zap delete: '~/Library/Preferences/com.kanecheshire.MacIDOSX.plist'
+  zap trash: '~/Library/Preferences/com.kanecheshire.MacIDOSX.plist'
 end

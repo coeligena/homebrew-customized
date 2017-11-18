@@ -8,6 +8,10 @@ cask 'libreoffice' do
   homepage 'https://www.libreoffice.org/'
   gpg "#{url}.asc", key_id: 'c2839ecad9408fbe9531c3e9f434a1efafeeaea3'
 
+  conflicts_with cask: [
+                         'libreoffice-dev',
+                         'libreoffice-still',
+                       ]
   depends_on macos: '>= :mountain_lion'
 
   app 'LibreOffice.app'
@@ -32,12 +36,10 @@ cask 'libreoffice' do
     EOS
   end
 
-  zap delete: [
-                '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.libreoffice.script.sfl*',
-                '~/Library/Saved Application State/org.libreoffice.script.savedState',
-              ],
-      trash:  [
-                '~/Library/Application Support/LibreOffice',
-                '~/Library/Preferences/org.libreoffice.script.plist',
-              ]
+  zap trash: [
+               '~/Library/Application Support/LibreOffice',
+               '~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/org.libreoffice.script.sfl*',
+               '~/Library/Preferences/org.libreoffice.script.plist',
+               '~/Library/Saved Application State/org.libreoffice.script.savedState',
+             ]
 end
