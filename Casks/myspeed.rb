@@ -3,9 +3,9 @@ require 'Ox'
 cask 'myspeed' do
   #    version '1153' # 1.43
   #    sha256 '22a77eaf5fec64e3055bc68f5287b9d2d94a0c34abc83e5948d0ff591c8cf7f5'
-  version '6334' # 6 Beta
-  sha256 'c53f7968008d4155b7fcd174141d26cbcc14650cb8ea0b626d5e4e2797c5d3e1'
-  
+  version '6438' # 6 Beta
+  sha256 '19e567ca002fef694d42e53748b7c5bc087962014f800c9499dd4c58628e6fca'
+
   url "https://www.enounce.com/downloads/#{version}/EnounceMySpeed.dmg"
   homepage 'https://www.enounce.com/myspeed1-mac-download'
   license :commercial
@@ -19,11 +19,11 @@ cask 'myspeed' do
     system 'killall', 'Installer'
     system 'killall', 'installer'
     system 'killall', 'eSellHijack1.0b7Installer'
-    
+
     sleep 2
     open "/Applications/MySpeed.app/"
     sleep 10
-    
+
     system 'osascript', '-e', %Q{tell application "MySpeed"
 	activate window "MySpeed™ Activation"
 	tell application "System Events" to tell process "MySpeed"
@@ -32,7 +32,7 @@ cask 'myspeed' do
 		click button "Ok" of window "MySpeed™ Activation"
 	end tell
 end tell}
-    
+
     i = 30
     while not File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist') && i > 0
       print "> > > Waiting...\n"
@@ -41,15 +41,15 @@ end tell}
     end
     break unless File.exist?(ENV["HOME"]+'/Library/Preferences/com.enounce.MySpeed.plist')
     sleep 10
-    
+
     system 'killall', '-m',  'MySpeed.*'
     sleep 2
-    
+
     lic = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'} License5`.strip
     licrem = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist'} UI:LicenseRemindTime`.strip
     timesav = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'} UI:TimeSaved`.strip
     timetot = `defaults read #{ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'} UI:TimeSavedTtl`.strip
-    
+
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'License5', lic
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:LicenseRemindTime', licrem
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:TimeSaved', timesav
@@ -58,12 +58,12 @@ end tell}
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:HotKeyPreferred', 'B'
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:PreferredSpeed', '30'
     system 'defaults', 'write', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', 'UI:maxRate', '50'
-    
+
     sleep 5
     system 'rm', '-Rf', ENV['HOME']+'/Library/Frameworks/EWSMac.framework'
     system 'rm', '-Rf', ENV['HOME']+'/Library/Application Support/eSellerate'
   end
-  
+
   uninstall_preflight do
     File.open('/tmp/remove-myspeed.sh', 'w') do |f|
       # use "\n" for two lines of text
@@ -111,13 +111,13 @@ runAppleScript()
                 try
                     tell application appleScriptName
                         with timeout of 5 seconds
-                            quit 
+                            quit
                         end timeout
                     end tell
                 end try
             end if
         end QuitApplication
-        
+
         on ForceQuitApplication(appName)
             tell application "System Events"
                set theID to (unix id of processes whose name is appName)
@@ -125,37 +125,38 @@ runAppleScript()
                    -- Should stop the application with no dialogs and no items saved.
                    do shell script "kill -9 " & theID
                end try
-            end tell        
+            end tell
         end ForceQuitApplication
-        
+
         on CheckForMySpeedApps()
             set runningApps to {}
             set appsToCheckList to {"MySpeed", "MySpeedInjector", "MySpeedDiagnostics" }
-                                    
+
             repeat with theCurrentApp in appsToCheckList
                 if (ApplicationIsRunning(theCurrentApp)) then
                     set runningApps to runningApps & theCurrentApp
                 end if
             end repeat
-                        
-            return runningApps        
+
+            return runningApps
         end CheckForMySpeedApps
 
         on CheckForMySpeedEnabledApps()
             set runningApps to {}
             set appsToCheckList to {"MySpeed", "MySpeedInjector", "MySpeedDiagnostics", "Safari", "firefox-bin", "firefox", ¬
-                                    "Google Chrome", "Opera", "flock-bin", "Camino", "RockMelt", "Google Chrome Canary", ¬
+                                    "Google Chrome", "Opera", "Opera Beta", "flock-bin", "Camino", "RockMelt", "Google Chrome Canary", ¬
+                                    "Citrio", "Brass", "SRWare Iron", "Chromium", ¬
                                     "RealPlayer", "mdm_flash_player" }
-                                    
+
             repeat with theCurrentApp in appsToCheckList
                 if (ApplicationIsRunning(theCurrentApp)) then
                     set runningApps to runningApps & theCurrentApp
                 end if
             end repeat
-                        
+
             return runningApps
         end CheckForMySpeedEnabledApps
-        
+
         on QuitAllMySpeedEnabledApps()
             QuitApplication("MySpeedInjector", "MySpeedInjector")
             QuitApplication("MySpeed", "MySpeed")
@@ -165,15 +166,20 @@ runAppleScript()
             QuitApplication("firefox", "firefox")
             QuitApplication("Google Chrome", "Google Chrome")
             QuitApplication("Opera", "Opera")
+            QuitApplication("Opera Internet Browser", "Opera Beta")
             QuitApplication("flock-bin", "flock")
             QuitApplication("Camino", "Camino")
+            QuitApplication("Chromium", "Chromium")
             QuitApplication("RockMelt", "RockMelt")
             QuitApplication("Google Chrome Canary", "Google Chrome Canary")
+            QuitApplication("Citrio", "Citrio")
+            QuitApplication("Brass", "Brass")
+            QuitApplication("SRWare Iron", "Chromium")
             QuitApplication("RealPlayer", "RealPlayer")
-            QuitApplication("mdm_flash_player", "Wimpy FLV Player")        
+            QuitApplication("mdm_flash_player", "Wimpy FLV Player")
         end QuitAllMySpeedEnabledApps
 
-        set os_version to do shell script "sw_vers -productVersion"	
+        set os_version to do shell script "sw_vers -productVersion"
         set dialogApp to "Finder"
 
         set currentlyRunningApps to CheckForMySpeedEnabledApps()
@@ -185,17 +191,17 @@ runAppleScript()
                 try
                     display dialog msg default button 1 buttons {"Continue", "Cancel"} with title "MySpeed Removal Tool"
                     on error number -128
-                        set scriptResult to "fail" 
+                        set scriptResult to "fail"
                 end try
-            end tell           
-        end if	
-    
+            end tell
+        end if
+
         if (scriptResult is "pass") then
             set quitLoopDone to false
             repeat until quitLoopDone
                 QuitAllMySpeedEnabledApps()
                 delay 1
-                
+
                 -- if any MySpeed apps are still running, then they failed to properly shutdown
                 -- force quit those
                 set mySpeedRunningApps to CheckForMySpeedApps()
@@ -204,9 +210,9 @@ runAppleScript()
                         if (ApplicationIsRunning(theMySpeedApp))
                             ForceQuitApplication(theMySpeedApp)
                         end if
-                    end repeat                
+                    end repeat
                 end if
-                
+
                 set currentlyRunningApps to CheckForMySpeedEnabledApps()
                 if (length of currentlyRunningApps > 0) then
                     tell application dialogApp
@@ -222,7 +228,7 @@ runAppleScript()
                         end try
                     end tell
                 else
-                    set quitLoopDone to true                
+                    set quitLoopDone to true
                 end if
             end repeat
 
@@ -233,15 +239,15 @@ runAppleScript()
                     activate
                     set msg to "MySpeed or a MySpeed enabled application (browsers) are still running..removal cannot continue. A reboot may be required before removal can continue."
                     set dialogresult to display dialog msg default button 1 buttons {"Cancel Install" } with title "MySpeed Removal Tool"
-                    set scriptResult to "fail"              
+                    set scriptResult to "fail"
                 end tell
-    
+
             end if
         end if
-        
+
         tell application "Terminal" to activate
-        
-        return scriptResult       
+
+        return scriptResult
 EOF
 `
     appleScriptResult=`echo "$osaCommand" | osascript`
@@ -250,7 +256,7 @@ EOF
 
 # first run the applescript to close everything
 result=$(runAppleScript)
-if [ $result != "pass" ] 
+if [ $result != "pass" ]
 then
     echo "Failed to close all MySpeed Enabled applications...exiting"
     exit 0
@@ -271,36 +277,36 @@ checkForFailure $? "sudo passord incorrect..."
 # Enounce, Inc, copyright (c) 2010. All rights reserved.
 #
 # remove the Enounce AUTimePitch Audio Unit
-if [ -e /Library/Audio/Plug-Ins/Components/AUTimePitch.component ] 
-then 
+if [ -e /Library/Audio/Plug-Ins/Components/AUTimePitch.component ]
+then
     echo "Removing AUTimePitch"
-    echo $sudoPassword | sudo -S rm -rf /Library/Audio/Plug-Ins/Components/AUTimePitch.component 
+    echo $sudoPassword | sudo -S rm -rf /Library/Audio/Plug-Ins/Components/AUTimePitch.component
 fi
 
 # Remove the NPAPI MySpeed Plugin, if it exists
-if [ -e "/Library/Internet Plug-Ins/NPMySpeedPlugin.plugin" ] 
-then 
+if [ -e "/Library/Internet Plug-Ins/NPMySpeedPlugin.plugin" ]
+then
     echo "Removing NPMySpeedPlugin"
-    echo $sudoPassword | sudo -S rm -rf "/Library/Internet Plug-Ins/NPMySpeedPlugin.plugin" 
+    echo $sudoPassword | sudo -S rm -rf "/Library/Internet Plug-Ins/NPMySpeedPlugin.plugin"
 fi
 
 # Remove the MySpeed Scripting Addition, if it exists
-if [ -e /Library/ScriptingAdditions/MySpeed.osax ] 
-then 
+if [ -e /Library/ScriptingAdditions/MySpeed.osax ]
+then
     echo "Removing MySpeed.osax"
-    echo $sudoPassword | sudo -S rm -rf /Library/ScriptingAdditions/MySpeed.osax 
+    echo $sudoPassword | sudo -S rm -rf /Library/ScriptingAdditions/MySpeed.osax
 fi
 
 # Remove MySpeed, if it exists
-if [ -e /Applications/MySpeed.app ] 
-then 
+if [ -e /Applications/MySpeed.app ]
+then
     echo "Removing MySpeed"
     echo $sudoPassword | sudo -S rm -rf /Applications/MySpeed.app
 fi
 
 # Remove MySpeed temp files dir, if it exists
-if [ -e ~/.enounce2 ] 
-then 
+if [ -e ~/.enounce2 ]
+then
     echo "Removing MySpeed temporary files directory"
     echo $sudoPassword | sudo -S rm -rf ~/.enounce2
 fi
@@ -411,9 +417,9 @@ echo "MySpeed has been removed....thank you for trying MySpeed!"
 }
     end
   end
-  
+
   pkg "MySpeed for Mac.pkg"
-  
+
   uninstall_preflight do
     system 'mv', '-f', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'
     system 'plutil', '-convert', 'xml1', ENV['HOME'] + '/Library/Preferences/com.enounce.MySpeed.plist.bakp.plist'
@@ -437,7 +443,7 @@ echo "MySpeed has been removed....thank you for trying MySpeed!"
       :rmdir   => [
           '~/Library/Application Support/Enounce'
       ]
-  
+
   uninstall_postflight do
     system '/bin/bash', '/tmp/remove-myspeed.sh'
     local_files = Pathname.glob(Pathname.new("~/.en*").expand_path)
