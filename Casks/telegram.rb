@@ -1,10 +1,10 @@
 cask 'telegram' do
-  version '3.5.3-108404'
-  sha256 '6adefa53240a03cfef43e9b31d3c73139c3ff876d6bed05ba89b6adf4bf161fd'
+  version '3.6-109809'
+  sha256 '6c6edfcff7b0d77e5a28d64659088d60260b0beee0fba005b19164a7d96ae754'
 
   url "https://osx.telegram.org/updates/Telegram-#{version}.app.zip"
   appcast 'https://osx.telegram.org/updates/versions.xml',
-          checkpoint: '76f5c974e1043f3d36acb8f225a4d6a8262b83c6c43e6011de36bb8f70e351ac'
+          checkpoint: '8f48b76b65412b130b58bec8fadccd88f0ac12b595e2f911d211143a08920f3b'
   name 'Telegram for macOS'
   homepage 'https://macos.telegram.org/'
 
