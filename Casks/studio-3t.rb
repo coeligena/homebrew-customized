@@ -1,10 +1,10 @@
 cask 'studio-3t' do
-  version '5.6.4'
-  sha256 '11b78151abd5bbf0fddd3f39209bdf61777af3e29d5bd676cc008ad1a25539ea'
+  version '5.7.4'
+  sha256 '9e161da134860f3822387b53cebc93280f0fb8aa96a9687547accab6d8fe5a36'
 
   url "https://download.studio3t.com/studio-3t/mac/#{version}/Studio-3T.dmg"
-  appcast 'http://files.studio3t.com/changelog/changelog.txt',
-          checkpoint: '18c1baa32e9e91a5a7dd27ac990371d617ce34e9039e693f05dd6c7ca24e94e1'
+  appcast 'https://files.studio3t.com/changelog/changelog.txt',
+          checkpoint: 'ec3e9cf293487231d10099f081612914e76e353b0f450068003a63c2717f5512'
   name 'Studio 3T'
   homepage 'https://studio3t.com/'
 

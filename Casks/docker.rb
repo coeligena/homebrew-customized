@@ -4,7 +4,7 @@ cask 'docker' do
 
   url 'https://download.docker.com/mac/stable/Docker.dmg'
   appcast 'https://download.docker.com/mac/stable/appcast.xml',
-          checkpoint: '3eca966b5e6154051b3270cbf4ebd1afdfd1ba8145f8ae2b88bea6408eb49143'
+          checkpoint: 'c90db831fa5ec64be3d298c9ccb67bf6bdd79228bb6c3cfa684eba3f15e527e8'
   name 'Docker Community Edition'
   name 'Docker CE'
   homepage 'https://www.docker.com/community-edition'

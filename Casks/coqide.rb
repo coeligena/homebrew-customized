@@ -1,12 +1,13 @@
 cask 'coqide' do
-  version '8.7.0'
-  sha256 '2ce75694a60b45d9f43e3d138a974959bda7e82615b8527116ab7cc8e517bcf3'
+  version '8.7.1-1'
+  sha256 '16c05be6de9094f140dd9659c65d83e3a10f701ae33be8eb3cda354da78496ce'
 
-  url "https://coq.inria.fr/distrib/V#{version}/files/coq-#{version}-installer-macos.dmg"
+  # github.com/coq/coq was verified as official when first introduced to the cask
+  url "https://github.com/coq/coq/releases/download/V#{version.major_minor_patch}/coq-#{version}-installer-macos.dmg"
   appcast 'https://github.com/coq/coq/releases.atom',
-          checkpoint: '940220c743905372e20c0e5edaaff11920a8b7765d722cf18b71426e4ad8c7c8'
+          checkpoint: '91af0d574c77ef0997d1f23eb594a1eed4889185ebb4d48db0ff267cd0894d13'
   name 'Coq'
   homepage 'https://coq.inria.fr/'
 
-  app "CoqIDE_#{version}.app"
+  app "CoqIDE_#{version.major_minor_patch}.app"
 end
