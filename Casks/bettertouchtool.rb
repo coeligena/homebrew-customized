@@ -19,6 +19,7 @@ cask 'bettertouchtool' do
     url "https://bettertouchtool.net/releases/btt#{version}_final_10_9.zip"
   else
     version :latest
+    sha256 :no_check
 
     # bettertouchtool.net/releases was verified as official when first introduced to the cask
     url "https://www.boastr.net/releases/BetterTouchTool.zip"
