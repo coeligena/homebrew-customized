@@ -1,11 +1,11 @@
 cask 'franz' do
-  version '5.0.0-beta.15'
-  sha256 '2a1ca30c05d6534e4d9805ff22360e627882b2a5f61ce9d558c97a6c5aa72e0a'
+  version '5.0.0-beta.17'
+  sha256 '2b388cb82da5bac7fb1bd71e17bab894523c6fce26631b297bb66d78387985c3'
 
   # github.com/meetfranz/franz was verified as official when first introduced to the cask
   url "https://github.com/meetfranz/franz/releases/download/v#{version}/franz-#{version}.dmg"
   appcast 'https://github.com/meetfranz/franz/releases.atom',
-          checkpoint: '4715ee564fb05dbb6133581f39f47e0f4172ae56b714401b886bd75ab8ce1a37'
+          checkpoint: 'f1a1b87b70a4f88c6075a36199e605ee9c398882e5be509958a3888fb453591a'
   name 'Franz'
   homepage 'https://meetfranz.com/'
 
