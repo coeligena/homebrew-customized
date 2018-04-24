@@ -4,7 +4,7 @@ cask 'disco' do
     
     url 'http://www.discoapp.com/disco.dmg'
     homepage 'http://www.discoapp.com'
-    license :gratis
+    
     
     caveats "Enter free name: FREE DISCO and serial: DSCO-111-113-199-99"
     

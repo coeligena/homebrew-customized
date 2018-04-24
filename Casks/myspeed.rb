@@ -8,7 +8,7 @@ cask 'myspeed' do
 
   url "https://www.enounce.com/downloads/#{version}/EnounceMySpeed.dmg"
   homepage 'https://www.enounce.com/myspeed1-mac-download'
-  license :commercial
+  
 
   postflight do
     sleep 2

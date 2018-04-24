@@ -4,7 +4,7 @@ cask 'dbvisualizer-tgz' do
 
   url "http://www.dbvis.com/product_download/dbvis-#{version}/media/dbvis_macos_#{version.gsub('.', '_')}.tgz"
   homepage 'http://www.dbvis.com/'
-  license :commercial
+  
 
   app 'DbVisualizer.app'
 end

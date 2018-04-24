@@ -6,7 +6,7 @@ cask 'flash-esr' do
   url "http://fpdownload.macromedia.com/get/flashplayer/current/licensing/mac/install_flash_player_#{version.split('.')[0]}_osx_pkg.dmg"
   name 'Adobe Flash Player Extended Support Release'
   homepage 'https://www.adobe.com/fi/products/flashplayer/distribution3.html'
-  license :gratis
+  
 
   pkg 'Install Adobe Flash Player.pkg'
 

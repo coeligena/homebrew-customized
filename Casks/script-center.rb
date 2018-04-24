@@ -5,7 +5,7 @@ cask 'script-center' do
   url 'http://gngrwzrd.com/Script%20Center.zip'
   name 'Script Center'
   homepage 'http://gngrwzrd.com/script-center/'
-  license :gratis
+  
 
   app 'Script Center.app'
 end

@@ -5,7 +5,7 @@ cask 'rider-eap' do
   url "https://download.jetbrains.com/resharper/riderRS-#{version}.dmg"
   name 'AppCode'
   homepage 'https://www.jetbrains.com/rider/'
-  license :commercial
+  
 
   app 'Rider EAP.app'
 

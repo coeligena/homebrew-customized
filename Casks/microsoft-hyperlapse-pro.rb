@@ -5,7 +5,7 @@ cask 'microsoft-hyperlapse-pro' do
   url "http://ftp.research.microsoft.com/downloads/9f3d92d8-583c-415d-a3cb-c238b80a1ef9/Microsoft%20Hyperlapse%20Pro-#{version}.pkg.zip"
   name 'Microsoft Hyperlapse Pro Mac'
   homepage 'https://research.microsoft.com/en-us/um/redmond/projects/hyperlapseapps/'
-  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  
 
   pkg "Microsoft Hyperlapse Pro-#{version}.pkg"
   

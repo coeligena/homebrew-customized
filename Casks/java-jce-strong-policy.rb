@@ -8,7 +8,7 @@ cask 'java-jce-strong-policy' do
                   }
   name 'Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy'
   homepage 'https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html'
-  license :gratis
+  
 
   preflight do
     unless File.exist?('/Library/Java/Home/jre/lib/security/local_policy.jar.backed_up')

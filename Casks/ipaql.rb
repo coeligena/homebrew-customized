@@ -5,7 +5,7 @@ cask 'ipaql' do
   url "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/quicklook-ipa/IPA%20Quick%20Look%20Plugin%20#{version}.dmg"
   name 'CocoaDeveloper Quicklook Plugin'
   homepage 'https://code.google.com/archive/p/quicklook-ipa/'
-  license :gratis
+  
 
   pkg 'IPA Quick Look Plugin.pkg'
 end

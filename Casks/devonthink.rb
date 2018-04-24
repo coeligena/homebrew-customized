@@ -13,4 +13,4 @@ cask 'devonthink' do
   depends_on macos: '>= :mavericks'
 
   app 'DEVONthink.app'
-end
+end
