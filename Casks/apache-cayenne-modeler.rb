@@ -1,4 +1,4 @@
-cask 'apache-cayenne-modeler-beta' do
+cask 'apache-cayenne-modeler' do
   version '4.0.RC1'
   sha256 'b5899a4275de89c5adebde0b25b2834c02917bfe7968f64eaef5c3b3a3e61ecc'
 

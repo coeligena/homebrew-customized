@@ -8,7 +8,6 @@ cask 'bitpay' do
           checkpoint: '0dc73ed919aa9337dad13787c755303b86945bc293ff3265014585283ae2b31d'
   name 'BitPay'
   homepage 'https://bitpay.com/'
-  gpg "#{url}.sig", key_id: '9d17e656bb3b6163ae9d71725cd600a61112cfa1'
 
   app 'BitPay.app'
 

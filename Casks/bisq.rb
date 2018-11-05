@@ -8,7 +8,6 @@ cask 'bisq' do
           checkpoint: '7ce578f13f263192fdf5bb645f5546eb3fc5442c7435929ebd75dab7550111b2'
   name 'Bisq'
   homepage 'https://bisq.io/'
-  gpg "#{url}.asc", key_id: '1dc3c8c4316a698ac494039cf5b84436f379a1c6'
 
   app 'Bisq.app'
 end

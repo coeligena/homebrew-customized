@@ -86,7 +86,6 @@ cask 'torbrowser' do
           checkpoint: 'd85ecd04b1e022e7434002fd093bebfc2715c696498636190c334c77d31a6326'
   name 'Tor Browser'
   homepage 'https://www.torproject.org/projects/torbrowser.html'
-  gpg "#{url}.asc", key_id: 'ef6e286dda85ea2a4ba7de684e2c6e8793298290'
 
   auto_updates true
   conflicts_with cask: 'torbrowser-alpha'

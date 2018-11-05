@@ -37,7 +37,6 @@ cask 'macports' do
           checkpoint: '6ddfb734b6c7633e383f699856b15f72aeadcf36a9c5d24e3d31bbcee13cc6a6'
   name 'MacPorts'
   homepage 'https://www.macports.org/'
-  gpg "#{url}.asc", key_id: '01ff673fb4aae6cd'
 
   uninstall pkgutil: 'org.macports.MacPorts'
 
