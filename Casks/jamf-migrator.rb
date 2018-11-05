@@ -1,12 +1,13 @@
 cask 'jamf-migrator' do
-  version '2.7.1'
-  sha256 '86529ef9d9d0dcc659c1b5e5a7a35f0ee4ef4454537ff590168521ab5210d599'
+  version '3.0.0'
+  sha256 '27919f9976f5e48aee429210953133f238eae5247176f031228c939d974ddc61'
 
   url 'https://github.com/jamfprofessionalservices/JamfMigrator/releases/download/current/jamf-migrator.zip'
-  appcast 'https://github.com/jamfprofessionalservices/JamfMigrator/releases.atom',
-          checkpoint: 'a55817d73874f77e2a5056ab402054a6f288a939bb9c3874f0f0d8f8be7c2f64'
+  appcast 'https://github.com/jamfprofessionalservices/JamfMigrator/releases.atom'
   name 'JamfMigrator'
   homepage 'https://github.com/jamfprofessionalservices/JamfMigrator'
+
+  depends_on macos: '>= :sierra'
 
   app 'jamf-migrator.app'
 end

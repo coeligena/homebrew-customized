@@ -1,14 +1,12 @@
 cask '1password-cli' do
-  version '0.3'
-  sha256 '342663c3870a4e869e7217b58bf091037e9cb9d88444edcab67ce90fe328a848'
+  version '0.5.4'
+  sha256 '93c8bae059e784fc2409c07e09b53648bd449feca3af1bfec4260e9ae9648830'
 
   # cache.agilebits.com/dist/1P/op/pkg was verified as official when first introduced to the cask
   url "https://cache.agilebits.com/dist/1P/op/pkg/v#{version}/op_darwin_amd64_v#{version}.zip"
-  appcast 'https://app-updates.agilebits.com/product_history/CLI',
-          checkpoint: '2d2962df502821be5724bf5e1289e2a6725cbbbc4c1a215c27bd23150f257481'
+  appcast 'https://app-updates.agilebits.com/product_history/CLI'
   name '1Password CLI'
   homepage 'https://support.1password.com/command-line/'
-  gpg 'op.sig', key_url: 'https://keybase.io/1password/pgp_keys.asc'
 
   binary 'op'
 

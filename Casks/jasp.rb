@@ -1,6 +1,6 @@
 cask 'jasp' do
-  version '0.8.6'
-  sha256 '7e373b47348cc9b0dc0aa61957d0c829ef562845d3132293245dee2a9c929bab'
+  version '0.9.1.0'
+  sha256 'be683948a2797d17fdab4f6bd549999c7ba2aa2dd9cd5851baca5a4ed50c5005'
 
   url "https://static.jasp-stats.org/JASP-#{version}.dmg"
   name 'JASP'

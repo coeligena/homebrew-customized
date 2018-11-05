@@ -1,9 +1,10 @@
 cask 'manager' do
-  version :latest
-  sha256 :no_check
+  version '18.11.6'
+  sha256 '5556f0ea7add3909a818b6c14f20a646b8f7cd880b985ab32648e2572a4c7fc3'
 
-  # mngr.s3.amazonaws.com was verified as official when first introduced to the cask
-  url 'https://mngr.s3.amazonaws.com/Manager.dmg'
+  # d2ap5zrlkavzl7.cloudfront.net was verified as official when first introduced to the cask
+  url "https://d2ap5zrlkavzl7.cloudfront.net/#{version}/Manager.dmg"
+  appcast 'https://www.manager.io/desktop/download/'
   name 'Manager'
   homepage 'https://www.manager.io/'
 

@@ -1,11 +1,10 @@
 cask 'splice' do
-  version '2.3-201706010955'
-  sha256 'e260ac2e838056979e0be763e89511ae89676c854536011402912856e5e8788e'
+  version '3.3.8'
+  sha256 'a679d155caf1b3630f882b9c739f91e4ec37be860ab358ab2b327333650ee663'
 
-  # amazonaws.com/spliceosx was verified as official when first introduced to the cask
-  url "https://s3-us-west-1.amazonaws.com/spliceosx/Splice.app-#{version}.zip"
-  appcast 'https://splice.com/appcast.xml',
-          checkpoint: 'a7725c36fa5b01d7ddc1641a04c6bfe987d7ea6c9da8a8975f1a93f5e1cf74ca'
+  # splicedesktop.s3-us-west-1.amazonaws.com was verified as official when first introduced to the cask
+  url 'https://splicedesktop.s3-us-west-1.amazonaws.com/darwin/stable/Splice.app.zip'
+  appcast 'https://api.splice.com/v2/desktop/darwin/stable/latest?v=0.0.0'
   name 'Splice'
   homepage 'https://splice.com/'
 

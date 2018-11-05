@@ -1,11 +1,10 @@
 cask 'padlock' do
-  version '2.5.0'
-  sha256 'f5d367608160a6fbbe6007893ed64e2fb8ba86f72bdff964b18f9b855b61eb80'
+  version '2.7.2'
+  sha256 'cb25ba911a07476d4914a9f9c20b252cbd141ddeff2bf0c677ead33cdb2a84d8'
 
-  # github.com/MaKleSoft/padlock was verified as official when first introduced to the cask
-  url "https://github.com/MaKleSoft/padlock/releases/download/v#{version}/Padlock-#{version}.dmg"
-  appcast 'https://github.com/MaKleSoft/padlock/releases.atom',
-          checkpoint: 'fce2adfe4c017e5b85c44686faebab2c54ade548eaa6d41d6386e3c943844efb'
+  # github.com/padlock/padlock was verified as official when first introduced to the cask
+  url "https://github.com/padlock/padlock/releases/download/v#{version}/Padlock-#{version}.dmg"
+  appcast 'https://github.com/padlock/padlock/releases.atom'
   name 'Padlock'
   homepage 'https://padlock.io/'
 

@@ -1,8 +1,8 @@
 cask 'eclipse-jee' do
-  version '4.7.2,oxygen:2'
-  sha256 '30412262e4fe6a0db5f03ee2dbbcd7635c88f8ad75af99a89ab25f4065f65ff7'
+  version '2018-09,R'
+  sha256 '5ca049d86362534815a169224604f44c8c32a162920697f04f2e4f0230450bcf'
 
-  url "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/#{version.after_comma.before_colon}/#{version.after_colon}/eclipse-jee-#{version.after_comma.before_colon}-#{version.after_colon}-macosx-cocoa-x86_64.dmg&r=1"
+  url "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/#{version.before_comma}/#{version.after_comma}/eclipse-jee-#{version.before_comma}-macosx-cocoa-x86_64.dmg&r=1"
   name 'Eclipse IDE for Java EE Developers'
   homepage 'https://eclipse.org/'
 
@@ -10,6 +10,13 @@ cask 'eclipse-jee' do
 
   # Renamed to avoid conflict with other Eclipse.
   app 'Eclipse.app', target: 'Eclipse JEE.app'
+
+  zap trash: [
+               '~/Library/Caches/org.eclipse.platform.ide',
+               '~/Library/Cookies/org.eclipse.platform.ide.binarycookies',
+               '~/Library/Preferences/org.eclipse.platform.ide.plist',
+               '~/Library/Saved Application State/org.eclipse.platform.ide.savedState',
+             ]
 
   caveats do
     depends_on_java

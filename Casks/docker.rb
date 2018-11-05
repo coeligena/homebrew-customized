@@ -1,10 +1,9 @@
 cask 'docker' do
-  version :latest
-  sha256 'd943b47f5cd250dd1f9cf5c4f4252be1f7975bca4dce855592944353ceaed073'
+  version '18.06.1-ce-mac73,26764'
+  sha256 '3429eac38cf0d198039ad6e1adce0016f642cdb914a34c67ce40f069cdb047a5'
 
-  url 'https://download.docker.com/mac/stable/Docker.dmg'
-  appcast 'https://download.docker.com/mac/stable/appcast.xml',
-          checkpoint: '9dcd36f6ac85ea84f656e647f9093a7ffdd4b8f5cff48a36cb5b43021cce7586'
+  url "https://download.docker.com/mac/stable/#{version.after_comma}/Docker.dmg"
+  appcast 'https://download.docker.com/mac/stable/appcast.xml'
   name 'Docker Community Edition'
   name 'Docker CE'
   homepage 'https://www.docker.com/community-edition'
@@ -16,6 +15,7 @@ cask 'docker' do
 
   uninstall delete:    [
                          '/Library/PrivilegedHelperTools/com.docker.vmnetd',
+                         '/private/var/tmp/com.docker.vmnetd.socket',
                          '/usr/local/bin/docker',
                          '/usr/local/bin/docker-compose',
                          '/usr/local/bin/docker-credential-osxkeychain',
@@ -31,6 +31,9 @@ cask 'docker' do
             quit:      'com.docker.docker'
 
   zap trash: [
+               '/usr/local/bin/docker-compose.backup',
+               '/usr/local/bin/docker-machine.backup',
+               '/usr/local/bin/docker.backup',
                '~/Library/Application Scripts/com.docker.helper',
                '~/Library/Caches/KSCrashReports/Docker',
                '~/Library/Caches/com.docker.docker',

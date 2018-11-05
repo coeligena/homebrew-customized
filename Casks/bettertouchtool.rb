@@ -23,15 +23,13 @@ cask 'bettertouchtool' do
 
     # bettertouchtool.net/releases was verified as official when first introduced to the cask
     url "https://bettertouchtool.net/releases/BetterTouchTool.zip"
-    appcast 'https://updates.bettertouchtool.net/bettertouchtool_release_notes.html',
-            checkpoint: '4520ee4fcee23c2367b2262ac827e548ca635ac33000cfb9becf4f4fc663c16a'
+    appcast 'https://bettertouchtool.net/releases/'
   end
 
   name 'BetterTouchTool'
-  homepage 'https://www.boastr.net/'
+  homepage 'https://folivora.ai/'
 
   auto_updates true
-  accessibility_access true
 
   app 'BetterTouchTool.app'
 

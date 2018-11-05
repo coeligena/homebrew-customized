@@ -1,11 +1,10 @@
 cask 'vnote' do
-  version '1.12'
-  sha256 '9ac3c687466faf60864a5610394f0b9b01fa4ad9a480483c7198303edd0872f0'
+  version '2.0'
+  sha256 'bba9fffe90e6b9ac2f2a1e9ce90e7ec4f6671511d6ae48ea990c1e7ef4a5d6f1'
 
   # github.com/tamlok/vnote was verified as official when first introduced to the cask
-  url "https://github.com/tamlok/vnote/releases/download/v#{version}/VNote_X64_#{version}.dmg"
-  appcast 'https://github.com/tamlok/vnote/releases.atom',
-          checkpoint: '17fe06d597fe9bb104c8bdb5a650a21021b0e7b473e81199e4c1ab47e71ab8a1'
+  url "https://github.com/tamlok/vnote/releases/download/v#{version}/VNote-#{version}-x64.dmg"
+  appcast 'https://github.com/tamlok/vnote/releases.atom'
   name 'VNote'
   homepage 'https://tamlok.github.io/vnote/'
 

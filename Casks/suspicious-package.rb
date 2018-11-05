@@ -1,14 +1,11 @@
 cask 'suspicious-package' do
-  version '3.3.1'
-  sha256 '49eee6dc930574b6d03534bea5820cdf47fd10c4f6b82be14afb8e1e76a06304'
+  version '3.4'
+  sha256 '0416e5a6c0e39ccdc2eed430e3d1650df039564bb891d649ea6f3bd987785a08'
 
-  url 'http://www.mothersruin.com/software/downloads/SuspiciousPackage.dmg'
-  appcast 'http://www.mothersruin.com/software/SuspiciousPackage/data/SuspiciousPackageVersionInfo.plist',
-          checkpoint: 'eb576c7131af0571064bb963b63381ecadfe395b34a9663746e71beb7dd87ca8'
+  url 'https://www.mothersruin.com/software/downloads/SuspiciousPackage.dmg'
+  appcast 'https://www.mothersruin.com/software/SuspiciousPackage/data/SuspiciousPackageVersionInfo.plist'
   name 'Suspicious Package'
-  homepage 'http://www.mothersruin.com/software/SuspiciousPackage/'
-
-  auto_updates true
+  homepage 'https://www.mothersruin.com/software/SuspiciousPackage/'
 
   app 'Suspicious Package.app'
   binary "#{appdir}/Suspicious Package.app/Contents/SharedSupport/spkg"

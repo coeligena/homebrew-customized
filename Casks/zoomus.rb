@@ -1,8 +1,9 @@
 cask 'zoomus' do
-  version '4.1.20446.0209'
-  sha256 '87f26cbf531472db043802c97ebb8447459a3e32290199497a6da6a7d9b024f8'
+  version '4.1.33259.0925'
+  sha256 '71c6f7087a2d68933ac1b2967c75b58720e427febe923bc3c9c07bf4da576e94'
 
   url "https://www.zoom.us/client/#{version}/zoomusInstaller.pkg"
+  appcast 'https://support.zoom.us/hc/en-us/articles/201361963-New-Updates-for-Mac-OS'
   name 'Zoom.us'
   homepage 'https://www.zoom.us/'
 
@@ -10,7 +11,11 @@ cask 'zoomus' do
 
   pkg 'zoomusInstaller.pkg'
 
-  uninstall delete: '/Applications/zoom.us.app'
+  uninstall delete: '/Applications/zoom.us.app',
+            quit:   'us.zoom.ZoomOpener',
+            signal: [
+                      ['KILL', 'us.zoom.xos'],
+                    ]
 
   zap trash: [
                '~/Desktop/Zoom',

@@ -1,12 +1,17 @@
 cask 'isyncr' do
-  version '5.6.3'
-  sha256 'e4de8de36b1e191aa511846549cac5f36727e44b0ad2607efa07a249fde55d91'
+  if MacOS.version <= :sierra
+    version '5.6.5'
+    sha256 '8cd6b1c96a902d8810e52aab6a980424370237617bfd3ff574367ff1ce8d4f4e'
+  else
+    version '5.14.9'
+    sha256 '886877b524148cd305189088b8cb54ee5599ab75186493d7e69624cc7d19fed6'
+  end
 
-  url "http://www.jrtstudio.com/files/iSyncr%20Desktop%20#{version}.pkg"
-  appcast 'http://www.jrtstudio.com/files/SlashiSyncr25.js',
-          checkpoint: '79c4376b562e3835b47239d837bfe6676657b38ff60018bbc31e99e07b32950d'
+  url "https://www.jrtstudio.com/files/iSyncr%20Desktop%20#{version}.pkg"
   name 'iSyncr Desktop'
-  homepage 'http://www.jrtstudio.com/iSyncr-iTunes-for-Android'
+  homepage 'https://www.jrtstudio.com/iSyncr-iTunes-for-Android'
+
+  depends_on macos: '>= :mountain_lion'
 
   pkg "iSyncr Desktop #{version}.pkg"
 

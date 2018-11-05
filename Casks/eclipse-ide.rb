@@ -1,6 +1,6 @@
 cask 'eclipse-ide' do
-  version '4.7.2,oxygen:2'
-  sha256 '8657a0a8bda888bd9287e92d26f3744bf2f9a2d0a95265a260d92f09372d3f6c'
+  version '4.8.0,photon:R'
+  sha256 '9aeb9ad57a359efb38b40ea1195873fbf6c8c5dd920ca9b079facf0f24b555fa'
 
   url "https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/#{version.after_comma.before_colon}/#{version.after_colon}/eclipse-committers-#{version.after_comma.before_colon}-#{version.after_colon}-macosx-cocoa-x86_64.dmg&r=1"
   name 'Eclipse IDE for Eclipse Committers'

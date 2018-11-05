@@ -1,11 +1,12 @@
 cask 'insync' do
-  version '1.4.4.37065'
-  sha256 '1b74a89a0ea6df57a999dfd09f59cffaee7236f6e63011224b93ef69acfbc669'
+  version '1.5.4.37362'
+  sha256 '53fef6aedba15ee0ade8b676a870dc8781e4b0e5863460cf3a638ba64490a2d5'
 
   url "http://s.insynchq.com/builds/Insync-#{version}.dmg"
   name 'Insync'
   homepage 'https://www.insynchq.com/'
 
+  auto_updates true
   conflicts_with cask: 'insync-beta'
 
   app 'Insync.app'

@@ -1,10 +1,9 @@
 cask 'ckan-app' do
-  version '1.24.0'
-  sha256 '4c116febeeaf4ed95cc6327ca3b220d22f16c8c601d878627367606573c205f8'
+  version '1.25.3'
+  sha256 'b9d079b8eccbc9651ddee91e9931f1ffa1afcf91db05defe2240f2c16e1e3658'
 
   url "https://github.com/KSP-CKAN/CKAN/releases/download/v#{version}/CKAN.dmg"
-  appcast 'https://github.com/KSP-CKAN/CKAN/releases.atom',
-          checkpoint: 'ec64ae33f2ab43d9324749aa536b066f7cc1679b28035065d9a5d7a3df4ce5b9'
+  appcast 'https://github.com/KSP-CKAN/CKAN/releases.atom'
   name 'Comprehensive Kerbal Archive Network client'
   homepage 'https://github.com/KSP-CKAN/CKAN'
 

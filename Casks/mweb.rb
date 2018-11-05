@@ -1,13 +1,12 @@
 cask 'mweb' do
-  version '2.2.8'
-  sha256 '149c7abb50fec0a9fa37f0b891a5a563290db18fcbc0780f095d7673efa05c76'
+  version '3.1.6'
+  sha256 '9dd14de39c14b94dc0e971a2da0245ac35527cb5695b0a4f5fd3c49a572113c4'
 
-  # dl.devmate.com/com.coderforart.MWeb was verified as official when first introduced to the cask
-  url 'https://dl.devmate.com/com.coderforart.MWeb/MWeb-ProMarkdownwriting%2CnotetakingandstaticbloggeneratorApp.dmg'
-  appcast 'https://updates.devmate.com/com.coderforart.MWeb.xml',
-          checkpoint: '651cc6d0abc923b562c36216f550a70d6ef0149ed1f091d6e53267322c497801'
+  # dl.devmate.com/com.coderforart.MWeb3 was verified as official when first introduced to the cask
+  url 'https://dl.devmate.com/com.coderforart.MWeb3/MWeb3-ProMarkdownwriting%2CnotetakingandstaticbloggeneratorApp.dmg'
+  appcast 'https://updates.devmate.com/com.coderforart.MWeb3.xml'
   name 'MWeb'
-  homepage 'http://www.mweb.im/'
+  homepage 'https://www.mweb.im/'
 
   app 'MWeb.app'
 end

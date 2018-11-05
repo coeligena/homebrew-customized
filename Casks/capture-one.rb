@@ -1,8 +1,8 @@
 cask 'capture-one' do
-  version '11.0.1'
-  sha256 'f87c9b1e0a72901464732fca68f06e46c1fe21878d31a99a671b42b7904573e8'
+  version '11.3.1'
+  sha256 'd13b8508ccf7dcf3bd9f94d738aa4e8118bb7e3fa84f295d89456fc74b085d60'
 
-  url "http://downloads.phaseone.com/73bc2bdb-c7e0-45ec-bffc-3b2ec2adeb03/International/CaptureOne.Mac.#{version}.dmg"
+  url "http://downloads.phaseone.com/e7f45a0e-447c-4878-84fb-bca6db2de475/International/CaptureOne.Mac.#{version}.dmg"
   name 'Capture One'
   homepage 'https://www.phaseone.com/en/Products/Software/Capture-One-Pro/Whats-new.aspx'
 

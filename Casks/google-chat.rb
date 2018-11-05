@@ -1,6 +1,6 @@
 cask 'google-chat' do
-  version '18.2.252'
-  sha256 '03207c6549f1055c6238633d8b3b49f89f296b4328b13c5209decc646ed2b5cb'
+  version '18.10.101'
+  sha256 '7ee0d17c7829394c2b8384e1a2179e0b9a26f5b67b1420c1161722784504b741'
 
   url "https://dl.google.com/chat/#{version}/InstallHangoutsChat.dmg"
   name 'Chat'
