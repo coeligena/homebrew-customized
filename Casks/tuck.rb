@@ -3,7 +3,7 @@ cask 'tuck' do
   sha256 :no_check
 
   url 'https://www.irradiatedsoftware.com/downloads/Tuck.zip'
-  appcast 'https://www.irradiatedsoftware.com/updates/profiles/tuck.php',
+  appcast 'https://www.irradiatedsoftware.com/updates/profiles/tuck.php'
   name 'Tuck'
   homepage 'https://www.irradiatedsoftware.com/labs/'
 
