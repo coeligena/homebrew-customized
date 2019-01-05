@@ -10,7 +10,7 @@ cask 'tunnelblick' do
 
   auto_updates true
 
-  app 'Tunnelblick.app'
+  app 'Tunnelblick.app'#, :target => 'Tunnelblick Moved.app'
 
   uninstall_preflight do
     set_ownership "#{appdir}/Tunnelblick.app"
