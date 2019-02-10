@@ -1,8 +1,9 @@
 cask 'elmedia-player' do
-  version :latest
-  sha256 :no_check
+  version '7.1,1650'
+  sha256 '4221c1664b02bf523fe69e7b94c8510991f9f0fbdce9c3e9952c6e1ed7411caf'
 
   url 'https://cdn.eltima.com/download/elmediaplayer.dmg'
+  appcast 'https://cdn.eltima.com/download/elmediaplayer-update/elmediaplayer.xml'
   name 'Elmedia Player'
   homepage 'https://mac.eltima.com/media-player.html'
 

@@ -1,6 +1,6 @@
 cask 'bookmacster' do
-  version '2.9.3'
-  sha256 '93dc3ca9eea5af68f741a443415cd99967347b86705f0df058fa9baecf127e3f'
+  version '2.9.7'
+  sha256 '56ef20442c6ed572c107f5f1f3924d2a213b9931cbee13d70a3e752fa05256af'
 
   url 'https://sheepsystems.com/bookmacster/BookMacster.zip'
   appcast 'https://sheepsystems.com/bookmacster/appcast.xml'

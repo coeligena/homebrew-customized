@@ -1,9 +1,8 @@
 cask 'subutaicontrolcenter' do
-  version '7.1.5'
-  sha256 '17e043558ea478fdab9b6b497a76412bbe58fb97efd43fabf0e894e74e6bdf97'
+  version '7.3.4'
+  sha256 'f71f7991abc9d4272c1d68a8e4c2b12ee99ee0b30c4412a645e10b8a1268628e'
 
-  # cdn.subutai.io:8338/kurjun/rest/raw was verified as official when first introduced to the cask
-  url 'https://cdn.subutai.io:8338/kurjun/rest/raw/get?name=subutai-control-center.pkg'
+  url 'https://bazaar.subutai.io/rest/v1/cdn/raw?name=subutai-control-center.pkg&latest&download'
   appcast 'https://github.com/subutai-io/control-center/releases.atom'
   name 'Subutai Control Center'
   homepage 'https://subutai.io/'
@@ -15,7 +14,7 @@ cask 'subutaicontrolcenter' do
   # This is a horrible hack to force the file extension.
   # The backend code should be fixed so that this is not needed.
   preflight do
-    system_command '/bin/mv', args: ['--', staged_path.join('get'), staged_path.join('subutai-control-center.pkg')]
+    system_command '/bin/mv', args: ['--', staged_path.join('raw'), staged_path.join('subutai-control-center.pkg')]
   end
 
   uninstall pkgutil: 'com.Subutai.Control.Center',

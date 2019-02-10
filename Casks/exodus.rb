@@ -1,6 +1,6 @@
 cask 'exodus' do
-  version '1.63.1'
-  sha256 'f69950effbb045abbfddf684cf41518d1e0f75bea77fa49e6777817eb3eb5eda'
+  version '19.2.5'
+  sha256 'ae1095199fdd143b43bedadfd1d610b60545ca428f08d594ac21035e1ea18c9f'
 
   # exodusbin.azureedge.net was verified as official when first introduced to the cask
   url "https://exodusbin.azureedge.net/releases/exodus-macos-#{version}.dmg"

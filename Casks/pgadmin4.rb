@@ -1,6 +1,6 @@
 cask 'pgadmin4' do
-  version '3.5'
-  sha256 '2ccc1a74fb4d5572644f58d4374625404c8d6e85d829b6ad8faa0f6315be1140'
+  version '4.2'
+  sha256 'c58fdcf66c76c975d83806c609956de0915457cba9756f4ab0a8e2f62f62f7a0'
 
   # ftp.postgresql.org was verified as official when first introduced to the cask
   url "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v#{version}/macos/pgadmin4-#{version}.dmg"

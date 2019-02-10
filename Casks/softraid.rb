@@ -1,6 +1,6 @@
 cask 'softraid' do
-  version '5.7'
-  sha256 '8787f42e52dd8e396670b9e7f9a8f38e3c8136125e67d46abb1bdde092b471c4'
+  version '5.7.3'
+  sha256 'dff834031f557006a6ff6f1553012ddbf5a2d94bd1d91dc8f76905d7d7ab6bff'
 
   url "https://softraid.com/updates/SoftRAID%20#{version}.dmg"
   appcast 'https://www.softraid.com/pages/support/download_latest_version.html'

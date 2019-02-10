@@ -1,10 +1,12 @@
 cask 'deezer' do
-  version '0.15.2'
-  sha256 '1793088582c5ff6e31eec49d3ee7d2ecfbb08a598b5d2dcb5c83bde7ac1bc889'
+  version '4.1.1'
+  sha256 '22c64deabd71a0a798270328e8d07091cdd8b0ce27a8e681bcf99574f5b37222'
 
   url "https://www.deezer.com/desktop/download/artifact/darwin/x64/#{version}"
   name 'Deezer'
   homepage 'https://www.deezer.com/download'
+
+  auto_updates true
 
   app 'Deezer.app'
 

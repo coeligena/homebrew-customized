@@ -1,6 +1,6 @@
 cask 'macvim' do
-  version '8.1.151'
-  sha256 '67aed665cb098e0e9c0fc3a4f99af6d4b4fda58531e6e46c6c9b0ffbed5faad2'
+  version '8.1.154'
+  sha256 '1dfbd4f3e16d12413df21fb926b1adf02927d6266fad84877049e1a46a56ea97'
 
   url "https://github.com/macvim-dev/macvim/releases/download/snapshot-#{version.patch}/MacVim.dmg"
   appcast 'https://github.com/macvim-dev/macvim/releases.atom'
@@ -9,7 +9,6 @@ cask 'macvim' do
 
   auto_updates true
   conflicts_with formula: 'macvim'
-  depends_on macos: '>= :mountain_lion'
 
   app 'MacVim.app'
 

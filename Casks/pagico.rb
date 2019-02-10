@@ -1,8 +1,9 @@
 cask 'pagico' do
-  version '8.14.2319'
-  sha256 '8c551c66126f5ab3ea8aebe99505777742950edac67ef0f9a1ee97c5bceaf2b9'
+  version '8.16.2375'
+  sha256 '376e17a6238c175a145a9926d43a6a76802857517937ea1f73776781062b4ba8'
 
   url "https://www.pagico.com/downloads/Pagico_macOS_r#{version.patch}.dmg"
+  appcast 'https://www.pagico.com/api/pagico8.mac.xml'
   name 'Pagico'
   homepage 'https://www.pagico.com/'
 

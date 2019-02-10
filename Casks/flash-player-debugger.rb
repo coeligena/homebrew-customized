@@ -1,6 +1,6 @@
 cask 'flash-player-debugger' do
-  version '31.0.0.122'
-  sha256 '5845325e56195309e8711dd389b50cc882e0f50f4bd2d40d2f016a4482466b7e'
+  version '32.0.0.114'
+  sha256 'e0fe31fa3d9a24dd1f939c0586e598960a79e4f694b19edb269d414284de919d'
 
   url "https://fpdownload.adobe.com/pub/flashplayer/updaters/#{version.major}/flashplayer_#{version.major}_sa_debug.dmg"
   appcast 'https://fpdownload.adobe.com/pub/flashplayer/update/current/xml/version_en_mac_pep.xml'

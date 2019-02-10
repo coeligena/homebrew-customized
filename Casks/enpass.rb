@@ -1,15 +1,15 @@
 cask 'enpass' do
-  version '5.6.11'
-  sha256 '0fdbfb3ed540b1d7c7f2d7d71f73ab5a32aaf4a66b4008ca3ddb62eb319b9fc1'
+  version '6.0.5,333'
+  sha256 'b0b7aee6609730ec593f5dc70f60b81db72a7bc7016d56a8c210ca170274b046'
 
-  # sinew.in was verified as official when first introduced to the cask
-  url "https://dl.sinew.in/mac/setup/Enpass-#{version}.dmg"
+  url "https://dl.enpass.io/stable/mac/package/#{version.after_comma}/Enpass.pkg"
+  appcast 'https://dl.sinew.in/mac/package/appcast.xml'
   name 'Enpass'
   homepage 'https://www.enpass.io/'
 
-  depends_on macos: '>= :mountain_lion'
+  pkg 'Enpass.pkg'
 
-  app 'Enpass.app'
+  uninstall pkgutil: 'in.sinew.Enpass-Desktop.App'
 
   zap trash: [
                '~/Library/Caches/com.plausiblelabs.crashreporter.data/in.sinew.Enpass-Desktop',

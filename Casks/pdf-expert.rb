@@ -1,6 +1,6 @@
 cask 'pdf-expert' do
-  version '2.4.13,585'
-  sha256 '7c72560e4b075d0d72e61387484280aa617a90baa4237544df7a5a83683b134b'
+  version '2.4.22,611'
+  sha256 'f58e6cc5b6e3881d18b71afd855d66262f3af53a5eefd339b90efc6221a2606a'
 
   # readdle-test-binaries.s3.amazonaws.com was verified as official when first introduced to the cask
   url "https://readdle-test-binaries.s3.amazonaws.com/versions/#{version.after_comma}/PDFExpert.dmg"
@@ -9,6 +9,7 @@ cask 'pdf-expert' do
   homepage 'https://pdfexpert.com/'
 
   auto_updates true
+  depends_on macos: '>= :sierra'
 
   app 'PDF Expert.app'
 end

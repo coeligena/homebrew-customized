@@ -1,6 +1,6 @@
 cask 'caprine' do
-  version '2.21.0'
-  sha256 '46f5825196311a9d0806819c732f467f0dda4072f0bc2ee4323d08df345ca81a'
+  version '2.27.1'
+  sha256 '4203e4f7a02276becf2e55d7fe474e7b67c818ead0b7d5a0a73364707fc163fd'
 
   url "https://github.com/sindresorhus/caprine/releases/download/v#{version}/Caprine-#{version}.dmg"
   appcast 'https://github.com/sindresorhus/caprine/releases.atom'

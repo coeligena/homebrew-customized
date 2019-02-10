@@ -1,16 +1,12 @@
 cask 'inky' do
-  version '4.1.0_146'
-  sha256 'da19f8405c8599b7c4b25247346442325b4eb5b7e53c0b63d8c7c760681908cb'
+  version '0.10.0b'
+  sha256 '5c790eda5f2335372a4d92551ad9915bc1eb0b2daad4cb5259b3b289adb50398'
 
-  url "http://download.inky.com/InkyInstall_osx_#{version}.dmg"
-  appcast 'http://download.inky.com/inky_appcast_osx.xml'
+  # github.com/inkle/inky was verified as official when first introduced to the cask
+  url "https://github.com/inkle/inky/releases/download/#{version}/Inky_mac.dmg"
+  appcast 'https://github.com/inkle/inky/releases.atom'
   name 'Inky'
-  homepage 'https://inky.com/'
+  homepage 'https://www.inklestudios.com/ink/'
 
   app 'Inky.app'
-
-  zap trash: [
-               '~/Library/Application Support/Arcode',
-               '~/Library/Caches/com.arcode.inky',
-             ]
 end

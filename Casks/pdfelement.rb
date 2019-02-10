@@ -1,6 +1,6 @@
 cask 'pdfelement' do
-  version '6.7.6,2991'
-  sha256 'ac293559a0d770ee1278cc87850ef795d45145dae404c17e95fb7dff96666d89'
+  version '6.7.12,2991'
+  sha256 'a4fd5421b98d00fb2433c9d64e2f29962d39dadf64e25d98e31325cdab37a711'
 
   url "http://download.wondershare.com/cbs_down/mac-pdfelement#{version.major}_full#{version.after_comma}.dmg"
   name 'Wondershare PDFelement for Mac'

@@ -1,6 +1,6 @@
 cask 'dash-dash' do
-  version '0.12.3.3'
-  sha256 '9ff640ff5322c893ab6c9b87759b5b63937a14b179d7b50fb959e926c3f32b2f'
+  version '0.13.0.0'
+  sha256 '6f97f502732e5b63a431d0edb5a9d14e95ff8afb8e7eb94463566a75e7589a70'
 
   # github.com/dashpay/dash was verified as official when first introduced to the cask
   url "https://github.com/dashpay/dash/releases/download/v#{version}/dashcore-#{version}-osx-unsigned.dmg"
