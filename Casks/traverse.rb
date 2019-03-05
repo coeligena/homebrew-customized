@@ -1,6 +1,6 @@
 cask 'traverse' do
-  version '0.10.10'
-  sha256 'b79df81c3ad26c0c21d53ca0ac3d4da68f88ac15ca39eea8290d3323c96bc15b'
+  version '0.10.12'
+  sha256 'b2f4f04cb143b945e665959417f20850111fa2c08742384c49468aec2f4b5630'
 
   # github.com/jasonraimondi/traverse was verified as official when first introduced to the cask
   url "https://github.com/jasonraimondi/traverse/releases/download/v#{version}/Traverse-#{version}-mac.zip"

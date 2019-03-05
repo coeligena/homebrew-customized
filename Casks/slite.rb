@@ -1,9 +1,10 @@
 cask 'slite' do
-  version '1.0.17'
-  sha256 'db0f53b3718dc8e832f14e02cc3fa480dd7d48698abec4508609bdb063e7c933'
+  version '1.0.20'
+  sha256 'c0a707ec179e25a3ecf3b01b3b9d7c483f8165027665f3827012941c2f8f0cd8'
 
   # storage.googleapis.com/slite-desktop was verified as official when first introduced to the cask
   url "https://storage.googleapis.com/slite-desktop/mac/Slite-#{version}.dmg"
+  appcast 'https://macupdater.net/cgi-bin/check_urls/check_url_redirect.cgi?url=https://slite.com/api/desktop/download%3Fplatform=mac'
   name 'Slite'
   homepage 'https://slite.com/'
 

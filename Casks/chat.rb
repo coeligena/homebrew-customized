@@ -1,12 +1,10 @@
 cask 'chat' do
-  version '1.0.3-1429112097'
-  sha256 '430028e75c0a01ae2f8cad9b3b2bb64ae30893c5fc4ce524b5c5dd3a9413c123'
+  version '19.1.281'
+  sha256 '30ac3007e565c8ac1f57c92291c9c58dec6a1d303eb19dd7c8c8cc080bb7949b'
 
-  # devmate.com/com.perma.chat was verified as official when first introduced to the cask
-  url "https://dl.devmate.com/com.perma.chat/#{version.sub(%r{-.*$}, '')}/#{version.sub(%r{.*?-}, '')}/Chat-#{version.sub(%r{-.*$}, '')}.zip"
-  appcast 'http://updateinfo.devmate.com/com.perma.chat/updates.xml'
-  name 'Chat'
-  homepage 'https://www.chatformac.com/'
+  url "https://dl.google.com/chat/#{version}/InstallHangoutsChat.dmg"
+  name 'Google Hangouts Chat'
+  homepage 'https://gsuite.google.com/products/chat/'
 
   app 'Chat.app'
 end
