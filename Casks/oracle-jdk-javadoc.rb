@@ -19,6 +19,6 @@ cask 'oracle-jdk-javadoc' do
                    ]
 
   caveats do
-    license 'https://www.oracle.com/technetwork/java/javase/terms/license/index.html'
+    # license 'https://www.oracle.com/technetwork/java/javase/terms/license/index.html'
   end
 end

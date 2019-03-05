@@ -18,6 +18,6 @@ cask 'filemaker-pro-advanced' do
   uninstall pkgutil: "com.filemaker.FMPA#{version.major}*"
 
   caveats do
-    license 'https://www.filemaker.com/company/legal/docs/eula/fmpa_eula_wwe.pdf'
+    # license 'https://www.filemaker.com/company/legal/docs/eula/fmpa_eula_wwe.pdf'
   end
 end

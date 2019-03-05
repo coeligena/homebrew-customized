@@ -13,7 +13,7 @@ cask 'soapui' do
   # installer, we also have to provide overrides for those defaults.
   #
   # The defaults below chose the options to:
-  #   accept the license agreement
+  #   accept the # license agreement
   #   install only SoapUI (not HermesJMS, the # tutorials, or source)
   #   install to /Applications
   #   don't create a desktop icon

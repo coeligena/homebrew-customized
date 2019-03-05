@@ -17,6 +17,6 @@ cask 'oracle-jdk' do
             rmdir:   '/Library/Java/JavaVirtualMachines'
 
   caveats do
-    license 'https://www.oracle.com/technetwork/java/javase/terms/license/javase-license.html'
+    # license 'https://www.oracle.com/technetwork/java/javase/terms/license/javase-license.html'
   end
 end

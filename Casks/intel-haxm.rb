@@ -21,6 +21,6 @@ cask 'intel-haxm' do
                     }
 
   caveats do
-    license 'https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager-end-user-license-agreement-macosx'
+    # license 'https://software.intel.com/en-us/android/articles/intel-hardware-accelerated-execution-manager-end-user-license-agreement-macosx'
   end
 end

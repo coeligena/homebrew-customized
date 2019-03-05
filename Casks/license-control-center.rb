@@ -9,7 +9,7 @@ cask 'license-control-center' do
   installer manual: 'eLicenserControlSetup.app'
 
   uninstall delete: [
-                      '/Applications/License Control Center.app',
+                      '/Applications/# license Control Center.app',
                       '/Library/Receipts/eLicenserControl.pkg',
                       '/Library/Receipts/LCC.pkg',
                       '/Library/Receipts/NOS.pkg',

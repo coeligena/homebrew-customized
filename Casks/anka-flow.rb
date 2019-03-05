@@ -37,6 +37,6 @@ cask 'anka-flow' do
              ]
 
   caveats do
-    license 'https://veertu.com/terms-and-conditions/'
+    # license 'https://veertu.com/terms-and-conditions/'
   end
 end

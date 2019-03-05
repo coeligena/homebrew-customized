@@ -35,6 +35,6 @@ cask 'virtualbox-extension-pack' do
   end
 
   caveats do
-    license 'https://www.virtualbox.org/wiki/VirtualBox_PUEL'
+    # license 'https://www.virtualbox.org/wiki/VirtualBox_PUEL'
   end
 end

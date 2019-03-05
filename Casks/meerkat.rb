@@ -11,6 +11,6 @@ cask 'meerkat' do
 
   caveats do
     discontinued
-    free_license 'http://codesorcery.net/meerkat'
+    free_# license 'http://codesorcery.net/meerkat'
   end
 end

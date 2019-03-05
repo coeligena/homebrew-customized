@@ -10,6 +10,6 @@ cask 'candybar' do
 
   caveats do
     discontinued
-    free_license 'https://panic.com/bin/setup.php/cb3/PPQA-YAMA-E3KP-VHXG-B6AL-L'
+    free_# license 'https://panic.com/bin/setup.php/cb3/PPQA-YAMA-E3KP-VHXG-B6AL-L'
   end
 end

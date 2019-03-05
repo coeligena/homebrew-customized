@@ -23,7 +23,7 @@ cask 'sencha' do
                     }
 
   caveats do
-    license 'https://www.sencha.com/legal/sencha-tools-software-license-agreement/'
+    # license 'https://www.sencha.com/legal/sencha-tools-software-license-agreement/'
     <<~EOS
       Sencha Cmd appends 1 line to your ~/.bash_profile or ~/.profile file:
 
