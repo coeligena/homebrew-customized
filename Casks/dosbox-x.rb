@@ -1,4 +1,4 @@
-cask 'dosbox-x-app' do
+cask 'dosbox-x' do
   version '0.82.16,20190301171645'
   sha256 'd415500e0e9c4c786cd4664d02ef134fbe73983d74dac3944b10ad8675f087df'
 
